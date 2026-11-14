@@ -1,9 +1,14 @@
+window.FinancialSections = window.FinancialSections || {};
+
 Dashboard.registerTab({
-  id: 'financial-kpis',
-  label: 'Financial KPIs',
-  title: 'Financial KPIs',
+  id: 'financial',
+  label: 'Financial',
+  title: 'Financial',
   render(container) {
-    // TODO: build this tab. Replace the line below with real content.
-    Dashboard.emptyState(container, 'Financial KPIs for geothermal (for example IRR, payback period, cost of capital) will go here.');
+    container.innerHTML = `
+      <section id="fin-kpi-trends"></section>
+      <section id="fin-capital-stack"></section>`;
+    FinancialSections.kpiTrends?.(container.querySelector('#fin-kpi-trends'));
+    FinancialSections.capitalStack?.(container.querySelector('#fin-capital-stack'));
   }
 });
