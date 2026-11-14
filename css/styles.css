@@ -1,18 +1,26 @@
-/* Design tokens, based on the Figma layout: white header, warm light page, slate-blue feature band, dark map panel */
+/* Design tokens: CATF brand palette (Cobalt, Chathams Blue, Cadet Blue) plus yellow accent.
+   If a color is needed, use a variable below instead of typing a hex code. */
 :root {
-  --blue: #1f4fb4;
-  --blue-link: #1a56c4;
-  --slate: #44558a;
-  --slate-light: #6b7bb0;
-  --navy: #0d1626;
-  --page: #f1eeea;
-  --card: #ffffff;
-  --ink: #0b0b0b;
-  --muted: #5b6270;
-  --line-blue: #3a9ad0;
+  /* Brand */
+  --cobalt: #0047bb;          /* primary: buttons, links, key data series */
+  --chathams: #153171;        /* headings, body text, dark panels */
+  --cadet: #abb8c3;           /* borders, neutral chart series, muted fills */
+  --accent: #ffde8d;          /* highlights and callouts (fills, not thin lines or small text) */
+
+  /* Supporting tints derived from the brand colors */
+  --cobalt-dark: #003a9a;     /* hover state for cobalt */
+  --cadet-light: #e6ebef;     /* subtle borders and table stripes */
+  --page: #ffffff;
+  --card: #f5f7f9;
+  --ink: #153171;
+  --muted: #5d6b7a;
+  --sky: #56bfee;             /* approx. CATF "Donate" button blue, sampled from the website; optional extra chart color */
+
   --radius: 8px;
-  --font-display: "Poppins", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --radius-pill: 999px;
+  /* Font stand-ins from Google Fonts. Replace if you have the exact CATF fonts. */
+  --font-display: "Source Serif 4", Georgia, serif;
+  --font-body: "Montserrat", system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -33,65 +41,102 @@ body {
   flex-wrap: wrap;
   padding: 1rem 2rem;
   background: #fff;
-  border-bottom: 1px solid #e3e0db;
+  box-shadow: 0 2px 12px rgba(21, 49, 113, .08);
 }
-.brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; color: var(--blue); }
+.brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; color: var(--cobalt); }
 .brand-mark {
   display: grid; place-items: center;
   width: 48px; height: 48px;
-  background: linear-gradient(160deg, #2f6fe0, #153f9a);
-  color: #fff; font: 700 1.1rem var(--font-display);
+  background: linear-gradient(160deg, #2b6ad6, var(--cobalt));
+  color: #fff; font: 700 1.1rem var(--font-body);
 }
-.brand-name { font: 600 .95rem/1.2 var(--font-display); letter-spacing: .02em; }
+.brand-name { font: 600 .85rem/1.2 var(--font-body); letter-spacing: .06em; text-transform: uppercase; }
 
-.tab-nav { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; }
+.tab-nav { display: flex; flex-wrap: wrap; gap: .25rem 1.75rem; margin-left: auto; }
 .tab-nav a {
-  font: 600 .8rem var(--font-body);
-  color: var(--blue-link);
+  font: 500 1rem var(--font-display);
+  color: var(--chathams);
   text-decoration: none;
   padding: .4rem 0;
   border-bottom: 2px solid transparent;
 }
-.tab-nav a:hover { border-bottom-color: var(--slate-light); }
-.tab-nav a[aria-selected="true"] { border-bottom-color: var(--blue); color: var(--blue); }
-a:focus-visible, button:focus-visible { outline: 3px solid #f2a900; outline-offset: 3px; }
+.tab-nav a:hover { border-bottom-color: var(--cadet); }
+.tab-nav a[aria-selected="true"] { border-bottom-color: var(--cobalt); color: var(--cobalt); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; }
 
 /* Panels */
 .tab-panels { min-height: 70vh; }
 .tab-panel[hidden] { display: none; }
 .panel-title {
-  font: 800 clamp(1.8rem, 4vw, 2.8rem)/1.15 var(--font-display);
+  font: 700 clamp(1.8rem, 4vw, 2.8rem)/1.15 var(--font-display);
+  color: var(--chathams);
   margin: 0;
   padding: 3rem 2rem 2rem;
 }
 .panel-body { padding: 0 2rem 3rem; }
+
+/* Shared building blocks. Use these in your tab instead of making your own. */
+.card {
+  background: var(--card);
+  border: 1px solid var(--cadet-light);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.btn {
+  display: inline-block;
+  padding: .85rem 1.75rem;
+  background: var(--cobalt);
+  color: #fff;
+  font: 700 .85rem var(--font-body);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+.btn:hover { background: var(--cobalt-dark); }
+.highlight { background: var(--accent); color: var(--chathams); padding: .1em .35em; border-radius: 4px; }
+
+/* Source line and caveat that go under every chart (see ChartTheme.sourceNote in js/chart-theme.js) */
+.source-note { margin: .5rem 0 0; font-size: .78rem; color: var(--muted); }
+.source-note a { color: var(--cobalt); }
+.egs-caveat {
+  margin: .5rem 0 0;
+  padding: .5rem .75rem;
+  background: var(--accent);
+  color: var(--chathams);
+  font-size: .8rem;
+  border-radius: var(--radius);
+}
 
 /* Empty-state block used by every placeholder tab */
 .empty-state {
   max-width: 640px;
   padding: 1.5rem;
   background: var(--card);
-  border: 1px dashed #b9b4ab;
+  border: 1px dashed var(--cadet);
   border-radius: var(--radius);
   color: var(--muted);
 }
-.empty-state strong { color: var(--ink); }
+.empty-state strong { color: var(--chathams); }
 
-/* Feature band (slate blue, as in the learning-curve section) */
-.band { background: var(--slate); color: #fff; padding: 3rem 2rem; }
+/* Feature band (Chathams Blue) */
+.band { background: var(--chathams); color: #fff; padding: 3rem 2rem; }
 .band h2 { font: 700 2rem/1.15 var(--font-display); margin: 0 0 1rem; }
 
 /* Map tab */
 .map-frame {
   width: 100%; height: 640px;
   border: 0; border-radius: 12px;
-  background: var(--navy);
+  background: var(--chathams);
 }
 
 .site-footer { padding: 1.5rem 2rem; color: var(--muted); font-size: .85rem; }
 
 @media (max-width: 720px) {
   .site-header { padding: 1rem; gap: 1rem; }
+  .tab-nav { margin-left: 0; }
   .panel-title { padding: 2rem 1rem 1.25rem; }
   .panel-body { padding: 0 1rem 2rem; }
   .map-frame { height: 480px; }
