@@ -142,3 +142,13 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--cobalt); outlin
   .map-frame { height: 480px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Sub-tabs inside a tab (Financial page) */
+.subtabs { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--cadet-light); }
+.subtab {
+  background: none; border: 0; border-bottom: 3px solid transparent;
+  padding: .6rem 0; cursor: pointer;
+  font: 500 1rem var(--font-display); color: var(--chathams);
+}
+.subtab:hover { border-bottom-color: var(--cadet); }
+.subtab[aria-selected="true"] { color: var(--cobalt); border-bottom-color: var(--cobalt); }
