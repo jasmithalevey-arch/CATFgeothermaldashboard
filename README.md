@@ -7,11 +7,10 @@ A static HTML/CSS/JS dashboard that presents technical, financial, and economic 
 | Tab | File | Status |
 |---|---|---|
 | Overview | `js/tabs/overview.js` | placeholder |
+| Industry Comparison | `js/tabs/industry-comparison.js` | placeholder |
 | Technical KPIs | `js/tabs/technical-kpis.js` | placeholder |
 | Financial KPIs | `js/tabs/financial-kpis.js` | placeholder |
-| Industry Comparison | `js/tabs/industry-comparison.js` | placeholder |
 | Project Map | `js/tabs/project-map.js` | CARTO embed starter |
-| Capital Stack | `js/tabs/capital-stack.js` | placeholder |
 
 ## Run locally
 
