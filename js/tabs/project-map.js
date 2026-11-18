@@ -6,11 +6,35 @@ Dashboard.registerTab({
     container.innerHTML = `
       <div class="project-map-shell">
         <div id="project-map-chart" class="project-map-chart" role="img" aria-label="Map of United States geothermal projects"></div>
-        <aside id="project-popup" class="project-popup" hidden aria-live="polite">
-          <button class="project-popup-close" type="button" aria-label="Close project details">&times;</button>
-          <h2 class="project-popup-title"></h2>
-          <span class="project-popup-status"></span>
-          <div class="project-popup-grid"></div>
+        <aside class="project-map-sidebar" aria-label="Map layers">
+          <button class="project-map-sidebar-toggle" type="button" aria-expanded="true" aria-label="Collapse map layers">
+            <span class="project-map-sidebar-chevron" aria-hidden="true">&#8249;</span>
+          </button>
+          <div class="project-map-sidebar-content">
+            <h2>
+              <button class="project-map-section-toggle" type="button" aria-expanded="true" aria-label="Collapse Map layers">
+                <span>Map layers</span>
+                <span class="project-map-section-chevron" aria-hidden="true">&#8963;</span>
+              </button>
+            </h2>
+            <section class="project-map-layer-section" aria-label="State concentration map layer">
+              <label class="project-map-layer-row">
+                <span>
+                  <strong><i class="project-map-layer-dot"></i>State concentration</strong>
+                  <small>Projects Per State</small>
+                </span>
+                <input id="state-concentration-toggle" type="checkbox" checked>
+                <span class="project-map-switch" aria-hidden="true"></span>
+              </label>
+              <div class="project-map-concentration-legend" aria-label="State concentration range">
+                <div><i style="background:#eeeeee"></i><span>No data</span></div>
+                <div><i style="background:#abb8c3"></i><span>1</span></div>
+                <div><i style="background:#94a8b8"></i><span>2-3</span></div>
+                <div><i style="background:#6f899c"></i><span>4-6</span></div>
+                <div><i style="background:#4d687e"></i><span>7+</span></div>
+              </div>
+            </section>
+          </div>
         </aside>
       </div>
       <p class="source-note">Source: CATF US Projects FINAL. Data type: actual and target/projected.</p>`;
@@ -75,7 +99,8 @@ Dashboard.registerTab({
         opacity: 0.5,
         line: { width: 0 }
       },
-      hovertemplate: '<b>%{text}</b><br>Capacity: %{customdata.capacity:,.1f} MW<extra></extra>',
+      hovertext: located.map(project => `${project.name}<br>Capacity: ${project.capacity == null ? 'N/A' : `${project.capacity.toLocaleString(undefined, { maximumFractionDigits: 3 })} MW`}`),
+      hovertemplate: '<b>%{hovertext}</b><extra></extra>',
       showlegend: false
     };
 
@@ -96,6 +121,51 @@ Dashboard.registerTab({
       showlegend: true,
       hoverinfo: 'skip'
     }));
+
+    const concentration = {
+      AK: 1, AL: 0, AR: 0, AZ: 0,
+      CA: 7, CO: 0, CT: 0, DE: 0, FL: 0, GA: 0, HI: 0,
+      ID: 1, IL: 0, IN: 0, IA: 0, KS: 0, KY: 0, LA: 0,
+      ME: 0, MD: 0, MA: 0, MI: 0, MN: 0, MS: 0, MO: 0, MT: 1,
+      NE: 0, NV: 8, NH: 0, NJ: 0, NM: 3, NY: 1, NC: 0, ND: 0,
+      OH: 0, OK: 0, OR: 3, PA: 0, RI: 0, SC: 0, SD: 0, TN: 0, TX: 0,
+      UT: 2, VT: 0, VA: 0, WA: 0, WV: 0, WI: 0, WY: 0
+    };
+    const concentrationLocations = Object.keys(concentration);
+    const concentrationCategory = count => {
+      if (count === 0) return 0;
+      if (count === 1) return 1;
+      if (count <= 3) return 2;
+      if (count <= 6) return 3;
+      return 4;
+    };
+    const concentrationValues = concentrationLocations.map(state => concentrationCategory(concentration[state]));
+
+    const concentrationTrace = {
+      type: 'choropleth',
+      locationmode: 'USA-states',
+      locations: concentrationLocations,
+      z: concentrationValues,
+      text: concentrationLocations.map(state => `${concentration[state]} project${concentration[state] === 1 ? '' : 's'}`),
+      colorscale: [
+        [0, '#eeeeee'],
+        [0.199, '#eeeeee'],
+        [0.2, '#abb8c3'],
+        [0.399, '#abb8c3'],
+        [0.4, '#94a8b8'],
+        [0.599, '#94a8b8'],
+        [0.6, '#6f899c'],
+        [0.799, '#6f899c'],
+        [0.8, '#4d687e'],
+        [1, '#4d687e']
+      ],
+      zmin: 0,
+      zmax: 4,
+      showscale: false,
+      marker: { line: { color: '#ffffff', width: 0.8 } },
+      hovertemplate: '<b>%{location}</b><br>%{text}<extra></extra>',
+      visible: true
+    };
 
     const layout = {
       margin: { t: 20, r: 20, b: 100, l: 20 },
@@ -133,22 +203,125 @@ Dashboard.registerTab({
       hoverlabel: { bgcolor: chathams, bordercolor: accent, font: { family: bodyFont, color: '#ffffff' } }
     };
 
-    const plot = () => {
+    const plot = (showConcentration = true) => {
+      concentrationTrace.visible = showConcentration;
       if (typeof ChartTheme !== 'undefined' && ChartTheme.plot) {
-        return ChartTheme.plot(document.getElementById('project-map-chart'), [trace, ...legendTraces], layout, { responsive: true, displaylogo: false, scrollZoom: false });
+        return ChartTheme.plot(document.getElementById('project-map-chart'), [concentrationTrace, trace, ...legendTraces], layout, { responsive: true, displaylogo: false, scrollZoom: false });
       }
-      return Plotly.newPlot(document.getElementById('project-map-chart'), [trace, ...legendTraces], layout, { responsive: true, displaylogo: false, scrollZoom: false });
+      return Plotly.newPlot(document.getElementById('project-map-chart'), [concentrationTrace, trace, ...legendTraces], layout, { responsive: true, displaylogo: false, scrollZoom: false });
     };
-    plot();
+    plot(true);
 
-    const popup = container.querySelector('#project-popup');
-    popup.querySelector('.project-popup-close').addEventListener('click', () => {
-      popup.hidden = true;
+    const sidebar = container.querySelector('.project-map-sidebar');
+    const sidebarToggle = container.querySelector('.project-map-sidebar-toggle');
+    sidebarToggle.addEventListener('click', () => {
+      const collapsed = sidebar.classList.toggle('is-collapsed');
+      sidebarToggle.setAttribute('aria-expanded', String(!collapsed));
+      sidebarToggle.setAttribute('aria-label', collapsed ? 'Expand map layers' : 'Collapse map layers');
+      sidebarToggle.querySelector('.project-map-sidebar-chevron').innerHTML = collapsed ? '&#8250;' : '&#8249;';
     });
 
-    container.querySelector('#project-map-chart').on('plotly_click', event => {
-      const project = event.points[0].customdata;
-      if (!project) return;
+    const sectionToggle = container.querySelector('.project-map-section-toggle');
+    const layerSection = container.querySelector('.project-map-layer-section');
+    sectionToggle.addEventListener('click', () => {
+      const expanded = sectionToggle.getAttribute('aria-expanded') === 'true';
+      sectionToggle.setAttribute('aria-expanded', String(!expanded));
+      sectionToggle.setAttribute('aria-label', expanded ? 'Expand Map layers' : 'Collapse Map layers');
+      layerSection.hidden = expanded;
+      sectionToggle.querySelector('.project-map-section-chevron').innerHTML = expanded ? '&#8964;' : '&#8963;';
+    });
+
+    container.querySelector('#state-concentration-toggle').addEventListener('change', event => {
+      concentrationTrace.visible = event.target.checked;
+      Plotly.restyle(document.getElementById('project-map-chart'), { visible: [event.target.checked] }, [0]);
+    });
+
+    const shell = container.querySelector('.project-map-shell');
+    const openPopups = new Map();
+    let topZIndex = 20;
+
+    const bringToFront = popup => {
+      topZIndex += 1;
+      popup.style.zIndex = String(topZIndex);
+    };
+
+    const makeDraggable = popup => {
+      const handle = popup.querySelector('.project-popup-title');
+      handle.classList.add('project-popup-drag-handle');
+      let drag = null;
+
+      handle.addEventListener('pointerdown', event => {
+        if (event.button !== 0) return;
+        bringToFront(popup);
+        const shellRect = shell.getBoundingClientRect();
+        const popupRect = popup.getBoundingClientRect();
+        drag = {
+          pointerId: event.pointerId,
+          offsetX: event.clientX - popupRect.left,
+          offsetY: event.clientY - popupRect.top,
+          shellRect,
+          popupRect
+        };
+        handle.setPointerCapture(event.pointerId);
+        popup.classList.add('is-dragging');
+        event.preventDefault();
+      });
+
+      handle.addEventListener('pointermove', event => {
+        if (!drag || event.pointerId !== drag.pointerId) return;
+        const left = Math.min(
+          drag.shellRect.width - 40,
+          Math.max(-drag.popupRect.width + 40, event.clientX - drag.shellRect.left - drag.offsetX)
+        );
+        const top = Math.min(
+          drag.shellRect.height - 40,
+          Math.max(0, event.clientY - drag.shellRect.top - drag.offsetY)
+        );
+        popup.style.left = `${left}px`;
+        popup.style.top = `${top}px`;
+        popup.style.right = 'auto';
+      });
+
+      const stopDragging = event => {
+        if (!drag || event.pointerId !== drag.pointerId) return;
+        drag = null;
+        popup.classList.remove('is-dragging');
+      };
+      handle.addEventListener('pointerup', stopDragging);
+      handle.addEventListener('pointercancel', stopDragging);
+    };
+
+    const openPopup = project => {
+      let popup = openPopups.get(project.name);
+      if (popup) {
+        bringToFront(popup);
+        return;
+      }
+
+      popup = document.createElement('aside');
+      popup.className = 'project-popup';
+      popup.setAttribute('aria-live', 'polite');
+      popup.innerHTML = `
+        <button class="project-popup-close" type="button" aria-label="Close project details">&times;</button>
+        <h2 class="project-popup-title"></h2>
+        <span class="project-popup-status"></span>
+        <div class="project-popup-grid"></div>`;
+
+      const offset = (openPopups.size % 5) * 24;
+      popup.style.top = `${32 + offset}px`;
+      popup.style.right = `${32 + offset}px`;
+      popup.style.left = 'auto';
+      shell.appendChild(popup);
+      openPopups.set(project.name, popup);
+      bringToFront(popup);
+
+      popup.querySelector('.project-popup-close').addEventListener('click', () => {
+        openPopups.delete(project.name);
+        popup.remove();
+      });
+      popup.addEventListener('pointerdown', () => bringToFront(popup));
+      makeDraggable(popup);
+
       popup.querySelector('.project-popup-title').textContent = project.name;
       const status = popup.querySelector('.project-popup-status');
       status.textContent = project.status;
@@ -157,7 +330,7 @@ Dashboard.registerTab({
 
       const fields = [
         ['Primary Purpose', project.purpose],
-        ['Capacity', project.capacity == null ? 'Not Publicly Disclosed' : `${project.capacity.toLocaleString(undefined, { maximumFractionDigits: 3 })} MW`],
+        ['Capacity', project.capacity == null ? 'N/A' : `${project.capacity.toLocaleString(undefined, { maximumFractionDigits: 3 })} MW`],
         ['# of Wells', project.wells],
         ['CAPEX ($/kW)', project.capex],
         ['Drilling Cost / Well', project.drilling],
@@ -172,7 +345,12 @@ Dashboard.registerTab({
           <span>${label}</span>
           <strong>${value}</strong>
         </div>`).join('');
-      popup.hidden = false;
+    };
+
+    container.querySelector('#project-map-chart').on('plotly_click', event => {
+      const project = event.points[0].customdata;
+      if (!project) return;
+      openPopup(project);
     });
   }
 });
