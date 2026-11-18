@@ -57,6 +57,11 @@ window.FinancialSections.capitalStack = function (el) {
       year: '2026',
       url: 'https://www.federalreserve.gov/releases/h15/',
     },
+    dscr: {
+      author: 'Fernando',
+      year: '2026',
+      url: 'https://www.investopedia.com/terms/d/dscr.asp',
+    },
   };
 
   const layers = [
@@ -185,6 +190,8 @@ window.FinancialSections.capitalStack = function (el) {
         },
         {
           text: 'A separate $14 million Pennsylvania EGS project was selected for award negotiations. DOE states that selection is not a commitment to issue an award or provide funding, so it is not counted as a funded grant here.',
+          status: 'actual',
+          statusLabel: 'Actual / reported selection · not funded',
           citations: [sources.paSelection],
         },
       ],
@@ -216,24 +223,28 @@ window.FinancialSections.capitalStack = function (el) {
       label: 'Deep EGS overnight cost',
       value: '$12,396–22,133/kW',
       note: 'NREL 2024 ATB range',
+      status: 'modeled',
       citation: sources.atb,
     },
     {
       label: 'Near-field EGS overnight cost',
       value: '$5,469–10,395/kW',
       note: 'NREL 2024 ATB range',
+      status: 'modeled',
       citation: sources.atb,
     },
     {
       label: 'Deep EGS drilling share',
       value: '≈57%',
       note: 'Drilling and completion share of overnight cost',
+      status: 'modeled',
       citation: sources.atb,
     },
     {
       label: 'Representative EGS flow',
       value: '≈60 kg/s',
       note: 'NREL modeled scenario',
+      status: 'modeled',
       citation: sources.atb,
     },
   ];
@@ -257,15 +268,21 @@ window.FinancialSections.capitalStack = function (el) {
       debt: 'Senior project debt, which may include construction-to-term loans, bridge facilities, and letters of credit. Cape Station pricing was not disclosed.',
       return: 'Deal rate not disclosed',
       returnNote: 'Federal Reserve prime rate: 7.00% (November 2026 reference only; not Cape Station pricing).',
+      returnStatus: 'actual',
+      returnStatusLabel: 'Actual / reported reference rate',
       returnCitation: sources.bankRates,
       risk: 'Senior repayment priority; still exposed to construction and performance risk',
-      priorities: ['Repayment coverage', 'Offtaker credit', 'Permits and completion'],
+      priorities: ['Debt-service coverage (DSCR)', 'Offtaker credit', 'Permits and completion'],
+      priorityNote: 'DSCR compares cash available for debt service with required principal and interest payments. This is a general financing metric, not an EGS-specific underwriting threshold.',
+      priorityCitation: sources.dscr,
       flag: 'Order caveat: senior bank debt is usually repaid ahead of equity but appears after infrastructure equity in the requested display order. The stack is not a rising risk or return scale.',
     },
     mezzanine: {
       debt: 'Subordinated debt or hybrid capital; returns can include cash interest, payment-in-kind interest, fees, or equity participation.',
       return: '12–20% investor return range',
       returnNote: 'Generic mezzanine benchmark, not geothermal-specific and not a disclosed EGS deal term.',
+      returnStatus: 'target',
+      returnStatusLabel: 'Generic target benchmark',
       returnCitation: sources.mezzanineReturns,
       risk: 'Higher risk than senior secured debt',
       priorities: ['Downside protection', 'Coupon and PIK terms', 'Refinancing or exit'],
@@ -280,7 +297,7 @@ window.FinancialSections.capitalStack = function (el) {
     'venture-capital': {
       debt: 'Usually preferred or common equity with no scheduled principal repayment; investors accept dilution and company-level risk.',
       return: 'No universal, source-published target range',
-      returnNote: 'A 40% target is not treated as a general VC expectation without a source; it may describe an individual fund’s hurdle.',
+      returnNote: 'No general VC expectation is inferred without a source; individual-fund hurdles are not transferable across strategies.',
       risk: 'Very high; early-stage equity can lose all invested capital',
       priorities: ['Technical milestones', 'Market scale', 'Follow-on and exit potential'],
     },
@@ -307,6 +324,12 @@ window.FinancialSections.capitalStack = function (el) {
     'Construction and operating plans with credible cost and schedule assumptions',
     'Committed equity and debt terms, with a financeable model and contingencies',
   ];
+
+  const statusLabels = {
+    actual: 'Actual / reported',
+    target: 'Target',
+    modeled: 'Modeled forecast',
+  };
 
   let selectedId = 'pensions';
   let focusedId = selectedId;
@@ -588,6 +611,9 @@ window.FinancialSections.capitalStack = function (el) {
         line-height: 1.55;
         padding: .65rem .7rem;
       }
+      .cs-data-status { background: var(--cadet-light); border: 1px solid var(--cs-border); border-radius: 999px; color: var(--chathams); display: inline-flex; font-size: .48rem; font-weight: 700; letter-spacing: .04em; margin-bottom: .35rem; padding: .14rem .4rem; text-transform: uppercase; }
+      .cs-data-status[data-status="target"] { background: var(--sky); }
+      .cs-data-status[data-status="modeled"] { background: var(--accent); }
       .cs-evidence p { margin: 0; }
       .cs-gap, .cs-caveat {
         background: #fff7e6;
@@ -697,6 +723,7 @@ window.FinancialSections.capitalStack = function (el) {
           <div class="cs-metrics" aria-label="EGS cost metrics">
             ${sourceMetrics.map((metric) => `
               <article class="cs-metric">
+                ${statusMarkup(metric.status)}
                 <h4>${escapeHtml(metric.label)}</h4>
                 <strong>${escapeHtml(metric.value)}</strong>
                 <p>${escapeHtml(metric.note)}</p>
@@ -707,7 +734,7 @@ window.FinancialSections.capitalStack = function (el) {
           <div class="cs-investor-card">
             <div class="cs-investor-card-top">
               <div><p class="cs-eyebrow">Developer resource</p><h4>Investor directory</h4></div>
-              <span class="cs-investor-count">10 profiles</span>
+              <span class="cs-investor-count">Target: 10 profiles</span>
             </div>
             <p>Source-backed geothermal investors, capital-stack categories, logos, and deal details will be added from the Currence data.</p>
             <button class="cs-investor-link" type="button" aria-controls="cs-investor-details" aria-expanded="false" data-open-investors><span>More information</span><span aria-hidden="true">→</span></button>
@@ -775,6 +802,7 @@ window.FinancialSections.capitalStack = function (el) {
           </div>
           <div class="cs-fid-example">
             <h4>Deal example: Cape Station</h4>
+            ${statusMarkup('actual')}
             <p>Fervo reported contracted power-purchase agreements and closed $421 million in non-recourse financing, including a construction-to-term loan, to fund remaining Phase I construction. The announcement illustrates FID readiness factors; it is not presented as a separately reported FID date.</p>
             ${citationMarkup(sources.bankFinancing)}
           </div>
@@ -871,7 +899,7 @@ window.FinancialSections.capitalStack = function (el) {
           <div>
             <p class="cs-eyebrow">Investor data pending</p>
             <h2>Profiles will appear here when the Currence data is added</h2>
-            <p>The directory is set up for investor names, capital-stack categories, logos, and geothermal deal details. No ranking or investment information has been inferred.</p>
+            <p><strong>Target: 10 profiles.</strong> The directory is set up for investor names, capital-stack categories, logos, and geothermal deal details. No ranking or investment information has been inferred.</p>
           </div>
         </div>
         <button class="cs-investor-back" type="button" data-back-to-stack>← Back to Capital Stack</button>
@@ -895,6 +923,16 @@ window.FinancialSections.capitalStack = function (el) {
       .replace(/'/g, '&#39;');
   }
 
+  function statusLabel(status = 'actual', label) {
+    const kind = Object.prototype.hasOwnProperty.call(statusLabels, status) ? status : 'actual';
+    return label || statusLabels[kind];
+  }
+
+  function statusMarkup(status = 'actual', label) {
+    const kind = Object.prototype.hasOwnProperty.call(statusLabels, status) ? status : 'actual';
+    return `<span class="cs-data-status" data-status="${kind}">${escapeHtml(statusLabel(kind, label))}</span>`;
+  }
+
   function citationMarkup(citation) {
     const url = escapeHtml(citation.url);
     return `<span class="cs-citation">(${escapeHtml(citation.author)}, ${escapeHtml(citation.year)}, <a href="${url}" target="_blank" rel="noopener">${url}</a>)</span>`;
@@ -904,6 +942,7 @@ window.FinancialSections.capitalStack = function (el) {
     if (!items.length) return `<div class="cs-gap">${escapeHtml(emptyMessage)}</div>`;
     return `<div class="cs-evidence-list">${items.map((item) => `
       <article class="cs-evidence">
+        ${statusMarkup(item.status, item.statusLabel)}
         <p>${escapeHtml(item.text)}</p>
         ${item.citations.map(citationMarkup).join('')}
       </article>
@@ -921,6 +960,7 @@ window.FinancialSections.capitalStack = function (el) {
           </div>
           <div class="cs-econ-item">
             <span class="cs-econ-label">Published return reference</span>
+            ${economics.returnStatus ? statusMarkup(economics.returnStatus, economics.returnStatusLabel) : ''}
             <strong>${escapeHtml(economics.return)}</strong>
             <p>${escapeHtml(economics.returnNote)}</p>
             ${economics.returnCitation ? citationMarkup(economics.returnCitation) : ''}
@@ -933,6 +973,7 @@ window.FinancialSections.capitalStack = function (el) {
         <div class="cs-priorities">
           <span class="cs-econ-label">Investor priorities</span>
           <div class="cs-priority-list">${economics.priorities.map((item) => `<span class="cs-priority-chip">${escapeHtml(item)}</span>`).join('')}</div>
+          ${economics.priorityNote ? `<p class="cs-copy">${escapeHtml(economics.priorityNote)}</p>${citationMarkup(economics.priorityCitation)}` : ''}
         </div>
         ${economics.flag ? `<div class="cs-econ-flag">${escapeHtml(economics.flag)}</div>` : ''}
       </div>
@@ -981,6 +1022,7 @@ window.FinancialSections.capitalStack = function (el) {
         ...[...layer.evidence, ...(layer.grants ? layer.grants.evidence : [])].flatMap((item) => item.citations),
         ...(layer.grants ? [layer.grants.citation] : []),
         ...(layerEconomics[layer.id].returnCitation ? [layerEconomics[layer.id].returnCitation] : []),
+        ...(layerEconomics[layer.id].priorityCitation ? [layerEconomics[layer.id].priorityCitation] : []),
       ]
         .filter((citation, index, all) => all.findIndex((other) => other.url === citation.url) === index);
       panelContent = citations.length
@@ -1091,7 +1133,7 @@ window.FinancialSections.capitalStack = function (el) {
       '',
     ];
     sourceMetrics.forEach((metric) => {
-      lines.push(`${metric.label}: ${metric.value} — ${metric.note}`, citationText(metric.citation));
+      lines.push(`${metric.label}: ${metric.value} — ${metric.note} (${statusLabel(metric.status)})`, citationText(metric.citation));
     });
     lines.push('');
     layers.forEach((layer) => {
@@ -1099,16 +1141,17 @@ window.FinancialSections.capitalStack = function (el) {
       const economics = layerEconomics[layer.id];
       lines.push(
         `Debt / capital structure: ${economics.debt}`,
-        `Published return reference: ${economics.return} — ${economics.returnNote}`,
+        `Published return reference: ${economics.return} — ${economics.returnNote}${economics.returnStatus ? ` (${statusLabel(economics.returnStatus, economics.returnStatusLabel)})` : ''}`,
         `Risk position: ${economics.risk}`,
         `Investor priorities: ${economics.priorities.join(', ')}`,
       );
       if (economics.returnCitation) lines.push(citationText(economics.returnCitation));
+      if (economics.priorityNote) lines.push(economics.priorityNote, citationText(economics.priorityCitation));
       if (economics.flag) lines.push(`Risk/return flag: ${economics.flag}`);
       const evidence = layer.grants ? [...layer.evidence, ...layer.grants.evidence] : layer.evidence;
       if (evidence.length) {
         evidence.forEach((item) => {
-          lines.push(`- ${item.text}`, ...item.citations.map(citationText));
+          lines.push(`- ${item.text} (${statusLabel(item.status, item.statusLabel)})`, ...item.citations.map(citationText));
         });
       } else {
         lines.push(`Evidence gap: ${layer.caveat}`);
