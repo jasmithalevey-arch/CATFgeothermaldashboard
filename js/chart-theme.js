@@ -111,3 +111,4 @@ const ChartTheme = (() => {
 
   return { colors, palette, fonts, baseLayout, baseConfig, style, plot, sourceNote };
 })();
+window.ChartTheme = ChartTheme;
