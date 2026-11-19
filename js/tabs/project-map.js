@@ -4,6 +4,7 @@ Dashboard.registerTab({
   title: 'US Geothermal Project Tracker',
   render(container) {
     container.innerHTML = `
+      <p class="project-map-description">This map aggregates data on different aspects of geothermal energy to evaluate EGS’s prevalence in the United States. It includes map layers which allow the visualization and comparison of many metrics. Some metrics include locations of large planned data centers which require firm energy sources like geothermal, the amount of EGS projects per state, the distribution of geothermal resources, and more. Expand the side-bar to view and toggle on these layers, as well as filter projects by certain characteristics. To view individual project details (including CAPEX, number of wells, and investors), simply click on the project circle.</p>
       <div class="project-map-shell">
         <div id="project-map-chart" class="project-map-chart" role="img" aria-label="Map of United States geothermal projects"></div>
         <div class="project-map-size-legend" aria-label="Project capacity circle sizes">
@@ -23,15 +24,15 @@ Dashboard.registerTab({
           <div class="project-map-sidebar-content">
             <h2>
               <button class="project-map-section-toggle" type="button" aria-expanded="true" aria-label="Collapse Map layers">
-                <span>Map layers</span>
+                <span>Map Layers</span>
                 <span class="project-map-section-chevron" aria-hidden="true">&#8963;</span>
               </button>
             </h2>
             <section class="project-map-layer-section" aria-label="State concentration map layer">
               <label class="project-map-layer-row">
                 <span>
-                  <strong><i class="project-map-layer-dot"></i>State concentration</strong>
-                  <small>Projects Per State</small>
+                  <strong><i class="project-map-layer-dot"></i>State Concentration</strong>
+                  <small>Projects per state</small>
                 </span>
                 <input id="state-concentration-toggle" type="checkbox" checked>
                 <span class="project-map-switch" aria-hidden="true"></span>
@@ -60,6 +61,10 @@ Dashboard.registerTab({
                 <div><i style="background:#3ca8cc"></i><span>50-100</span></div>
                 <div><i style="background:#0090c1"></i><span>100+</span></div>
               </div>
+              <a class="project-map-layer-source" href="https://efifoundation.org/energy-innovation-project/data/?division=projects&projects.technologies=Geothermal" target="_blank" rel="noopener noreferrer">
+                <span class="project-map-source-info" aria-hidden="true">i</span>
+                <span>EFI Foundation</span>
+              </a>
             </section>
             <section class="project-map-layer-section" aria-label="Data Center Distribution map layer">
               <label class="project-map-layer-row">
@@ -70,12 +75,16 @@ Dashboard.registerTab({
                 <input id="data-center-distribution-toggle" type="checkbox" checked>
                 <span class="project-map-switch" aria-hidden="true"></span>
               </label>
+              <a class="project-map-layer-source" href="https://maps.nlr.gov/geothermal-energy-atlas/data-viewer/data-library/layers" target="_blank" rel="noopener noreferrer">
+                <span class="project-map-source-info" aria-hidden="true">i</span>
+                <span>NLR, Geothermal Energy Atlas, 2025</span>
+              </a>
             </section>
             <section class="project-map-layer-section" aria-label="Resource temperature map layer">
               <label class="project-map-layer-row">
                 <span>
-                  <strong><i class="project-map-layer-dot" style="background:#d85a30"></i>Resource temperature</strong>
-                  <small>Temperature (°C)</small>
+                  <strong><i class="project-map-layer-dot" style="background:#d85a30"></i>Resource Temperature</strong>
+                  <small>Temperature (°C) at 3000 m depth</small>
                 </span>
                 <input id="resource-temperature-toggle" type="checkbox" checked>
                 <span class="project-map-switch" aria-hidden="true"></span>
@@ -90,6 +99,10 @@ Dashboard.registerTab({
                 </div>
                 <div class="project-map-temperature-scale"><span>57°C</span><span>122°C</span><span>188°C</span><span>253°C</span><span>318°C</span></div>
               </div>
+              <a class="project-map-layer-source" href="https://doi.org/10.15121/2324793" target="_blank" rel="noopener noreferrer">
+                <span class="project-map-source-info" aria-hidden="true">i</span>
+                <span>Stanford Thermal Earth Model for the Conterminous United States, 2024</span>
+              </a>
             </section>
             <section class="project-map-filter-section">
               <button class="project-map-filter-heading" type="button" aria-expanded="true" aria-controls="project-status-filter">
@@ -107,7 +120,7 @@ Dashboard.registerTab({
             </section>
             <section class="project-map-filter-section">
               <button class="project-map-filter-heading" type="button" aria-expanded="true" aria-controls="temperature-histogram-filter">
-                <span>Resource temperature</span><span class="project-map-filter-chevron" aria-hidden="true">&#8963;</span>
+                <span>Resource Temperature</span><span class="project-map-filter-chevron" aria-hidden="true">&#8963;</span>
               </button>
               <small class="project-map-filter-subtitle">Temperature of project resource (degrees Celcius)</small>
               <div id="temperature-histogram-filter" class="project-map-filter-content"></div>
@@ -127,11 +140,22 @@ Dashboard.registerTab({
           </div>
         </aside>
       </div>
-      <p class="source-note">Source: CATF US Projects FINAL. Data type: actual and target/projected.</p>`;
+      <p class="source-note">Source: Clean Air Task Force</p>`;
 
     const temperatureStyles = document.createElement('style');
     temperatureStyles.textContent = `
       .project-map-temperature-legend { margin-top: .35rem; }
+      .project-map-sidebar-content h2 {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+      .project-map-description {
+        max-width: 1100px;
+        margin: 0 0 1.25rem;
+        color: var(--muted);
+        font-size: .9rem;
+        line-height: 1.6;
+      }
       .project-map-temperature-gradient {
         position: relative;
         height: 10px;
@@ -160,6 +184,45 @@ Dashboard.registerTab({
         color: rgba(255,255,255,.48);
         font-size: .68rem;
         line-height: 1.4;
+      }
+      .project-map-filter-section {
+        margin: 0 -1rem;
+        padding: .9rem 1rem;
+        border-top: 1px solid rgba(86,191,238,.16);
+        border-bottom: 0;
+      }
+      .project-map-layer-section {
+        margin: 0 0 .55rem;
+        padding: .65rem .7rem;
+        border: 1px solid rgba(86,191,238,.18);
+        border-radius: 10px;
+        background: rgba(7,20,38,.22);
+      }
+      .project-map-layer-source {
+        display: flex;
+        align-items: flex-start;
+        gap: .4rem;
+        margin-top: .55rem;
+        color: rgba(255,255,255,.42);
+        font-size: .58rem;
+        line-height: 1.4;
+        text-decoration: none;
+      }
+      .project-map-layer-source:hover,
+      .project-map-layer-source:focus-visible {
+        color: rgba(255,255,255,.88);
+        text-decoration: underline;
+      }
+      .project-map-source-info {
+        display: inline-flex;
+        flex: 0 0 13px;
+        align-items: center;
+        justify-content: center;
+        width: 13px;
+        height: 13px;
+        border: 1px solid currentColor;
+        border-radius: 50%;
+        font: italic 600 9px/1 Georgia, serif;
       }
       #resource-temperature-toggle:checked + .project-map-switch { background: #d85a30; }
       #data-center-distribution-toggle:checked + .project-map-switch { background: #54278f; }
