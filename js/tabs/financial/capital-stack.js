@@ -3,9 +3,9 @@ window.FinancialSections = window.FinancialSections || {};
 window.FinancialSections.capitalStack = function (el) {
   const sources = {
     atb: {
-      author: 'NREL',
-      year: '2024',
-      url: 'https://atb.nrel.gov/electricity/2024/',
+      author: 'NLR',
+      year: '2025',
+      url: 'https://atb.nlr.gov/electricity/2025/geothermal',
     },
     fervoSeriesE: {
       author: 'Fervo Energy',
@@ -48,7 +48,7 @@ window.FinancialSections.capitalStack = function (el) {
       url: 'https://www.energy.gov/hgeo/geothermal/articles/office-geothermal-selects-14-million-enhanced-geothermal-systems',
     },
     mezzanineReturns: {
-      author: 'Corporate Finance Institute',
+      author: 'CFI Team',
       year: '2020',
       url: 'https://corporatefinanceinstitute.com/resources/commercial-lending/mezzanine-financing/',
     },
@@ -62,6 +62,11 @@ window.FinancialSections.capitalStack = function (el) {
       year: '2026',
       url: 'https://www.investopedia.com/terms/d/dscr.asp',
     },
+    fervoSeriesD: {
+      author: 'Fervo Energy',
+      year: '2024',
+      url: 'https://fervoenergy.com/fervo-energy-raises-244-million-to-accelerate-deployment-of-next-generation-geothermal/',
+    },
   };
 
   const layers = [
@@ -69,7 +74,7 @@ window.FinancialSections.capitalStack = function (el) {
       id: 'pensions',
       short: 'P',
       name: 'Pensions',
-      subtitle: 'Long-horizon institutional capital',
+      subtitle: 'Institutional long-term investment',
       color: 'var(--cobalt)',
       ink: '#ffffff',
       soft: '#eaf0fb',
@@ -86,7 +91,7 @@ window.FinancialSections.capitalStack = function (el) {
       id: 'infrastructure',
       short: 'IF',
       name: 'Infrastructure funds',
-      subtitle: 'Development and project capital',
+      subtitle: 'Long-duration equity / private credit',
       color: 'var(--sky)',
       ink: 'var(--chathams)',
       soft: '#e9f7fc',
@@ -103,7 +108,7 @@ window.FinancialSections.capitalStack = function (el) {
       id: 'banks',
       short: 'CB',
       name: 'Commercial banks',
-      subtitle: 'Construction and project debt',
+      subtitle: 'Senior secured project debt',
       color: 'var(--cadet-light)',
       ink: 'var(--chathams)',
       soft: 'var(--cadet-light)',
@@ -120,7 +125,7 @@ window.FinancialSections.capitalStack = function (el) {
       id: 'mezzanine',
       short: 'MZ',
       name: 'Mezzanine finance',
-      subtitle: 'Subordinated or hybrid capital',
+      subtitle: 'Subordinated debt / preferred equity',
       color: 'var(--accent)',
       ink: 'var(--chathams)',
       soft: '#fff7e6',
@@ -137,7 +142,7 @@ window.FinancialSections.capitalStack = function (el) {
       id: 'private-equity',
       short: 'PE',
       name: 'Private equity',
-      subtitle: 'Growth and ownership capital',
+      subtitle: 'Growth / asset equity',
       color: 'var(--cobalt-dark)',
       ink: '#ffffff',
       soft: '#eaf0fb',
@@ -149,7 +154,7 @@ window.FinancialSections.capitalStack = function (el) {
       id: 'venture-capital',
       short: 'VC',
       name: 'Venture capital',
-      subtitle: 'Company-level technology and growth equity',
+      subtitle: 'Common / preferred equity',
       color: 'var(--chathams)',
       ink: '#ffffff',
       soft: '#e8edf7',
@@ -166,7 +171,7 @@ window.FinancialSections.capitalStack = function (el) {
       id: 'philanthropy',
       short: 'PH',
       name: 'Philanthropy',
-      subtitle: 'Mission-aligned grants and support',
+      subtitle: 'Catalytic grants / impact capital',
       color: 'var(--cadet)',
       ink: 'var(--chathams)',
       soft: 'var(--cadet-light)',
@@ -178,7 +183,7 @@ window.FinancialSections.capitalStack = function (el) {
       id: 'government',
       short: 'GOV',
       name: 'Government subsidies',
-      subtitle: 'Grants and public programs',
+      subtitle: 'Non-dilutive public funding',
       color: 'var(--cobalt)',
       ink: '#ffffff',
       soft: '#eaf0fb',
@@ -220,48 +225,68 @@ window.FinancialSections.capitalStack = function (el) {
 
   const sourceMetrics = [
     {
-      label: 'Deep EGS overnight cost',
-      value: '$12,396–22,133/kW',
-      note: 'NREL 2024 ATB range',
+      label: 'Deep EGS overnight capital cost',
+      value: '$7,416–26,194/kW',
+      note: '2025 ATB minimum-to-maximum across listed resource-cost categories; not a project quote',
       status: 'modeled',
       citation: sources.atb,
     },
     {
-      label: 'Near-field EGS overnight cost',
-      value: '$5,469–10,395/kW',
-      note: 'NREL 2024 ATB range',
+      label: 'Near-field EGS overnight capital cost',
+      value: '$4,001–60,166/kW',
+      note: '2025 ATB minimum-to-maximum across listed temperature categories; highly site-specific',
       status: 'modeled',
       citation: sources.atb,
     },
     {
-      label: 'Deep EGS drilling share',
-      value: '≈57%',
-      note: 'Drilling and completion share of overnight cost',
+      label: 'Flow per production well',
+      value: 'Conservative: 60 kg/s; Moderate: 60 flash / 90 binary; Advanced: 80 flash / 120 binary',
+      note: '2025 ATB scenario assumptions for NF-EGS and Deep EGS',
       status: 'modeled',
       citation: sources.atb,
     },
     {
-      label: 'Representative EGS flow',
-      value: '≈60 kg/s',
-      note: 'NREL modeled scenario',
+      label: 'Exploration well success assumptions',
+      value: 'NF-EGS: 80% / 80% / 95%; Deep EGS: 60% / 60% / 95%',
+      note: 'Conservative / Moderate / Advanced scenarios',
+      status: 'modeled',
+      citation: sources.atb,
+    },
+    {
+      label: 'Development and stimulation success assumptions',
+      value: 'NF-EGS: 82% / 85% / 95%; Deep EGS: 80% / 85% / 95%',
+      note: 'Conservative / Moderate / Advanced; same rates for development and stimulation',
       status: 'modeled',
       citation: sources.atb,
     },
   ];
 
+  const investorProfiles = [
+    { rank: 1, name: 'B Capital', category: 'Venture / growth equity', detail: 'Led Fervo’s $462 million Series E in 2025.', source: sources.fervoSeriesE },
+    { rank: 2, name: 'Breakthrough Energy Ventures', category: 'Venture capital', detail: 'Returning Fervo investor in disclosed EGS development financing.', source: sources.fervoSeriesE },
+    { rank: 3, name: 'Capricorn Investment Group', category: 'Growth / private equity', detail: 'Disclosed as an existing investor in Fervo’s $244 million 2024 EGS development financing; the announcement names Devon as round lead.', source: sources.fervoSeriesD },
+    { rank: 4, name: 'DCVC', category: 'Venture capital', detail: 'Disclosed as a returning Fervo investor in its EGS developer financing.', source: sources.fervoSeriesE },
+    { rank: 5, name: 'CalSTRS', category: 'Pension fund', detail: 'Public pension participant in Fervo’s disclosed equity financing; instrument and amount are not disclosed.', source: sources.fervoSeriesE },
+    { rank: 6, name: 'CPP Investments', category: 'Pension fund', detail: 'Pension participant in Fervo’s disclosed equity financing; instrument and amount are not disclosed.', source: sources.fervoSeriesE },
+    { rank: 7, name: 'Centaurus Capital', category: 'Preferred equity', detail: 'Committed $75 million of preferred equity to support Cape Station Phase I construction.', source: sources.fervoSeriesE },
+    { rank: 8, name: 'Barclays', category: 'Commercial bank', detail: 'Coordinating lead arranger for Cape Station’s senior secured, non-recourse project financing.', source: sources.bankFinancing },
+    { rank: 9, name: 'MUFG', category: 'Commercial bank', detail: 'Administrative agent for the senior secured Cape Station project-finance facility.', source: sources.bankFinancing },
+    { rank: 10, name: 'HSBC', category: 'Commercial bank', detail: 'Coordinating lead arranger and collateral agent in the Cape Station financing.', source: sources.bankFinancing },
+  ];
+
   const layerEconomics = {
     pensions: {
       debt: 'Pension funds are capital providers, not a debt instrument. They may invest through fund interests or equity; no debt terms for the cited investors were disclosed.',
-      return: 'No layer-specific, source-published return range',
+      return: 'No EGS-specific or source-published pension return range',
       returnNote: 'Do not substitute a pension plan’s total-portfolio assumption for an EGS deal hurdle.',
-      risk: 'Varies by allocation and mandate',
-      priorities: ['Long-duration fit', 'Risk-adjusted return', 'Liquidity planning'],
+      risk: 'Varies by instrument: senior debt, private credit, preferred equity or common equity',
+      priorities: ['Long-duration fit', 'Contracted revenue', 'Risk-adjusted returns'],
     },
     infrastructure: {
       debt: 'Typically equity or fund capital; the project may also use senior debt. EIG did not disclose the Star Peak investment structure.',
-      return: 'No source-published target range for this example',
+      return: 'No disclosed EGS infrastructure-fund return range',
       returnNote: 'Fund targets vary by strategy and asset maturity; no range is inferred.',
-      risk: 'Development and asset risk',
+      risk: 'Varies by instrument and project stage',
       priorities: ['Construction readiness', 'Contracted revenue', 'Long-life cash flow'],
     },
     banks: {
@@ -282,22 +307,22 @@ window.FinancialSections.capitalStack = function (el) {
       return: '12–20% investor return range',
       returnNote: 'Generic mezzanine benchmark, not geothermal-specific and not a disclosed EGS deal term.',
       returnStatus: 'target',
-      returnStatusLabel: 'Generic target benchmark',
+      returnStatusLabel: 'General market benchmark',
       returnCitation: sources.mezzanineReturns,
       risk: 'Higher risk than senior secured debt',
       priorities: ['Downside protection', 'Coupon and PIK terms', 'Refinancing or exit'],
     },
     'private-equity': {
       debt: 'Equity ownership; a buyout may use debt at the company or asset level. No distinct EGS private-equity deal was verified.',
-      return: 'No standardized, source-published target range',
-      returnNote: 'No target is invented for this layer; strategy, leverage, and exit timing drive outcomes.',
+      return: 'No standardized, source-published EGS target range',
+      returnNote: 'No target is invented for this layer; strategy, leverage and exit timing drive outcomes.',
       risk: 'High; equity bears losses before creditors',
       priorities: ['Control and governance', 'Value creation', 'Exit path'],
     },
     'venture-capital': {
       debt: 'Usually preferred or common equity with no scheduled principal repayment; investors accept dilution and company-level risk.',
-      return: 'No universal, source-published target range',
-      returnNote: 'No general VC expectation is inferred without a source; individual-fund hurdles are not transferable across strategies.',
+      return: 'No source-published universal EGS or Fervo target range',
+      returnNote: 'No general VC expectation is inferred without a direct EGS-source benchmark.',
       risk: 'Very high; early-stage equity can lose all invested capital',
       priorities: ['Technical milestones', 'Market scale', 'Follow-on and exit potential'],
     },
@@ -397,6 +422,7 @@ window.FinancialSections.capitalStack = function (el) {
       .cs-metric h4 { color: var(--muted); font-size: .57rem; letter-spacing: .08em; margin: 0; text-transform: uppercase; }
       .cs-metric strong { color: var(--chathams); display: block; font-size: .96rem; letter-spacing: -.02em; margin-top: .2rem; }
       .cs-metric p { color: var(--cs-muted); font-size: .58rem; line-height: 1.5; margin: .2rem 0 0; }
+      .cs-metrics-note { color: var(--cs-muted); font-size: .58rem; line-height: 1.5; margin: .6rem 0 0; }
       .cs-citation { color: var(--cs-muted); display: block; font-size: .55rem; line-height: 1.5; margin-top: .35rem; overflow-wrap: anywhere; }
       .cs-citation a, .cs-source-link { color: var(--cobalt); }
       .cs-investor-card { background: linear-gradient(135deg, #fff, var(--card)); border: 1px solid var(--cs-border); border-radius: 10px; margin-top: 1rem; padding: .8rem; }
@@ -417,6 +443,17 @@ window.FinancialSections.capitalStack = function (el) {
       .cs-investor-pending-mark { align-items: center; background: var(--accent); border-radius: 14px; color: var(--chathams); display: flex; flex: 0 0 64px; font: 700 1.25rem var(--font-body); height: 64px; justify-content: center; }
       .cs-investor-pending h2 { color: var(--chathams); font: 600 1rem/1.35 var(--font-body); margin: .2rem 0 0; }
       .cs-investor-pending p:last-child { color: var(--muted); font-size: .75rem; line-height: 1.6; margin: .35rem 0 0; }
+      .cs-investor-grid { display: grid; gap: .75rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1.25rem; }
+      .cs-investor-profile { background: #fff; border: 1px solid var(--cadet-light); border-radius: 12px; display: grid; gap: .7rem; grid-template-columns: 44px minmax(0, 1fr); padding: .85rem; }
+      .cs-investor-rank { align-items: center; background: var(--chathams); border-radius: 10px; color: #fff; display: flex; font: 700 .75rem var(--font-body); height: 44px; justify-content: center; width: 44px; }
+      .cs-investor-profile h3 { color: var(--chathams); font: 700 .82rem/1.25 var(--font-body); margin: 0; }
+      .cs-investor-profile .cs-investor-category { color: var(--cobalt); display: block; font-size: .54rem; font-weight: 700; margin-top: .15rem; text-transform: uppercase; }
+      .cs-investor-profile p { color: var(--muted); font-size: .64rem; line-height: 1.5; margin: .35rem 0 0; }
+      .cs-investor-profile a { color: var(--cobalt); display: block; font-size: .56rem; line-height: 1.45; margin-top: .35rem; overflow-wrap: anywhere; }
+      .cs-transition { background: var(--card); border: 1px solid var(--cadet-light); border-radius: 12px; display: grid; gap: 1rem; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 1.25rem 0 0; padding: 1rem; }
+      .cs-transition article { border-left: 2px solid var(--accent); padding-left: .65rem; }
+      .cs-transition h3 { color: var(--chathams); font-size: .7rem; margin: 0; }
+      .cs-transition p { color: var(--muted); font-size: .61rem; line-height: 1.55; margin: .35rem 0 0; }
       .cs-investor-back { background: transparent; border: 0; color: var(--cobalt); cursor: pointer; display: inline-flex; font: 700 .75rem var(--font-body); margin-top: 1rem; padding: 0; text-decoration: none; }
       .cs-investor-back:hover { text-decoration: underline; }
       .cs-fid { margin-top: 1.25rem; }
@@ -493,7 +530,7 @@ window.FinancialSections.capitalStack = function (el) {
         pointer-events: none;
         position: absolute;
       }
-      .cs-tower-inner { display: flex; flex-direction: column; min-height: 660px; position: relative; }
+      .cs-tower-inner { display: flex; flex-direction: column; height: 100%; min-height: 660px; position: relative; }
       .cs-tower-head { align-items: flex-start; display: flex; justify-content: space-between; gap: 1rem; }
       .cs-tower-kicker { color: var(--cadet); font-size: .6rem; font-weight: 700; letter-spacing: .13em; margin: 0; text-transform: uppercase; }
       .cs-tower-kicker span { color: var(--accent); font-size: .85rem; margin-right: .25rem; }
@@ -504,8 +541,9 @@ window.FinancialSections.capitalStack = function (el) {
         display: flex;
         flex: 1;
         flex-direction: column;
-        height: 530px;
+        height: 100%;
         max-width: 420px;
+        min-height: 530px;
         perspective: 900px;
         transform: rotateX(-1deg);
       }
@@ -577,6 +615,13 @@ window.FinancialSections.capitalStack = function (el) {
         z-index: 1;
       }
       .cs-tower-footer { border-top: 1px solid rgba(255,255,255,.15); color: var(--cadet); font-size: .57rem; font-weight: 600; line-height: 1.5; padding-top: .75rem; }
+      .cs-tower-how-to { border-top: 1px solid rgba(255,255,255,.15); display: grid; gap: .65rem 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: auto; padding-top: .85rem; }
+      .cs-tower-how-head { grid-column: 1 / -1; }
+      .cs-tower-how-head h4 { color: #fff; font: 600 .85rem/1.3 var(--font-body); margin: .2rem 0 0; }
+      .cs-tower-how-note { color: var(--cadet); font-size: .56rem; line-height: 1.5; margin: .25rem 0 0; }
+      .cs-tower-how-item { border-left: 2px solid var(--accent); padding-left: .55rem; }
+      .cs-tower-how-item h5 { color: var(--accent); font-size: .58rem; margin: 0; }
+      .cs-tower-how-item p { color: var(--cadet-light); font-size: .52rem; line-height: 1.45; margin: .2rem 0 0; }
       .cs-research { overflow: hidden; padding: 0; }
       .cs-profile-head { border-bottom: 1px solid var(--cs-border); padding: 1.25rem; }
       .cs-profile-top { align-items: flex-start; display: flex; gap: .75rem; justify-content: space-between; }
@@ -690,6 +735,8 @@ window.FinancialSections.capitalStack = function (el) {
         .cs-fid-track { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .cs-fid-details, .cs-fid-checklist { grid-template-columns: minmax(0, 1fr); }
         .cs-investor-pending { align-items: flex-start; flex-direction: column; }
+        .cs-investor-grid { grid-template-columns: minmax(0, 1fr); }
+        .cs-transition { grid-template-columns: minmax(0, 1fr); }
       }
       @media (max-width: 420px) {
         .cs-tower-help { display: none; }
@@ -697,6 +744,8 @@ window.FinancialSections.capitalStack = function (el) {
         .cs-tower-subtitle { font-size: .46rem; }
         .cs-grant-sublayer { font-size: .45rem; }
         .cs-econ-grid { grid-template-columns: minmax(0, 1fr); }
+        .cs-tower-how-to { gap: .55rem; }
+        .cs-tower-how-item p { font-size: .5rem; }
       }
       @media (prefers-reduced-motion: reduce) {
         .cs-stack *, .cs-stack *::before, .cs-stack *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
@@ -708,7 +757,7 @@ window.FinancialSections.capitalStack = function (el) {
         <div class="cs-intro-row">
           <div>
             <h2>Who funds EGS?</h2>
-            <p>Source-linked capital channels for enhanced geothermal systems</p>
+            <p>Capital channels for enhanced geothermal systems</p>
           </div>
           <button class="cs-export" type="button" data-export><span aria-hidden="true">↓</span> Export research</button>
         </div>
@@ -717,8 +766,8 @@ window.FinancialSections.capitalStack = function (el) {
       <div class="cs-workspace">
         <aside class="cs-card">
           <div class="cs-card-heading">
-            <div><p class="cs-eyebrow">EGS-specific data</p><h3>EGS cost drivers</h3></div>
-            <span class="cs-pill">NREL 2024 ATB</span>
+            <div><p class="cs-eyebrow">EGS-specific data</p><h3>EGS resource and cost drivers</h3></div>
+            <span class="cs-pill">NLR 2025 ATB</span>
           </div>
           <div class="cs-metrics" aria-label="EGS cost metrics">
             ${sourceMetrics.map((metric) => `
@@ -731,12 +780,13 @@ window.FinancialSections.capitalStack = function (el) {
               </article>
             `).join('')}
           </div>
+          <p class="cs-metrics-note">ATB cost ranges are modeled resource estimates, not project quotes. Near-term EGS costs combine recent commercial drilling and completion costs with modeled improvements; future costs are projections.</p>
           <div class="cs-investor-card">
             <div class="cs-investor-card-top">
               <div><p class="cs-eyebrow">Developer resource</p><h4>Investor directory</h4></div>
-              <span class="cs-investor-count">Target: 10 profiles</span>
+              <span class="cs-investor-count">10 verified participants</span>
             </div>
-            <p>Source-backed geothermal investors, capital-stack categories, logos, and deal details will be added from the Currence data.</p>
+            <p>Confirmed Fervo / Cape Station participants, categorized by the disclosed instrument or financing role.</p>
             <button class="cs-investor-link" type="button" aria-controls="cs-investor-details" aria-expanded="false" data-open-investors><span>More information</span><span aria-hidden="true">→</span></button>
           </div>
           <div class="cs-nav">
@@ -777,6 +827,29 @@ window.FinancialSections.capitalStack = function (el) {
               </div>
             </div>
             <footer class="cs-tower-footer">Requested provider order, not a risk/return ranking or funding waterfall. FID is a project gate, not a capital source.</footer>
+            <div class="cs-tower-how-to" role="region" aria-labelledby="cs-tower-how-title">
+              <header class="cs-tower-how-head">
+                <p class="cs-tower-kicker">How to read this view</p>
+                <h4 id="cs-tower-how-title">EGS funding evidence, not an assumed capital stack</h4>
+                <p class="cs-tower-how-note">Capital providers and financing instruments can overlap. Reported round totals are not split across investors unless the source does so.</p>
+              </header>
+              <article class="cs-tower-how-item">
+                <h5>EGS-only examples</h5>
+                <p>Transactions shown are tied to EGS developers or projects; non-EGS deals are not used to fill evidence gaps.</p>
+              </article>
+              <article class="cs-tower-how-item">
+                <h5>Public disclosure gaps</h5>
+                <p>Missing public data is not treated as a zero-dollar allocation or proof that a funding type is unavailable.</p>
+              </article>
+              <article class="cs-tower-how-item">
+                <h5>Risk and return caveat</h5>
+                <p>Only source-backed targets are shown; debt coupons, fund targets, and pension assumptions are different measures.</p>
+              </article>
+              <article class="cs-tower-how-item">
+                <h5>Government grants</h5>
+                <p>EGS grants support research, drilling, appraisal, and demonstrations. Selections are not funding until awards are reported.</p>
+              </article>
+            </div>
           </div>
         </div>
 
@@ -809,30 +882,22 @@ window.FinancialSections.capitalStack = function (el) {
         </div>
       </div>
 
-      <div class="cs-below" role="region" aria-labelledby="cs-evidence-title">
-        <header class="cs-below-head">
-          <div><p class="cs-eyebrow">How to read this view</p><h3 id="cs-evidence-title">EGS funding evidence, not an assumed capital stack</h3></div>
-          <p class="cs-aside-note">Capital providers and financing instruments can overlap. Reported round totals are not split across investors unless the source does so.</p>
-        </header>
-        <div class="cs-below-grid">
-          <article class="cs-below-item">
-            <h4>EGS-only examples</h4>
-            <p>Transaction examples shown are tied to EGS developers or projects. No non-EGS transaction is used as a substitute for missing EGS evidence.</p>
-          </article>
-          <article class="cs-below-item">
-            <h4>Public disclosure gaps</h4>
-            <p>Where a primary-source EGS example was not found, the profile says so. Missing public data is not treated as a zero-dollar allocation or proof that a funding type is unavailable.</p>
-          </article>
-          <article class="cs-below-item">
-            <h4>Risk and return caveat</h4>
-            <p>Published target ranges are shown only when a source supports them. Debt coupons, fund targets, and pension assumptions are different measures; the requested stack order does not imply a smooth risk-return curve.</p>
-          </article>
-          <article class="cs-below-item">
-            <h4>Government grants</h4>
-            <p>The nested grant layer shows EGS awards for research, drilling, appraisal, and demonstrations. Program selections are not counted as funding unless an award is reported as received.</p>
-          </article>
-        </div>
+      <div class="cs-transition" role="region" aria-label="EGS financing transition">
+        <article>
+          <h3>Availability is improving</h3>
+          <p>EGS is moving from development-stage equity and public support toward preferred equity and institutional project finance.</p>
+        </article>
+        <article>
+          <h3>The structure is maturing</h3>
+          <p>Preferred equity, senior secured debt, non-recourse project finance and long-term power offtake indicate greater lender participation.</p>
+        </article>
+        <article>
+          <h3>Cost of capital: not yet proven</h3>
+          <p>Cape Station’s $421 million commitment shows improving availability, but comparable EGS interest rates and investor IRRs are not publicly disclosed. This does not establish cheaper capital.</p>
+          ${citationMarkup(sources.bankFinancing)}
+        </article>
       </div>
+
       <p class="cs-disclaimer"><span aria-hidden="true">ⓘ</span><span>Conceptual provider map—not an EGS financing recommendation or a standard waterfall. Each cited amount refers only to the project, company round, or award described in its source; no allocation is inferred.</span></p>
 
       <div class="cs-below" role="region" aria-labelledby="cs-glossary-title">
@@ -883,7 +948,7 @@ window.FinancialSections.capitalStack = function (el) {
             <a href="https://www.energy.gov/eere/geothermal/funding-opportunities" target="_blank" rel="noopener">DOE Geothermal Technologies Office funding opportunities</a>
             <a href="https://www.energy.gov/lpo/geothermal" target="_blank" rel="noopener">DOE Loan Programs Office: geothermal</a>
             <a href="https://www.irs.gov/credits-deductions/businesses/energy-investment-tax-credit" target="_blank" rel="noopener">IRS business energy investment tax credit</a>
-            <a href="https://atb.nrel.gov/electricity/2024/" target="_blank" rel="noopener">NREL Annual Technology Baseline 2024</a>
+            <a href="https://atb.nlr.gov/electricity/2025/geothermal" target="_blank" rel="noopener">NLR Annual Technology Baseline 2025: Geothermal</a>
           </div>
         </div>
       </div>
@@ -892,16 +957,22 @@ window.FinancialSections.capitalStack = function (el) {
         <header class="cs-investor-page-hero">
           <p class="cs-eyebrow">EGS capital providers</p>
           <h2 tabindex="-1">Investor directory</h2>
-          <p>Explore geothermal investors by capital-stack role, with company logos and source-linked details on their geothermal investments.</p>
+          <p>Ten publicly disclosed participants in Fervo’s EGS financing or development history. These are participants, not a ranking.</p>
         </header>
-        <div class="cs-investor-pending" role="status" aria-live="polite">
-          <div class="cs-investor-pending-mark" aria-hidden="true">10</div>
-          <div>
-            <p class="cs-eyebrow">Investor data pending</p>
-            <h2>Profiles will appear here when the Currence data is added</h2>
-            <p><strong>Target: 10 profiles.</strong> The directory is set up for investor names, capital-stack categories, logos, and geothermal deal details. No ranking or investment information has been inferred.</p>
-          </div>
+        <p class="cs-caveat">Infrastructure-fund gap: no clearly disclosed direct EGS investment by a dedicated infrastructure fund was identified in the sources above. Pension and bank participation does not make an institution an infrastructure fund.</p>
+        <div class="cs-investor-grid">
+          ${investorProfiles.map((investor) => `
+            <article class="cs-investor-profile">
+              <div class="cs-investor-rank" aria-label="Investor ${investor.rank}">${investor.rank}</div>
+              <div>
+                <h3>${escapeHtml(investor.name)}<span class="cs-investor-category">${escapeHtml(investor.category)}</span></h3>
+                <p>${escapeHtml(investor.detail)}</p>
+                ${citationMarkup(investor.source)}
+              </div>
+            </article>
+          `).join('')}
         </div>
+        <p class="cs-caveat">EGS-specific data unavailable for direct financing terms: the cited announcements generally do not disclose interest rates, preferred-return terms, investor IRRs or investment amounts attributable to each participant.</p>
         <button class="cs-investor-back" type="button" data-back-to-stack>← Back to Capital Stack</button>
       </div>
     </div>
@@ -1045,7 +1116,7 @@ window.FinancialSections.capitalStack = function (el) {
         </div>
         <p class="cs-definition">${escapeHtml(layer.role)}</p>
         <div class="cs-research-tabs" role="tablist" aria-label="Capital source research">
-          ${tabs.map((tab) => `<button class="cs-research-tab" id="cs-research-tab-${tab}" type="button" role="tab" data-research-tab="${tab}" aria-controls="cs-research-content" aria-selected="${researchTab === tab}">${tab === 'evidence' ? 'EGS evidence' : tab}</button>`).join('')}
+          ${tabs.map((tab) => `<button class="cs-research-tab" id="cs-research-tab-${tab}" type="button" role="tab" data-research-tab="${tab}" aria-controls="cs-research-content" aria-selected="${researchTab === tab}">${tab === 'evidence' ? 'EGS evidence' : tab.charAt(0).toUpperCase() + tab.slice(1)}</button>`).join('')}
         </div>
       </header>
       <div class="cs-research-body" id="cs-research-content" role="tabpanel" aria-labelledby="cs-research-tab-${researchTab}">${panelContent}</div>
@@ -1172,6 +1243,15 @@ window.FinancialSections.capitalStack = function (el) {
       'Project-stage gate after development and financing commitments and before construction; it is not a capital layer.',
       ...fidChecklist.map((item) => `- ${item}`),
       citationText(sources.bankFinancing),
+    );
+    lines.push(
+      '',
+      'VERIFIED EGS FINANCING PARTICIPANTS',
+      'Participants are drawn from disclosed Fervo/Cape Station financing. This is not a ranking; direct investment terms may be undisclosed.',
+      ...investorProfiles.map((investor) => `${investor.rank}. ${investor.name} — ${investor.category}: ${investor.detail} (${citationText(investor.source)})`),
+      '',
+      'EGS-SPECIFIC DATA UNAVAILABLE',
+      'EGS-specific interest rates, preferred returns and investor IRRs remain limited. General market benchmarks are not observed EGS deal terms.',
     );
 
     const url = URL.createObjectURL(new Blob([lines.join('\n')], { type: 'text/plain' }));
