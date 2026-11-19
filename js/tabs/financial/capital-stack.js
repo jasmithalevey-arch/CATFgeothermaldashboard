@@ -65,7 +65,7 @@ window.FinancialSections.capitalStack = function (el) {
     fervoSeriesD: {
       author: 'Fervo Energy',
       year: '2024',
-      url: 'https://fervoenergy.com/fervo-energy-raises-244-million-to-accelerate-deployment-of-next-generation-geothermal/',
+      url: 'https://fervoenergy.com/fervo-energy-secures-additional-255-million-funding/',
     },
   };
 
@@ -115,7 +115,7 @@ window.FinancialSections.capitalStack = function (el) {
       role: 'Lenders can provide construction-to-term debt and credit facilities when a project has enough technical, contractual, and financial evidence to support repayment.',
       evidence: [
         {
-          text: 'Fervo closed $421 million of non-recourse financing for Cape Station Phase I: a $309 million construction-to-term loan, a $61 million tax-credit bridge loan, and a $51 million letter-of-credit facility. Coordinating lead arrangers included Barclays, BBVA, HSBC, MUFG, RBC, and Société Générale.',
+          text: 'Fervo closed $421.4 million of non-recourse financing for Cape Station Phase I: a $309 million construction-to-term loan, a $61 million tax-credit bridge loan, and a $51 million letter-of-credit facility. Coordinating lead arrangers included Barclays, BBVA, HSBC, MUFG, RBC, and Société Générale.',
           citations: [sources.bankFinancing],
         },
       ],
@@ -217,6 +217,10 @@ window.FinancialSections.capitalStack = function (el) {
             text: 'DOE describes the EGS Pilot Demonstrations initiative as support for projects testing EGS in varied locations, geology, and subsurface conditions.',
             citations: [sources.egsPilot],
           },
+          {
+            text: 'Mazama Energy is a DOE EGS pilot participant. DOE lists a project in Oregon, but the $18 million figure reported in secondary commentary is not used here until the underlying award record is verified.',
+            citations: [sources.egsPilot],
+          },
         ],
         caveat: 'Awards are specific to their notices and projects; the examples do not establish a typical grant amount or a standard government share of project cost.',
       },
@@ -264,7 +268,7 @@ window.FinancialSections.capitalStack = function (el) {
   const investorProfiles = [
     { rank: 1, name: 'B Capital', category: 'Venture / growth equity', detail: 'Led Fervo’s $462 million Series E in 2025.', source: sources.fervoSeriesE },
     { rank: 2, name: 'Breakthrough Energy Ventures', category: 'Venture capital', detail: 'Returning Fervo investor in disclosed EGS development financing.', source: sources.fervoSeriesE },
-    { rank: 3, name: 'Capricorn Investment Group', category: 'Growth / private equity', detail: 'Disclosed as an existing investor in Fervo’s $244 million 2024 EGS development financing; the announcement names Devon as round lead.', source: sources.fervoSeriesD },
+    { rank: 3, name: 'Capricorn Investment Group', category: 'Growth / private equity', detail: 'Led Fervo’s $135 million corporate equity round within a broader $255 million 2024 financing for EGS development.', source: sources.fervoSeriesD },
     { rank: 4, name: 'DCVC', category: 'Venture capital', detail: 'Disclosed as a returning Fervo investor in its EGS developer financing.', source: sources.fervoSeriesE },
     { rank: 5, name: 'CalSTRS', category: 'Pension fund', detail: 'Public pension participant in Fervo’s disclosed equity financing; instrument and amount are not disclosed.', source: sources.fervoSeriesE },
     { rank: 6, name: 'CPP Investments', category: 'Pension fund', detail: 'Pension participant in Fervo’s disclosed equity financing; instrument and amount are not disclosed.', source: sources.fervoSeriesE },
@@ -278,14 +282,14 @@ window.FinancialSections.capitalStack = function (el) {
     pensions: {
       debt: 'Pension funds are capital providers, not a debt instrument. They may invest through fund interests or equity; no debt terms for the cited investors were disclosed.',
       return: 'No EGS-specific or source-published pension return range',
-      returnNote: 'Do not substitute a pension plan’s total-portfolio assumption for an EGS deal hurdle.',
+      returnNote: 'General infrastructure or pension survey expectations are not actual EGS deal terms. Do not substitute a pension plan portfolio assumption for an EGS hurdle.',
       risk: 'Varies by instrument: senior debt, private credit, preferred equity or common equity',
       priorities: ['Long-duration fit', 'Contracted revenue', 'Risk-adjusted returns'],
     },
     infrastructure: {
       debt: 'Typically equity or fund capital; the project may also use senior debt. EIG did not disclose the Star Peak investment structure.',
       return: 'No disclosed EGS infrastructure-fund return range',
-      returnNote: 'Fund targets vary by strategy and asset maturity; no range is inferred.',
+      returnNote: 'Infrastructure debt and equity expectations vary by instrument and fund strategy. No EGS-specific range or return is inferred.',
       risk: 'Varies by instrument and project stage',
       priorities: ['Construction readiness', 'Contracted revenue', 'Long-life cash flow'],
     },
@@ -314,15 +318,15 @@ window.FinancialSections.capitalStack = function (el) {
     },
     'private-equity': {
       debt: 'Equity ownership; a buyout may use debt at the company or asset level. No distinct EGS private-equity deal was verified.',
-      return: 'No standardized, source-published EGS target range',
-      returnNote: 'No target is invented for this layer; strategy, leverage and exit timing drive outcomes.',
+      return: 'No source-published EGS-specific private-equity target',
+      returnNote: 'General private-market surveys are market benchmarks, not Fervo or Cape Station terms. Strategy, leverage and exit timing drive outcomes.',
       risk: 'High; equity bears losses before creditors',
       priorities: ['Control and governance', 'Value creation', 'Exit path'],
     },
     'venture-capital': {
       debt: 'Usually preferred or common equity with no scheduled principal repayment; investors accept dilution and company-level risk.',
       return: 'No source-published universal EGS or Fervo target range',
-      returnNote: 'No general VC expectation is inferred without a direct EGS-source benchmark.',
+      returnNote: 'Median and top-quartile VC fund figures are realized fund benchmarks, not universal target returns or observed EGS deal terms.',
       risk: 'Very high; early-stage equity can lose all invested capital',
       priorities: ['Technical milestones', 'Market scale', 'Follow-on and exit potential'],
     },
@@ -876,7 +880,7 @@ window.FinancialSections.capitalStack = function (el) {
           <div class="cs-fid-example">
             <h4>Deal example: Cape Station</h4>
             ${statusMarkup('actual')}
-            <p>Fervo reported contracted power-purchase agreements and closed $421 million in non-recourse financing, including a construction-to-term loan, to fund remaining Phase I construction. The announcement illustrates FID readiness factors; it is not presented as a separately reported FID date.</p>
+            <p>Fervo reported contracted power-purchase agreements and closed $421.4 million in non-recourse financing, including a construction-to-term loan, to fund remaining Phase I construction. The announcement illustrates FID readiness factors; it is not presented as a separately reported FID date.</p>
             ${citationMarkup(sources.bankFinancing)}
           </div>
         </div>
@@ -893,7 +897,7 @@ window.FinancialSections.capitalStack = function (el) {
         </article>
         <article>
           <h3>Cost of capital: not yet proven</h3>
-          <p>Cape Station’s $421 million commitment shows improving availability, but comparable EGS interest rates and investor IRRs are not publicly disclosed. This does not establish cheaper capital.</p>
+          <p>Cape Station’s $421.4 million commitment shows improving availability, but comparable EGS interest rates and investor IRRs are not publicly disclosed. This does not establish cheaper capital.</p>
           ${citationMarkup(sources.bankFinancing)}
         </article>
       </div>
