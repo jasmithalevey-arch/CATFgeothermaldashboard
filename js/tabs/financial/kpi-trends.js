@@ -100,6 +100,7 @@ FinancialSections.kpiTrends = function (el) {
       #fin-kpi-trends .kt-low-value{font-size:2rem}
       #fin-kpi-trends .kt-accent{color:var(--cobalt);font-weight:650}
       #fin-kpi-trends .kt-chart{width:100%;height:400px;min-width:0}#fin-kpi-trends .kt-chart.kt-chart-tall{height:520px}#fin-kpi-trends .kt-chart.kt-chart-compact{height:300px}#fin-kpi-trends #kt-project-capex{height:580px}#fin-kpi-trends #kt-lcoe{height:540px}
+      #fin-kpi-trends .kt-axis-label{margin:14px 0 4px;color:var(--chathams);font-size:13px;font-weight:650;line-height:1.4;text-align:left}
       #fin-kpi-trends .kt-source{margin-top:13px;line-height:1.45;font-size:12px;text-align:left}
       #fin-kpi-trends .kt-source a,#fin-kpi-trends details a,#fin-kpi-trends .kt-copy a,#fin-kpi-trends .kt-citation{color:var(--cobalt);text-underline-offset:3px}
       #fin-kpi-trends .kt-citation{white-space:normal;text-decoration:underline;font-weight:600}
@@ -182,7 +183,7 @@ FinancialSections.kpiTrends = function (el) {
              <span class="kt-pill kt-dot">Expected total cost</span>
              <span class="kt-pill kt-dash">Company target</span>
            </div>
-           <p class="kt-note">The source for Project Red's $15,000/kW benchmark was published in 2025 but does not identify the cost year. Fervo's November 9, 2026 disclosure reports completed operations for Cape Station GeoBlock 1 and a separate expected total cost for Phase I.</p>
+           <p class="kt-note">Project Red began producing electricity in 2023. Its $15,000/kW CapEx was reported by Columbia University in April 2025, without a specific expenditure year. Fervo's November 9, 2026 disclosure confirms Cape Station GeoBlock 1 operations and separately reports the expected total Phase I cost.</p>
            <div class="kt-capex-status" aria-label="Cape Station achieved operations versus expected capital cost">
              <div class="kt-capex-status-item kt-achieved">
                <span class="kt-label">Achieved operation (September 30, 2026)</span>
@@ -195,16 +196,16 @@ FinancialSections.kpiTrends = function (el) {
                <p>Fervo's expected total cost for GeoBlocks 1 to 3. GeoBlocks 2 and 3 had not yet reached commercial operation when this estimate was reported.</p>
              </div>
            </div>
-           <div id="kt-project-capex" class="kt-chart kt-chart-tall" role="img" aria-label="EGS CapEx comparison: Project Red reported benchmark 15,000 dollars per kilowatt; Cape Station Phase I expected total cost 7,000 dollars per kilowatt; Cape Google 400 target 5,500 dollars per kilowatt"></div>
+           <div id="kt-project-capex" class="kt-chart kt-chart-tall" role="img" aria-label="EGS CapEx comparison: Project Red, operational since 2023, with a 15,000 dollar per kilowatt benchmark reported in 2025; Cape Station Phase I expected total cost 7,000 dollars per kilowatt; Cape Google 400 target 5,500 dollars per kilowatt"></div>
            <p class="kt-note"><strong>How to read the comparison:</strong> Cape Station Phase I's expected $7,000/kW is 53.3% below the $15,000/kW Project Red benchmark. Cape Google 400's $5,500/kW target is 63.3% below Project Red and 21.4% below Cape Station's expected cost. These comparisons involve different projects and reporting categories, so they should not be read as confirmed reductions in construction cost.</p>
            <p class="kt-source">Project Red: ${apa('Kah, M., & Kleinberg, R.','2025','The Potential Contribution of Enhanced Geothermal Systems to Future Power Supply',sources.projectRed,'p. 6')}. Cape Station Phase I: ${apa('Fervo Energy','2026','Fervo Energy Reports Third Quarter 2026 Results',sources.fervoQ3,'Nov. 9 Q3 results')}. Cape Google 400: ${apa('The Motley Fool','2026','Fervo Energy Q3 2026 earnings call transcript',sources.fervoTranscript,'Nov. 9 Q3 call')}.</p>
            <details>
              <summary>Sources &amp; methodology</summary>
-             <p>The Columbia report (p. 6) gives the $15,000/kW Project Red benchmark but does not verify its underlying cost year or identify it as audited actual expenditure. Fervo's November 9, 2026 results say <strong>expected total cost</strong> for Cape Station Phase I GeoBlocks 1 to 3 remained approximately $7,000/kW. The same release confirms GeoBlock 1 entered commercial operation on September 30, 2026, while the other two GeoBlocks were still progressing toward commercial operation. The approximately $514.3 million transferred from construction-in-process into property, plant and equipment is <strong>not</strong> the standalone cost of GeoBlock 1; it includes shared wellfield and infrastructure costs, as well as capitalized interest and financing costs. The $5,500/kW Cape Google 400 figure is a future installed-cost target. Percentage differences are calculated from the displayed rounded figures and do not prove realized cost reductions.</p>
+             <p>The April 2025 Columbia University report (p. 6) states that Project Red began electricity production in 2023 and reports CapEx of $15,000/kW. The 2023 chart label refers to the start of operation, not the expenditure year. The report does not provide a separate cost year or identify the figure as an audited actual expenditure. Fervo's November 9, 2026 results say <strong>expected total cost</strong> for Cape Station Phase I GeoBlocks 1 to 3 remained approximately $7,000/kW. The same release confirms GeoBlock 1 entered commercial operation on September 30, 2026, while the other two GeoBlocks were still progressing toward commercial operation. The approximately $514.3 million transferred from construction-in-process into property, plant and equipment is <strong>not</strong> the standalone cost of GeoBlock 1; it includes shared wellfield and infrastructure costs, as well as capitalized interest and financing costs. The $5,500/kW Cape Google 400 figure is a future installed-cost target. Percentage differences are calculated from the displayed rounded figures and do not prove realized cost reductions.</p>
            </details>
          </div>
        </section>
-  
+
 
 
       <section id="kt-lcoe-section" class="kt-section">
@@ -217,6 +218,7 @@ FinancialSections.kpiTrends = function (el) {
           <div class="kt-card kt-span-8">
             <h3>Historical Modeled LCOE</h3>
             <p class="kt-note">Values are approximate readings of Figure 23 in the 2025 U.S. Geothermal Market Report, expressed in 2022 USD/MWh. Each year refers to an ATB edition, not a year of electricity generation.</p>
+            <p class="kt-axis-label">Approximate modeled LCOE (2022 USD/MWh)</p>
             <div id="kt-lcoe" class="kt-chart kt-chart-tall" role="img" aria-label="Modeled Deep EGS Binary LCOE by ATB edition from 2021 to 2024, ending at approximately 205 dollars per MWh in the 2024 edition"></div>
             <div class="kt-lcoe-coverage">
               <span class="kt-label">Latest comparable point in this chart</span>
@@ -420,13 +422,68 @@ FinancialSections.kpiTrends = function (el) {
     '<b>Next-generation geothermal</b><br>Nearly $2.2B in 2025<br>Approximately 11.8% of global funding<br>Reported annual worldwide funding'
   ];
   plot('kt-funding',[{type:'pie',labels:['Heating','Conventional power','Next-generation geothermal'],values:[11.5,5,2.2],hole:.62,sort:false,direction:'clockwise',marker:{colors:[colors.cobalt,colors.chathams,colors.cadet],line:{color:colors.page,width:3}},textinfo:'percent',texttemplate:'~%{percent:.1%}',textposition:'inside',automargin:true,hovertext:fundingHover,hoverinfo:'text'}],{margin:compact?{t:15,r:10,b:90,l:10}:{t:30,r:45,b:95,l:45},showlegend:true,legend:{orientation:'h',x:.5,xanchor:'center',y:-.13,yanchor:'top',font:{size:11}},annotations:[{text:'<b>2025</b><br>funding mix',x:.5,y:.5,showarrow:false,font:{family:chartFont,size:compact?13:18,color:colors.chathams}}]});
-  plot('kt-project-capex',[{x:[0,15000],y:['Project Red','Project Red'],name:'Reported benchmark',mode:'lines+markers',line:{color:colors.cobalt,width:5,dash:'solid'},marker:{color:colors.cobalt,size:[0,16],symbol:'circle'},hovertext:['','<b>Project Red</b><br>$15,000/kW<br>Reported project benchmark<br>Source published 2025; underlying cost year not stated<br>Not identified as audited actual expenditure<br>Kah and Kleinberg (2025), p. 6'],hoverinfo:'text'},{x:[0,7000],y:['Cape Station Phase I','Cape Station Phase I'],name:'Expected total cost',mode:'lines+markers',line:{color:colors.chathams,width:3,dash:'dot'},marker:{color:colors.chathams,size:[0,16],symbol:'square'},hovertext:['','<b>Cape Station Phase I</b><br>~$7,000/kW expected total cost, GeoBlocks 1 to 3<br>November 9, 2026 company disclosure<br><b>Operational actual:</b> GeoBlock 1 (33 MW) reached commercial operation September 30, 2026<br><b>Cost classification:</b> expected total Phase I cost, not achieved final CapEx/kW<br>Fervo Energy (2026), Q3 results'],hoverinfo:'text'},{x:[0,5500],y:['Cape Google 400','Cape Google 400'],name:'Company target',...ChartTheme.style('target'),line:{color:colors.sky,width:3,dash:'dash'},marker:{color:colors.sky,size:[0,16],symbol:'diamond'},hovertext:['','<b>Cape Google 400</b><br>$5,500/kW<br>Installed CapEx target (Q3 2026)<br>Company target, not an achieved cost<br>Timothy Latimer, Fervo Q3 2026 earnings call'],hoverinfo:'text'}],{margin:compact?{t:70,r:15,b:78,l:115}:{t:88,r:95,b:78,l:175},xaxis:{title:'Reported, expected or targeted CapEx (USD/kW)',range:[0,17000],tickprefix:'$',tickformat:',.0f'},yaxis:{categoryorder:'array',categoryarray:['Cape Google 400','Cape Station Phase I','Project Red']},legend:{orientation:'h',x:0,xanchor:'left',y:1.16},annotations:[{x:10500,y:'Cape Station Phase I',text:'<b>53.3% indicative difference</b><br>Project Red benchmark to Cape Station expected cost',showarrow:true,arrowhead:0,ax:compact?0:75,ay:-48,bgcolor:colors.accent,borderpad:7,font:{size:11,color:colors.chathams}}]});
+  // Short hover details on narrow screens prevent clipped tooltips.
+  // Full supporting detail remains in the paragraphs and source notes below the chart.
+  const capexHover = compact ? {
+    red: '<b>Project Red</b><br>$15,000/kW benchmark<br>Online 2023<br>Kah & Kleinberg (2025)',
+    cape: '<b>Cape Station Phase I</b><br>~$7,000/kW<br>Expected cost, Q3 2026<br>Fervo Energy (2026)',
+    google: '<b>Cape Google 400</b><br>$5,500/kW<br>Company target, Q3 2026<br>Fervo Energy (2026)'
+  } : {
+    red: '<b>Project Red</b><br>$15,000/kW reported CapEx benchmark<br>Electricity production began in 2023<br>Published by Columbia University in April 2025<br>Expenditure year not specified<br>Kah and Kleinberg (2025), p. 6',
+    cape: '<b>Cape Station Phase I</b><br>~$7,000/kW expected total cost, GeoBlocks 1 to 3<br>November 9, 2026 company disclosure<br><b>Operational actual:</b> GeoBlock 1 (33 MW) reached commercial operation September 30, 2026<br><b>Cost classification:</b> expected total Phase I cost, not achieved final CapEx/kW<br>Fervo Energy (2026), Q3 results',
+    google: '<b>Cape Google 400</b><br>$5,500/kW<br>Installed CapEx target (Q3 2026)<br>Company target, not an achieved cost<br>Timothy Latimer, Fervo Q3 2026 earnings call'
+  };
+  plot('kt-project-capex', [
+    {
+      x: [0, 15000], y: ['Project Red (online 2023)', 'Project Red (online 2023)'],
+      name: 'Reported benchmark', mode: 'lines+markers',
+      line: {color: colors.cobalt, width: 5, dash: 'solid'},
+      marker: {color: colors.cobalt, size: [0, 16], symbol: 'circle'},
+      hovertext: ['', capexHover.red], hoverinfo: 'text'
+    },
+    {
+      x: [0, 7000], y: ['Cape Station Phase I', 'Cape Station Phase I'],
+      name: 'Expected total cost', mode: 'lines+markers',
+      line: {color: colors.chathams, width: 3, dash: 'dot'},
+      marker: {color: colors.chathams, size: [0, 16], symbol: 'square'},
+      hovertext: ['', capexHover.cape], hoverinfo: 'text'
+    },
+    {
+      x: [0, 5500], y: ['Cape Google 400', 'Cape Google 400'],
+      name: 'Company target', ...ChartTheme.style('target'),
+      line: {color: colors.sky, width: 3, dash: 'dash'},
+      marker: {color: colors.sky, size: [0, 16], symbol: 'diamond'},
+      hovertext: ['', capexHover.google], hoverinfo: 'text'
+    }
+  ], {
+    margin: compact ? {t: 75, r: 12, b: 78, l: 155} : {t: 88, r: 95, b: 78, l: 190},
+    xaxis: {
+      title: 'Reported, expected or targeted CapEx (USD/kW)',
+      range: [0, 17000], tickprefix: '$', tickformat: ',.0f'
+    },
+    yaxis: {
+      categoryorder: 'array',
+      categoryarray: ['Cape Google 400', 'Cape Station Phase I', 'Project Red (online 2023)']
+    },
+    hovermode: 'closest',
+    hoverlabel: {font: {family: chartFont, color: colors.ink, size: compact ? 11 : 12}},
+    legend: {orientation: 'h', x: 0, xanchor: 'left', y: 1.16},
+    // The same 53.3% comparison is already explained under the chart.
+    // On mobile, removing the bulky annotation prevents it from being clipped.
+    annotations: compact ? [] : [{
+      x: 10500, y: 'Cape Station Phase I',
+      text: '<b>53.3% indicative difference</b><br>Project Red benchmark to Cape Station expected cost',
+      showarrow: true, arrowhead: 0, ax: 75, ay: -48,
+      bgcolor: colors.accent, borderpad: 7,
+      font: {size: 11, color: colors.chathams}
+    }]
+  });
   plot('kt-atb-capex',[{x:['2021 ATB','2024 ATB'],y:[53240,19757],name:'Modeled estimate',...ChartTheme.style('modeled'),line:{color:colors.cadet,width:3,dash:'dot'},marker:{color:[colors.cadet,colors.cobalt],symbol:'circle-open',size:14,line:{width:3}},text:['$53,240/kW','$19,757/kW'],textposition:['top center','bottom center'],hovertext:['<b>2021 ATB edition</b><br>$53,240/kW (2022 USD)<br>Deep EGS Binary overnight capital cost<br>Modeled ATB estimate, not a project actual<br>Akindipe et al. (2026), Figure 18','<b>2024 ATB edition</b><br>$19,757/kW (2022 USD)<br>Deep EGS Binary overnight capital cost<br>Modeled ATB estimate, not a project actual<br>Akindipe et al. (2026), Figure 18'],hoverinfo:'text'}],{margin:{t:55,r:25,b:52,l:72},yaxis:{title:'2022 USD/kW',rangemode:'tozero',tickprefix:'$',tickformat:',.0f'},showlegend:false,annotations:[{xref:'paper',yref:'paper',x:.5,y:.58,text:'<b>62.89% lower</b>',showarrow:false,bgcolor:colors.accent,borderpad:6,font:{color:colors.chathams,size:11}}]});
   const wells=['Project Red, Well 1','Project Red, Well 2','Cape Station, Well 3','Cape Station, Well 4','Cape Station, Well 5','Cape Station, Well 6','Cape Station, Well 7','Cape Station, Well 8'];
   const costs=[994.62,1106.74,633.45,471.59,395.71,346.45,394.08,357.36];
   const drillingHover = wells.map((well,index)=>`<b>${well}</b><br>$${costs[index].toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}/ft<br>Published 2025 well comparison<br>Reported drilling cost<br>Akindipe and Witter (2025), Table 1, p. 3`);
   plot('kt-drilling',[{type:'bar',orientation:'h',x:costs.slice(0,2),y:wells.slice(0,2),name:'Project Red',marker:{color:colors.cobalt,line:{color:colors.chathams,width:1}},text:costs.slice(0,2).map(v=>`$${v.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}/ft`),textposition:compact?'inside':'outside',cliponaxis:false,hovertext:drillingHover.slice(0,2),hoverinfo:'text'},{type:'bar',orientation:'h',x:costs.slice(2),y:wells.slice(2),name:'Cape Station',marker:{color:colors.sky,line:{color:colors.cadet,width:1}},text:costs.slice(2).map(v=>`$${v.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}/ft`),textposition:compact?'inside':'outside',cliponaxis:false,hovertext:drillingHover.slice(2),hoverinfo:'text'}],{margin:compact?{t:55,r:20,b:62,l:110}:{t:62,r:100,b:62,l:175},xaxis:{title:'Reported drilling cost (USD/ft)',range:[0,1250],tickprefix:'$',tickformat:',.0f'},yaxis:{autorange:'reversed'},legend:{orientation:'h',x:0,y:1.12},bargap:.3});
-  plot('kt-lcoe',[{x:[2021,2022,2023,2024],y:[480,465,473,205],name:'Approximate modeled estimate',...ChartTheme.style('modeled'),line:{color:colors.cobalt,dash:'dot',width:4},marker:{color:colors.page,symbol:'circle',size:14,line:{color:colors.cobalt,width:3}},text:['~$480','~$465','~$473','~$205'],textposition:'top center',hovertext:['<b>2021 ATB edition</b><br>Approximately $480/MWh (2022 USD)<br>Modeled Deep EGS Binary LCOE<br>Modeled estimate, not an operating cost<br>Akindipe et al. (2026), Figure 23','<b>2022 ATB edition</b><br>Approximately $465/MWh (2022 USD)<br>Modeled Deep EGS Binary LCOE<br>Modeled estimate, not an operating cost<br>Akindipe et al. (2026), Figure 23','<b>2023 ATB edition</b><br>Approximately $473/MWh (2022 USD)<br>Modeled Deep EGS Binary LCOE<br>Modeled estimate, not an operating cost<br>Akindipe et al. (2026), Figure 23','<b>2024 ATB edition</b><br>Approximately $205/MWh (2022 USD)<br>Modeled Deep EGS Binary LCOE<br>Modeled estimate, not an operating cost<br>Akindipe et al. (2026), Figure 23'],hoverinfo:'text'}],{margin:{t:58,r:35,b:70,l:82},xaxis:{title:'ATB publication edition, not generation year',dtick:1,range:[2020.75,2024.25]},yaxis:{title:'Approximate modeled LCOE (2022 USD/MWh)',rangemode:'tozero',tickprefix:'$'},showlegend:false});
+  plot('kt-lcoe',[{x:[2021,2022,2023,2024],y:[480,465,473,205],name:'Approximate modeled estimate',...ChartTheme.style('modeled'),line:{color:colors.cobalt,dash:'dot',width:4},marker:{color:colors.page,symbol:'circle',size:14,line:{color:colors.cobalt,width:3}},text:['~$480','~$465','~$473','~$205'],textposition:'top center',hovertext:['<b>2021 ATB edition</b><br>Approximately $480/MWh (2022 USD)<br>Modeled Deep EGS Binary LCOE<br>Modeled estimate, not an operating cost<br>Akindipe et al. (2026), Figure 23','<b>2022 ATB edition</b><br>Approximately $465/MWh (2022 USD)<br>Modeled Deep EGS Binary LCOE<br>Modeled estimate, not an operating cost<br>Akindipe et al. (2026), Figure 23','<b>2023 ATB edition</b><br>Approximately $473/MWh (2022 USD)<br>Modeled Deep EGS Binary LCOE<br>Modeled estimate, not an operating cost<br>Akindipe et al. (2026), Figure 23','<b>2024 ATB edition</b><br>Approximately $205/MWh (2022 USD)<br>Modeled Deep EGS Binary LCOE<br>Modeled estimate, not an operating cost<br>Akindipe et al. (2026), Figure 23'],hoverinfo:'text'}],{margin:compact?{t:38,r:16,b:74,l:130}:{t:54,r:35,b:74,l:140},xaxis:{title:'ATB publication edition, not generation year',dtick:1,range:[2020.75,2024.25]},yaxis:{title:{text:''},rangemode:'tozero',tickprefix:'$',automargin:false},showlegend:false});
   plot('kt-fervo-capex',[{type:'bar',x:['2024','2025'],y:[178.693,465.659],name:'Reported actual',marker:{color:[colors.cadet,colors.cobalt],line:{color:colors.chathams,width:1}},text:['$178.7M','$465.7M'],textposition:'outside',cliponaxis:false,hovertext:['<b>2024 annual capital expenditures</b><br>$178.693 million<br>Reported actual annual company CapEx<br>Fervo Energy Company (2026), p. F-9','<b>2025 annual capital expenditures</b><br>$465.659 million<br>Reported actual annual company CapEx<br>Fervo Energy Company (2026), p. F-9'],hoverinfo:'text'}],{margin:{t:42,r:28,b:60,l:88},xaxis:{title:'Fiscal year',type:'category'},yaxis:{title:'Annual capital expenditures (USD millions)',range:[0,535],tickprefix:'$',ticksuffix:'M'},legend:{orientation:'h',x:0,y:1.12}});
   plot('kt-fervo-ppa-growth',[{type:'bar',x:['Q2 2026','Q3 2026'],y:[658,1054],name:'Contracted capacity (binding PPAs)',marker:{color:[colors.cadet,colors.cobalt],line:{color:colors.chathams,width:1}},text:['658 MW','1,054 MW'],textposition:'outside',cliponaxis:false,hovertext:['<b>Q2 2026</b><br>658 MW under binding PPAs<br>Contracted future capacity, not operating generation<br>Fervo Energy (November 9, 2026)','<b>Q3 2026</b><br>1,054 MW under binding PPAs<br>396 MW increase (60.2%) from Q2<br>Contracted future capacity, not operating generation<br>Fervo Energy (November 9, 2026)'],hoverinfo:'text'}],{margin:compact?{t:65,r:20,b:72,l:70}:{t:65,r:28,b:70,l:88},xaxis:{title:'Reporting quarter',type:'category'},yaxis:{title:'Capacity under binding PPAs (MW)',range:[0,1250],ticksuffix:' MW',tickformat:',.0f'},showlegend:false});
   };
