@@ -1,8 +1,17 @@
+window.TechnicalSections = window.TechnicalSections || {};
+
 Dashboard.registerTab({
   id: 'overview',
   label: 'Overview',
   title: 'Geothermal Energy Deployment',
   render(container) {
-    Dashboard.emptyState(container, 'A summary of the headline geothermal KPIs will go here. Use the tabs above to explore each category.');
+    container.innerHTML = `
+      <div class="tech-stack-block" data-role="plant-map-host"></div>
+      <hr class="tech-stack-divider" />
+      <div class="tech-stack-block" data-role="cost-focus-host"></div>`;
+
+    // Mount after the panel is visible so Plotly gets a real width
+    TechnicalSections.plantMap?.(container.querySelector('[data-role="plant-map-host"]'));
+    TechnicalSections.costFocus?.(container.querySelector('[data-role="cost-focus-host"]'));
   }
 });

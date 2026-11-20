@@ -1,0 +1,608 @@
+{
+    "plants":  {
+                   "egs":  {
+                               "label":  "EGS",
+                               "tagline":  "Fractured reservoir · circulating water",
+                               "accent":  "#2F6F5E",
+                               "image":  "assets/diagrams/egs.jpg?v=2"
+                           },
+                   "shr":  {
+                               "label":  "Superhot rock",
+                               "tagline":  "\u003e375°C · high power per well",
+                               "accent":  "#9B2D6B",
+                               "image":  "assets/diagrams/shr.jpg?v=3"
+                           },
+                   "clgs":  {
+                                "label":  "Closed-loop",
+                                "tagline":  "Sealed U-loop · no open reservoir",
+                                "accent":  "#1F3F8A",
+                                "image":  "assets/diagrams/clgs.jpg?v=2"
+                            }
+               },
+    "sections":  [
+                     {
+                         "id":  "resource",
+                         "num":  1,
+                         "short":  "Resource"
+                     },
+                     {
+                         "id":  "drilling",
+                         "num":  2,
+                         "short":  "Drilling"
+                     },
+                     {
+                         "id":  "reservoir",
+                         "num":  3,
+                         "short":  "Reservoir / heat exchange"
+                     },
+                     {
+                         "id":  "monitoring",
+                         "num":  4,
+                         "short":  "Monitoring"
+                     },
+                     {
+                         "id":  "pumps",
+                         "num":  5,
+                         "short":  "Pumps"
+                     },
+                     {
+                         "id":  "plant",
+                         "num":  6,
+                         "short":  "Power plant"
+                     },
+                     {
+                         "id":  "water",
+                         "num":  7,
+                         "short":  "Water / cooling"
+                     },
+                     {
+                         "id":  "grid",
+                         "num":  8,
+                         "short":  "Grid"
+                     }
+                 ],
+    "bubbles":  {
+                    "egs":  [
+                                {
+                                    "id":  "water",
+                                    "x":  30,
+                                    "y":  28
+                                },
+                                {
+                                    "id":  "plant",
+                                    "x":  40,
+                                    "y":  26
+                                },
+                                {
+                                    "id":  "grid",
+                                    "x":  60,
+                                    "y":  24
+                                },
+                                {
+                                    "id":  "pumps",
+                                    "x":  50,
+                                    "y":  40
+                                },
+                                {
+                                    "id":  "drilling",
+                                    "x":  42,
+                                    "y":  58
+                                },
+                                {
+                                    "id":  "monitoring",
+                                    "x":  50,
+                                    "y":  58
+                                },
+                                {
+                                    "id":  "reservoir",
+                                    "x":  50,
+                                    "y":  82
+                                },
+                                {
+                                    "id":  "resource",
+                                    "x":  72,
+                                    "y":  90
+                                }
+                            ],
+                    "shr":  [
+                                {
+                                    "id":  "plant",
+                                    "x":  34,
+                                    "y":  15
+                                },
+                                {
+                                    "id":  "grid",
+                                    "x":  50,
+                                    "y":  10
+                                },
+                                {
+                                    "id":  "water",
+                                    "x":  70,
+                                    "y":  18
+                                },
+                                {
+                                    "id":  "pumps",
+                                    "x":  43,
+                                    "y":  22
+                                },
+                                {
+                                    "id":  "drilling",
+                                    "x":  42,
+                                    "y":  48
+                                },
+                                {
+                                    "id":  "monitoring",
+                                    "x":  55,
+                                    "y":  48
+                                },
+                                {
+                                    "id":  "reservoir",
+                                    "x":  50,
+                                    "y":  86
+                                },
+                                {
+                                    "id":  "resource",
+                                    "x":  58,
+                                    "y":  92
+                                }
+                            ],
+                    "clgs":  [
+                                 {
+                                     "id":  "water",
+                                     "x":  32,
+                                     "y":  18
+                                 },
+                                 {
+                                     "id":  "plant",
+                                     "x":  42,
+                                     "y":  18
+                                 },
+                                 {
+                                     "id":  "grid",
+                                     "x":  58,
+                                     "y":  16
+                                 },
+                                 {
+                                     "id":  "pumps",
+                                     "x":  48,
+                                     "y":  30
+                                 },
+                                 {
+                                     "id":  "drilling",
+                                     "x":  33,
+                                     "y":  55
+                                 },
+                                 {
+                                     "id":  "monitoring",
+                                     "x":  63,
+                                     "y":  55
+                                 },
+                                 {
+                                     "id":  "reservoir",
+                                     "x":  48,
+                                     "y":  87
+                                 },
+                                 {
+                                     "id":  "resource",
+                                     "x":  74,
+                                     "y":  90
+                                 }
+                             ]
+                },
+    "hover":  {
+                  "egs":  {
+                              "resource":  {
+                                               "title":  "Resource characterization \u0026 modeling",
+                                               "blurb":  "Geologists and engineers use surveys, temperature data and models to identify hot rock and predict how heat and water will move. A poor resource assessment can lead to unsuccessful wells, higher development costs and less electricity than forecast. A model is only as reliable as the field data used to build and validate it.",
+                                               "kpis":  [
+                                                            "Exploration / temperature-gradient well results",
+                                                            "Predicted vs measured temperature",
+                                                            "Model validation against field data"
+                                                        ],
+                                               "differenceFrom":  {
+                                                                      "heading":  "Difference from CLGS and Superhot",
+                                                                      "text":  "EGS must identify hot rock suitable for creating connected fluid pathways. CLGS must identify hot rock with enough thermal conductivity to transfer heat into sealed pipes. Superhot must locate extremely hot rock at drillable depths and determine whether it can support fluid production."
+                                                                  },
+                                               "proven":  {
+                                                              "heading":  "Partially Proven Technology",
+                                                              "text":  "Proven methods, but not enough data. EGS resource data still has gaps. Geophysical surveys, well logs, and geological modeling are established. Predicting commercial well productivity is harder."
+                                                          }
+                                           },
+                              "drilling":  {
+                                               "title":  "Drilling \u0026 well design",
+                                               "blurb":  "Bits, rigs, casing, cement and completions create and stabilize the wells. Better bits can reduce drilling time and cost per foot, but oil-and-gas performance does not automatically translate to geothermal. Longer horizontal sections can increase reservoir contact, while also increasing drilling time, equipment needs and completion risk. Well-integrity failures can cause expensive repairs or lost production.",
+                                               "kpis":  [
+                                                            "Drilling cost per meter / days to drill",
+                                                            "Lateral length and ROP",
+                                                            "Casing / completion integrity"
+                                                        ],
+                                               "differenceFrom":  {
+                                                                      "heading":  "Difference from CLGS and Superhot",
+                                                                      "text":  "EGS often uses injection and production wells, potentially with long horizontal sections. CLGS uses sealed pipe loops; multilateral designs can require extensive horizontal drilling. Superhot requires deep, high-temperature wells and specialized materials and tools."
+                                                                  },
+                                               "proven":  {
+                                                              "heading":  "Proven Technology",
+                                                              "text":  "PDC bits and related drilling tools are established in oil and gas. High-temperature, hard-rock EGS conditions are still being innovated in, but Fervo has consistent drilling stats (cost, # bits, ROP). Drilling rigs and directional drilling are mature adjacent technology from oil and gas; EGS demonstrations have shown they can create long horizontal well sections. Successful wells have been completed and cased, but high temperature, pressure, and corrosive fluids impose site-specific challenges."
+                                                          }
+                                           },
+                              "reservoir":  {
+                                                "title":  "Reservoir creation \u0026 management",
+                                                "blurb":  "Water is injected to open or improve fractures so fluid can circulate between wells and absorb heat. Stimulation determines whether a drilled well pair can circulate enough water to generate electricity. Poor stimulation can leave an expensive well with insufficient flow; overly aggressive stimulation can increase water use and seismicity risk. High initial flow is not enough if temperature falls quickly or water losses require costly replacement.",
+                                                "kpis":  [
+                                                             "Post-stimulation flow rate (kg/s)",
+                                                             "Sustained circulation / production temperature",
+                                                             "Water loss and thermal breakthrough"
+                                                         ],
+                                                "differenceFrom":  {
+                                                                       "heading":  "Difference from CLGS and Superhot",
+                                                                       "text":  "In EGS, water circulates through fractures in hot rock. In CLGS, heat transfers through sealed pipe walls into a circulating fluid. In Superhot, fluid circulates through extremely hot rock, with the precise reservoir design varying by project."
+                                                                   },
+                                                "proven":  {
+                                                               "heading":  "Partially Proven Technology",
+                                                               "text":  "EGS projects have demonstrated circulation through stimulated rock (FORGE, Project Red). Repeatable commercial productivity remains site-dependent. Stimulation is cost-prohibitive and lacks zonal isolation; both the precision and scale of stimulation must improve. Hydroshearing can improve permeability, but controlling the resulting flow network is difficult and success is dependent on site-specific geology."
+                                                           }
+                                            },
+                              "monitoring":  {
+                                                 "title":  "Monitoring \u0026 instrumentation",
+                                                 "blurb":  "Downhole sensors and fiber optics measure temperature, pressure and fluid movement; seismic networks track induced events so operators can adjust or pause if activity approaches safety thresholds. Better monitoring can reveal poor flow distribution and developing problems. Seismicity can create safety concerns, regulatory restrictions, delays and reputational risk.",
+                                                 "kpis":  [
+                                                              "Sensor / fiber coverage and uptime",
+                                                              "Seismic event count and maximum magnitude",
+                                                              "Protocol-related shutdowns"
+                                                          ],
+                                                 "differenceFrom":  {
+                                                                        "heading":  "Difference from CLGS and Superhot",
+                                                                        "text":  "EGS monitoring priority is flow distribution, reservoir pressure, temperature, water loss and seismicity. CLGS focuses on fluid temperature, pressure, flow and pipe integrity. Superhot prioritizes extreme-temperature sensing, well integrity, fluid chemistry and seismicity."
+                                                                    },
+                                                 "proven":  {
+                                                                "heading":  "Partially Proven Technology",
+                                                                "text":  "Downhole sensing technologies are proven; adaptation to EGS is partial. Installation in EGS still faces temperature and geological challenges. Seismic networks and traffic-light protocols are established, but the risk of induced seismicity remains and is not fully understood."
+                                                            }
+                                             },
+                              "pumps":  {
+                                            "title":  "Production \u0026 injection pumps",
+                                            "blurb":  "Pumps move water between the surface and the reservoir. Their electricity use matters because it reduces the amount of power a project can sell. Reservoirs that require high injection pressure or have poor permeability can consume more electricity to maintain the same flow rate.",
+                                            "kpis":  [
+                                                         "Parasitic power (% of gross generation)",
+                                                         "Injection pressure required",
+                                                         "Pump maintenance cost"
+                                                     ],
+                                            "differenceFrom":  {
+                                                                   "heading":  "Difference from CLGS and Superhot",
+                                                                   "text":  "EGS pumps move water between the surface and a fractured reservoir; poor permeability can raise injection pressure and parasitic load. CLGS pumps circulate fluid through a sealed underground loop where friction losses can be substantial. Superhot fluid handling may also need separators, steam washing and corrosion-resistant materials before power generation."
+                                                               },
+                                            "proven":  {
+                                                           "heading":  "Proven Technology",
+                                                           "text":  "Mature equipment; geothermal-specific conditions matter. Pumping power and equipment reliability affect net generation."
+                                                       }
+                                        },
+                              "plant":  {
+                                            "title":  "Heat exchangers \u0026 ORC generation",
+                                            "blurb":  "Many EGS plants are expected to use a binary / Organic Rankine Cycle plant: hot geothermal water heats a separate working fluid that drives a turbine. Binary plants can use lower-temperature resources and keep geothermal fluids separate from the turbine, but the heat exchanger, working-fluid system and pumps add equipment and parasitic power.",
+                                            "kpis":  [
+                                                         "Net and gross electrical output (MW)",
+                                                         "Capacity factor / plant availability",
+                                                         "Parasitic power from plant auxiliaries"
+                                                     ],
+                                            "differenceFrom":  {
+                                                                   "heading":  "Difference from CLGS and Superhot",
+                                                                   "text":  "EGS usually uses binary ORC for moderate-temperature resources; flash or other steam cycles may be possible at higher temperatures. CLGS usually uses binary ORC because the sealed-loop fluid transfers heat to a secondary working fluid. Superhot may use direct steam at sufficiently high temperatures and suitable fluid conditions; binary cycles remain an alternative."
+                                                               },
+                                            "proven":  {
+                                                           "heading":  "Proven Technology",
+                                                           "text":  "ORC systems are established for geothermal power, although their economics depend on resource temperature and flow."
+                                                       }
+                                        },
+                              "water":  {
+                                            "title":  "Cooling \u0026 water management",
+                                            "blurb":  "Cooling removes heat from the power cycle so the working fluid can be reused. Plants may use wet cooling, which consumes water through evaporation, or air cooling, which generally uses less water but can reduce efficiency and increase equipment costs. Cooling affects both water use and net power output.",
+                                            "kpis":  [
+                                                         "Makeup-water requirement",
+                                                         "Wet vs dry cooling trade-off",
+                                                         "Operational water intensity"
+                                                     ],
+                                            "differenceFrom":  {
+                                                                   "heading":  "Difference from CLGS and Superhot",
+                                                                   "text":  "EGS cooling and makeup water also have to cover reservoir water loss through fractures. CLGS does not manage reservoir water loss the same way because the underground loop is sealed. Superhot cooling and reinjection face the same wet-vs-air trade-off, with wet cooling requiring substantially more water and dry cooling increasing parasitic power."
+                                                               },
+                                            "proven":  {
+                                                           "heading":  "Proven Technology",
+                                                           "text":  "Cooling systems and water-management equipment are established surface technologies; the investor question is usually water intensity and net power, not whether cooling hardware exists."
+                                                       }
+                                        },
+                              "grid":  {
+                                           "title":  "Grid connection",
+                                           "blurb":  "Substations and transmission hardware are established. Interconnection queues, upgrades and transmission access can still delay or constrain projects. Some operating outages are caused by surface or grid infrastructure rather than the reservoir itself.",
+                                           "kpis":  [
+                                                        "Interconnection cost ($/kW)",
+                                                        "Time from application to interconnection",
+                                                        "Transmission / upgrade constraints"
+                                                    ],
+                                           "differenceFrom":  {
+                                                                  "heading":  "Difference from CLGS and Superhot",
+                                                                  "text":  "Grid connection hardware is similar across EGS, CLGS and Superhot. Superhot concepts may promise higher energy production per well, but interconnection queues, upgrades and transmission access still affect when power can be delivered."
+                                                              },
+                                           "proven":  {
+                                                          "heading":  "Proven Technology",
+                                                          "text":  "The electrical equipment is established. Interconnection queues, upgrades, and transmission access can still delay or constrain projects."
+                                                      }
+                                       }
+                          },
+                  "shr":  {
+                              "resource":  {
+                                               "title":  "Superhot resource exploration \u0026 modeling",
+                                               "blurb":  "Superhot geothermal aims to access rock and fluids above about 375°C and 22 MPa. Temperature and depth determine how much drilling is needed and whether the project can produce enough energy to justify the investment. A hotter resource may offer more power per well, but reaching it can require more expensive drilling. At these conditions water can become supercritical, so predicting fluid behavior matters for output estimates and equipment design.",
+                                               "kpis":  [
+                                                            "Depth and temperature/pressure of the target",
+                                                            "Exploration well and testing cost",
+                                                            "High-temperature reservoir model inputs"
+                                                        ],
+                                               "differenceFrom":  {
+                                                                      "heading":  "Difference from EGS and CLGS",
+                                                                      "text":  "Superhot must locate extremely hot rock at drillable depths and determine whether it can support fluid production. EGS must identify hot rock suitable for creating connected fluid pathways. CLGS must identify hot rock with enough thermal conductivity to transfer heat into sealed pipes."
+                                                                  },
+                                               "proven":  {
+                                                              "heading":  "Partially Proven Technology",
+                                                              "text":  "Exploration methods are established, but superhot targets above about 375°C and 22 MPa are earlier-stage, with less field data than conventional or EGS resources. Temperature and depth determine how much drilling is needed and whether the project can produce enough energy to justify the investment."
+                                                          }
+                                           },
+                              "drilling":  {
+                                               "title":  "High-temperature drilling \u0026 well design",
+                                               "blurb":  "Bits, tools, casing, cement and completion components must withstand extreme temperatures and pressures. Higher temperatures can damage conventional downhole tools; material degradation or well failure can cause expensive repairs and interrupt production. A well is only valuable if its components can operate reliably after drilling is complete.",
+                                               "kpis":  [
+                                                            "Tool / bit life at temperature",
+                                                            "Days and cost to target depth",
+                                                            "High-temperature casing and completion integrity"
+                                                        ],
+                                               "differenceFrom":  {
+                                                                      "heading":  "Difference from EGS and CLGS",
+                                                                      "text":  "Superhot requires deep, high-temperature wells and specialized materials and tools. EGS often uses injection and production wells, potentially with long horizontal sections. CLGS uses sealed pipe loops; multilateral designs can require extensive horizontal drilling."
+                                                                  },
+                                               "proven":  {
+                                                              "heading":  "Partially Proven Technology",
+                                                              "text":  "Bits, tools, casing, cement and completion components must withstand extreme temperatures and pressures. Higher temperatures can damage conventional downhole tools; material degradation or well failure can cause expensive repairs and interrupt production."
+                                                          }
+                                           },
+                              "reservoir":  {
+                                                "title":  "Reservoir access \u0026 fluid management",
+                                                "blurb":  "Some superhot projects may need to increase permeability so fluid can circulate; others target natural pathways. A resource is only useful if enough fluid can circulate and carry heat to the surface. Higher-temperature fluids can carry more energy, but supercritical conditions and chemistry can create challenges for flow control, materials and surface equipment. Corrosion and mineral deposits can damage equipment and reduce plant availability.",
+                                                "kpis":  [
+                                                             "Circulation rate and sustainability",
+                                                             "Fluid chemistry / scaling / corrosion indicators",
+                                                             "Temperature and pressure decline over time"
+                                                         ],
+                                                "differenceFrom":  {
+                                                                       "heading":  "Difference from EGS and CLGS",
+                                                                       "text":  "In Superhot, fluid circulates through extremely hot rock, with the precise reservoir design varying by project. In EGS, water circulates through fractures in hot rock. In CLGS, heat transfers through sealed pipe walls into a circulating fluid."
+                                                                   },
+                                                "proven":  {
+                                                               "heading":  "Partially Proven Technology",
+                                                               "text":  "Some superhot projects may need to increase permeability; others target natural pathways. Corrosion, mineral deposits, supercritical conditions and uncertain long-term production remain key subsurface risks. High initial temperatures do not guarantee long-term production."
+                                                           }
+                                            },
+                              "monitoring":  {
+                                                 "title":  "High-temperature monitoring",
+                                                 "blurb":  "Sensors must remain accurate in environments that can exceed conventional geothermal limits. Without reliable measurements, operators cannot confidently assess well conditions, identify equipment problems or validate reservoir models. Monitoring also helps detect leaks or material degradation before they become major failures.",
+                                                 "kpis":  [
+                                                              "High-temperature sensor uptime",
+                                                              "Well-integrity monitoring indicators",
+                                                              "Seismic monitoring coverage"
+                                                          ],
+                                                 "differenceFrom":  {
+                                                                        "heading":  "Difference from EGS and CLGS",
+                                                                        "text":  "Superhot prioritizes extreme-temperature sensing, well integrity, fluid chemistry and seismicity. EGS focuses on flow distribution, reservoir pressure, temperature, water loss and seismicity. CLGS focuses on fluid temperature, pressure, flow and pipe integrity."
+                                                                    },
+                                                 "proven":  {
+                                                                "heading":  "Partially Proven Technology",
+                                                                "text":  "Sensors must remain accurate in environments that can exceed conventional geothermal limits. Without reliable measurements, operators cannot confidently assess well conditions, identify equipment problems or validate reservoir models."
+                                                            }
+                                             },
+                              "pumps":  {
+                                            "title":  "High-temperature fluid handling",
+                                            "blurb":  "Surface equipment receives and manages hot produced fluids. It may need to separate steam from liquid, remove unwanted minerals and gases, and control pressure before power generation. Superhot fluids can contain corrosive chemicals and dissolved minerals that damage conventional equipment, which can increase plant costs and maintenance.",
+                                            "kpis":  [
+                                                         "Separator / steam-wash requirements",
+                                                         "Corrosion-resistant materials needs",
+                                                         "Parasitic load from fluid handling"
+                                                     ],
+                                            "differenceFrom":  {
+                                                                   "heading":  "Difference from EGS and CLGS",
+                                                                   "text":  "Superhot surface equipment may need to separate steam from liquid, remove unwanted minerals and gases, and control pressure before power generation. EGS pumps mainly move water into and out of a fractured reservoir. CLGS pumps circulate working fluid through a sealed loop."
+                                                               },
+                                            "proven":  {
+                                                           "heading":  "Partially Proven Technology",
+                                                           "text":  "Superhot fluids can contain corrosive chemicals and dissolved minerals that damage conventional equipment. The need for specialized separators, pipes and materials can increase plant costs and maintenance requirements."
+                                                       }
+                                        },
+                              "plant":  {
+                                            "title":  "Turbines \u0026 power conversion",
+                                            "blurb":  "Depending on temperature, pressure and fluid composition, superhot geothermal may use direct-steam generation rather than binary ORC. Direct-steam systems can be more efficient, but may need specialized turbine materials and corrosion protection. A 2024 CATF engineering study of a representative 500 MW plant found most surface equipment commercially mature, while the specialized steam turbine was less mature, and estimated surface-plant capital cost at about $1,989/kW excluding wellfield costs.",
+                                            "kpis":  [
+                                                         "Direct-steam vs ORC selection",
+                                                         "Surface plant ≈ $1,989/kW (CATF 2024 study; excludes wellfield)",
+                                                         "Turbine materials / maturity notes"
+                                                     ],
+                                            "differenceFrom":  {
+                                                                   "heading":  "Difference from EGS and CLGS",
+                                                                   "text":  "Direct steam may be possible at sufficiently high temperatures and suitable fluid conditions; binary cycles remain an alternative. EGS usually uses binary ORC for moderate-temperature resources. CLGS usually uses binary ORC because sealed-loop fluid transfers heat to a secondary working fluid."
+                                                               },
+                                            "proven":  {
+                                                           "heading":  "Partially Proven Technology",
+                                                           "text":  "A 2024 CATF engineering study assessed a representative 500-MW superhot plant and found that most surface equipment was commercially mature, while the specialized steam turbine was less mature. Most assessed equipment was rated at technology readiness levels 8–9, while the specialized steam turbine was rated at 5–6."
+                                                       }
+                                        },
+                              "water":  {
+                                            "title":  "Cooling \u0026 reinjection",
+                                            "blurb":  "After heat is extracted, remaining fluid may be cooled and reinjected where the design allows. Wet cooling can require substantially more water than air cooling, while dry cooling can increase parasitic power consumption. Cooling affects water consumption, parasitic power and net electricity output.",
+                                            "kpis":  [
+                                                         "Cooling water demand",
+                                                         "Dry-cooling parasitic power",
+                                                         "Reinjection requirements"
+                                                     ],
+                                            "differenceFrom":  {
+                                                                   "heading":  "Difference from EGS and CLGS",
+                                                                   "text":  "Superhot cooling and reinjection face the same wet-vs-air trade-off as other plants, with wet cooling requiring substantially more water and dry cooling increasing parasitic power. EGS also manages makeup water for reservoir losses. CLGS does not manage reservoir water loss the same way because the underground loop is sealed."
+                                                               },
+                                            "proven":  {
+                                                           "heading":  "Proven Technology",
+                                                           "text":  "Cooling and reinjection equipment are established surface technologies; the Stanford superhot assessment highlights water use and parasitic-power trade-offs rather than unproven cooling hardware."
+                                                       }
+                                        },
+                              "grid":  {
+                                           "title":  "Grid connection",
+                                           "blurb":  "Higher energy production per well is one reason investors look at superhot concepts, but interconnection queues, upgrades and transmission access still affect when power can be delivered, as with other geothermal plants.",
+                                           "kpis":  [
+                                                        "Expected MW per well (design-dependent)",
+                                                        "Interconnection timeline",
+                                                        "Network upgrade cost"
+                                                    ],
+                                           "differenceFrom":  {
+                                                                  "heading":  "Difference from EGS and CLGS",
+                                                                  "text":  "Higher energy production per well is one reason investors look at Superhot concepts, but interconnection queues, upgrades and transmission access still affect when power can be delivered, as with EGS and CLGS."
+                                                              },
+                                           "proven":  {
+                                                          "heading":  "Proven Technology",
+                                                          "text":  "The electrical equipment is established. Interconnection queues, upgrades, and transmission access can still delay or constrain projects."
+                                                      }
+                                       }
+                          },
+                  "clgs":  {
+                               "resource":  {
+                                                "title":  "Temperature mapping \u0026 thermal modeling",
+                                                "blurb":  "Closed-loop systems do not circulate water through fractures. Fluid stays in sealed pipes and absorbs heat through the pipe walls. A high geothermal gradient can mean useful temperatures at shallower depths; low-conductivity rock or a low gradient can make it hard to extract enough heat economically. Accurate modeling matters because heat must transfer through rock and pipe walls, which can limit output.",
+                                                "kpis":  [
+                                                             "Geothermal gradient",
+                                                             "Rock thermal conductivity",
+                                                             "Modeled long-term heat output"
+                                                         ],
+                                                "differenceFrom":  {
+                                                                       "heading":  "Difference from EGS and Superhot",
+                                                                       "text":  "CLGS must identify hot rock with enough thermal conductivity to transfer heat into sealed pipes. EGS must identify hot rock suitable for creating connected fluid pathways. Superhot must locate extremely hot rock at drillable depths and determine whether it can support fluid production."
+                                                                   },
+                                                "proven":  {
+                                                               "heading":  "Partially Proven Technology",
+                                                               "text":  "Temperature mapping and thermal modeling methods are established, but closed-loop output depends on geothermal gradient and rock thermal conductivity. Accurate modeling matters because heat must transfer through rock and pipe walls, which can limit output."
+                                                           }
+                                            },
+                               "drilling":  {
+                                                "title":  "Drilling, geometry \u0026 closed-loop piping",
+                                                "blurb":  "Drilling can dominate CLGS project costs. Long horizontal or multilateral sections increase pipe contact with hot rock, but also increase upfront capital cost. The loop must remain sealed over decades; leaks can interrupt circulation and require expensive repairs. An NREL techno-economic study of Eavor Loop 2.0 used a modeled lateral drilling cost of about $400 per meter — a study assumption, not a universal market price.",
+                                                "kpis":  [
+                                                             "Lateral meters drilled",
+                                                             "Modeled drilling $/m (study assumption)",
+                                                             "Pipe / connection integrity"
+                                                         ],
+                                                "differenceFrom":  {
+                                                                       "heading":  "Difference from EGS and Superhot",
+                                                                       "text":  "CLGS uses sealed pipe loops; multilateral designs can require extensive horizontal drilling. EGS often uses injection and production wells, potentially with long horizontal sections. Superhot requires deep, high-temperature wells and specialized materials and tools."
+                                                                   },
+                                                "proven":  {
+                                                               "heading":  "Partially Proven Technology",
+                                                               "text":  "Drilling can dominate CLGS project costs. Long horizontal or multilateral sections increase pipe contact with hot rock, but also increase upfront capital cost. The loop must remain sealed over decades; leaks can interrupt circulation and require expensive repairs. An NREL techno-economic study of Eavor Loop 2.0 used a modeled lateral drilling cost of about $400 per meter — a study assumption, not a universal market price."
+                                                           }
+                                            },
+                               "reservoir":  {
+                                                 "title":  "Underground heat exchange",
+                                                 "blurb":  "Heat moves from surrounding rock through the pipe walls into the circulating fluid. A system may have a large underground loop but still produce limited power if heat cannot move into the fluid quickly enough. Increasing heat-transfer surface area can improve output, but often requires more drilling capital. As heat is extracted, rock around the pipes gradually cools, which can lower return temperature and electricity production over time.",
+                                                 "kpis":  [
+                                                              "Heat-transfer surface area",
+                                                              "Outlet / return fluid temperature",
+                                                              "Thermal drawdown over time"
+                                                          ],
+                                                 "differenceFrom":  {
+                                                                        "heading":  "Difference from EGS and Superhot",
+                                                                        "text":  "In CLGS, heat transfers through sealed pipe walls into a circulating fluid. In EGS, water circulates through fractures in hot rock. In Superhot, fluid circulates through extremely hot rock, with the precise reservoir design varying by project."
+                                                                    },
+                                                 "proven":  {
+                                                                "heading":  "Partially Proven Technology",
+                                                                "text":  "A system may have a large underground loop but still produce limited power if heat cannot move into the fluid quickly enough. As heat is extracted, rock around the pipes gradually cools, which can lower return temperature and electricity production over time. Main subsurface risks are insufficient heat transfer, thermal drawdown and loop integrity."
+                                                            }
+                                             },
+                               "monitoring":  {
+                                                  "title":  "Sensors \u0026 leak monitoring",
+                                                  "blurb":  "Temperature and pressure trends show whether the system is delivering expected heat output and staying within equipment limits. Operators also monitor flow and pressure to check that the sealed loop remains intact. Avoiding large-scale hydraulic stimulation can reduce one source of induced-seismicity risk, but drilling and other subsurface operations still take place.",
+                                                  "kpis":  [
+                                                               "Downhole temperature and pressure trends",
+                                                               "Flow / leak-detection alarms",
+                                                               "Seismic monitoring requirements"
+                                                           ],
+                                                  "differenceFrom":  {
+                                                                         "heading":  "Difference from EGS and Superhot",
+                                                                         "text":  "CLGS focuses on fluid temperature, pressure, flow and pipe integrity. EGS monitoring priority is flow distribution, reservoir pressure, temperature, water loss and seismicity. Superhot prioritizes extreme-temperature sensing, well integrity, fluid chemistry and seismicity."
+                                                                     },
+                                                  "proven":  {
+                                                                 "heading":  "Partially Proven Technology",
+                                                                 "text":  "Temperature and pressure trends show whether the system is delivering expected heat output and staying within equipment limits. Avoiding large-scale hydraulic stimulation can reduce one source of induced-seismicity risk, but drilling and other subsurface operations still take place."
+                                                             }
+                                              },
+                               "pumps":  {
+                                             "title":  "Circulation pumps",
+                                             "blurb":  "Pumps move working fluid through the underground loop and surface equipment. Long and narrow pipe networks can create substantial friction losses, increasing pumping requirements and reducing net electricity output. Increasing flow can raise heat extraction, but may also lower return temperature and require more pumping power.",
+                                             "kpis":  [
+                                                          "Pumping parasitic load",
+                                                          "Flow rate vs return temperature",
+                                                          "Loop pressure drop"
+                                                      ],
+                                             "differenceFrom":  {
+                                                                    "heading":  "Difference from EGS and Superhot",
+                                                                    "text":  "CLGS pumps move working fluid through a sealed underground loop and surface equipment; long and narrow pipe networks can create substantial friction losses. EGS pumps move water between surface and a fractured reservoir. Superhot may also need specialized high-temperature fluid handling before generation."
+                                                                },
+                                             "proven":  {
+                                                            "heading":  "Proven Technology",
+                                                            "text":  "Circulation pumps are mature equipment; geothermal-specific loop geometry matters because friction losses increase pumping requirements and reduce net electricity output."
+                                                        }
+                                         },
+                               "plant":  {
+                                             "title":  "Heat exchangers \u0026 ORC generation",
+                                             "blurb":  "Most closed-loop electricity concepts use a binary / ORC cycle. The temperature of fluid delivered by the closed loop determines how much electricity the plant can generate. If heat transfer produces relatively low outlet temperatures, the turbine may generate little power compared with the cost of drilling the loop. In one NREL study, drilling cost dominated overall project economics.",
+                                             "kpis":  [
+                                                          "Delivered fluid temperature",
+                                                          "Net ORC output",
+                                                          "Drilling share of project cost / LCOE"
+                                                      ],
+                                             "differenceFrom":  {
+                                                                    "heading":  "Difference from EGS and Superhot",
+                                                                    "text":  "CLGS usually uses binary ORC because the sealed-loop fluid transfers heat to a secondary working fluid. EGS usually uses binary ORC for moderate-temperature resources. Superhot may use direct steam at sufficiently high temperatures; binary cycles remain an alternative."
+                                                                },
+                                             "proven":  {
+                                                            "heading":  "Proven Technology",
+                                                            "text":  "ORC technology is commercially established, but the temperature of fluid delivered by the closed loop determines how much electricity the plant can generate. If heat transfer produces relatively low outlet temperatures, the turbine may generate little power compared with the cost of drilling the loop."
+                                                        }
+                                         },
+                               "water":  {
+                                             "title":  "Cooling \u0026 fluid management",
+                                             "blurb":  "Cooling equipment condenses the ORC working fluid after the turbine. Air-cooled condensers reduce water consumption; wet cooling can improve heat rejection but requires a water supply. Cooling affects net generation, water requirements and operating costs. Because the underground loop is sealed, reservoir water loss is not managed the same way as in EGS.",
+                                             "kpis":  [
+                                                          "Air vs wet cooling choice",
+                                                          "Hot-weather output derate",
+                                                          "Working-fluid inventory / makeup"
+                                                      ],
+                                             "differenceFrom":  {
+                                                                    "heading":  "Difference from EGS and Superhot",
+                                                                    "text":  "Because the underground loop is sealed, reservoir water loss is not managed the same way as in EGS. Cooling still matters for ORC condensation. Superhot also cools and may reinject produced fluids, with wet cooling requiring substantially more water than air cooling."
+                                                                },
+                                             "proven":  {
+                                                            "heading":  "Proven Technology",
+                                                            "text":  "Cooling equipment is established; air-cooled condensers reduce water consumption while wet cooling can improve heat rejection but requires a water supply."
+                                                        }
+                                         },
+                               "grid":  {
+                                            "title":  "Grid connection",
+                                            "blurb":  "Grid equipment is mature. For CLGS, a practical question is whether the drilled loop produces enough sellable power after interconnection costs and schedule are included.",
+                                            "kpis":  [
+                                                         "Interconnection cost ($/kW)",
+                                                         "Time to interconnect",
+                                                         "Net MW delivered"
+                                                     ],
+                                            "differenceFrom":  {
+                                                                   "heading":  "Difference from EGS and Superhot",
+                                                                   "text":  "Grid equipment is mature across CLGS, EGS and Superhot. For CLGS, a practical question is whether the drilled loop produces enough sellable power after interconnection costs and schedule are included."
+                                                               },
+                                            "proven":  {
+                                                           "heading":  "Proven Technology",
+                                                           "text":  "The electrical equipment is established. Interconnection queues, upgrades, and transmission access can still delay or constrain projects."
+                                                       }
+                                        }
+                           }
+              }
+}

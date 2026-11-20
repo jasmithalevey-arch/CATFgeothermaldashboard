@@ -1,0 +1,2008 @@
+{
+  "cost": [
+    {
+      "project": "Bad Urach: Phase 2",
+      "well": "Urach 4 (redrilled)",
+      "year": 2022,
+      "value": 1679,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 1-I",
+      "year": 2023,
+      "value": 2150,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 2-P",
+      "year": 2023,
+      "value": 1495,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 3-I",
+      "year": 2023,
+      "value": 1295,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 4-T",
+      "year": 2023,
+      "value": 1065,
+      "pc": "research",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 1-IA",
+      "year": 2024,
+      "value": 1345,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 2 -IB",
+      "year": 2024,
+      "value": 1150,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cooper Basin/ Habanero Pilot Plant (HPP)",
+      "well": "H03",
+      "year": 2008,
+      "value": 5533,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Cooper Basin/ Habanero Pilot Plant (HPP)",
+      "well": "Jolokia 1",
+      "year": 2010,
+      "value": 5979,
+      "pc": "research",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Cooper Basin/ Habanero Pilot Plant (HPP)",
+      "well": "H04",
+      "year": 2012,
+      "value": 10106,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Desert Peak",
+      "well": "27-15 (existing)",
+      "year": 2012,
+      "value": 4726,
+      "pc": "unknown",
+      "sc": "operating"
+    },
+    {
+      "project": "Eden Geothermal",
+      "well": "EG-1",
+      "year": 2021,
+      "value": 4932,
+      "pc": "unknown",
+      "sc": "operating"
+    },
+    {
+      "project": "Gro\u00df Sch\u00f6nebeck",
+      "well": "GrSk 4/05",
+      "year": 2006,
+      "value": 4888,
+      "pc": "commercial",
+      "sc": "concluded"
+    },
+    {
+      "project": "Paralana EGS",
+      "well": "P1b",
+      "year": 2006,
+      "value": 8925,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Paralana EGS",
+      "well": "P2",
+      "year": 2009,
+      "value": 4020,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Penola (PANAX)",
+      "well": "Salamander 1",
+      "year": 2010,
+      "value": 3434,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Project Red",
+      "well": "34-22",
+      "year": 2022,
+      "value": 3631,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Project Red",
+      "well": "34A-22",
+      "year": 2022,
+      "value": 3263,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Qiabuqia EGS",
+      "well": "DR3",
+      "year": 2014,
+      "value": 5223,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Qiabuqia EGS",
+      "well": "DR4",
+      "year": 2015,
+      "value": 4373,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Qiabuqia EGS",
+      "well": "GR1",
+      "year": 2017,
+      "value": 5395,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Qiabuqia EGS",
+      "well": "GR2",
+      "year": 2017,
+      "value": 5535,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Raft River EGS",
+      "well": "ST1 (new sidetrack drilled off existing RRG-9)",
+      "year": 2013,
+      "value": 786,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "SE Geysers",
+      "well": "E-7",
+      "year": 2009,
+      "value": 7046,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "St Gallen",
+      "well": "GT1",
+      "year": 2013,
+      "value": 10382,
+      "pc": "unknown",
+      "sc": "abandoned"
+    }
+  ],
+  "days": [
+    {
+      "project": "Cape Station",
+      "well": "Delano 1-OB",
+      "year": 2023,
+      "value": 17.0,
+      "pc": "research",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 1-I",
+      "year": 2023,
+      "value": 33.8,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 2-P",
+      "year": 2023,
+      "value": 25.9,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 3-I",
+      "year": 2023,
+      "value": 24.3,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 4-T",
+      "year": 2023,
+      "value": 20.1,
+      "pc": "research",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 1-IA",
+      "year": 2024,
+      "value": 23.7,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 2 -IB",
+      "year": 2024,
+      "value": 22.3,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Sugarloaf",
+      "year": 2026,
+      "value": 16.0,
+      "pc": "research",
+      "sc": "planned"
+    },
+    {
+      "project": "Cooper Basin/ Habanero Pilot Plant (HPP)",
+      "well": "H03",
+      "year": 2008,
+      "value": 174.0,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Cooper Basin/ Habanero Pilot Plant (HPP)",
+      "well": "Jolokia 1",
+      "year": 2010,
+      "value": 192.0,
+      "pc": "research",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Cooper Basin/ Habanero Pilot Plant (HPP)",
+      "well": "H04",
+      "year": 2012,
+      "value": 183.0,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "CUBO",
+      "well": "CUBO",
+      "year": 2022,
+      "value": 30.0,
+      "pc": "research",
+      "sc": "planned"
+    },
+    {
+      "project": "Eden Geothermal",
+      "well": "EG-1",
+      "year": 2021,
+      "value": 162.0,
+      "pc": "unknown",
+      "sc": "operating"
+    },
+    {
+      "project": "Haute Sorne",
+      "well": "GVL-1",
+      "year": 2024,
+      "value": 68.0,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Innamincka Shallows",
+      "well": "Celsius 1",
+      "year": 2011,
+      "value": 46.0,
+      "pc": "research",
+      "sc": "abandoned"
+    },
+    {
+      "project": "NW Geysers/Calpine",
+      "well": "P-32",
+      "year": 2011,
+      "value": 75.0,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "NW Geysers/Calpine",
+      "well": "PS-31",
+      "year": 2011,
+      "value": 75.0,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Penola (PANAX)",
+      "well": "Salamander 1",
+      "year": 2010,
+      "value": 44.0,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Project Red",
+      "well": "34-22",
+      "year": 2022,
+      "value": 59.0,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Project Red",
+      "well": "34A-22",
+      "year": 2022,
+      "value": 72.0,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Project Red",
+      "well": "73-22",
+      "year": 2022,
+      "value": 41.0,
+      "pc": "research",
+      "sc": "operating"
+    },
+    {
+      "project": "Reykjanes",
+      "well": "IDDP-2 (was RN-15)",
+      "year": 2017,
+      "value": 167.0,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "St Gallen",
+      "well": "GT1",
+      "year": 2013,
+      "value": 124.0,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "ST1 Otaniemi",
+      "well": "OTN-2",
+      "year": 2020,
+      "value": 246.0,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "United Downs",
+      "well": "UD-2",
+      "year": 2018,
+      "value": 31.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Unterhaching",
+      "well": "Gt Uha2",
+      "year": 2007,
+      "value": 190.0,
+      "pc": "commercial",
+      "sc": "abandoned"
+    }
+  ],
+  "depth": [
+    {
+      "project": "Bad Urach: Phase 2",
+      "well": "Urach 4 (redrilled)",
+      "year": 2022,
+      "value": 700,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Basel EGS",
+      "well": "Basel 1",
+      "year": 2006,
+      "value": 5009,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Bradys Hot Springs",
+      "well": "15-12 ST1 (recompleted)",
+      "year": 2007,
+      "value": 1527,
+      "pc": "commercial",
+      "sc": "concluded"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Delano 1-OB",
+      "year": 2023,
+      "value": 2994,
+      "pc": "research",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 1-I",
+      "year": 2023,
+      "value": 4059,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 2-P",
+      "year": 2023,
+      "value": 4046,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 3-I",
+      "year": 2023,
+      "value": 4147,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 4-T",
+      "year": 2023,
+      "value": 4051,
+      "pc": "research",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 1-IA",
+      "year": 2024,
+      "value": 4251,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 2 -IB",
+      "year": 2024,
+      "value": 4189,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 3-PA",
+      "year": 2024,
+      "value": 4250,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 4-PB",
+      "year": 2024,
+      "value": 4250,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 5-IA",
+      "year": 2024,
+      "value": 4250,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 6-IB",
+      "year": 2024,
+      "value": 4250,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 7-PA",
+      "year": 2024,
+      "value": 4250,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 8-IA",
+      "year": 2024,
+      "value": 4250,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Gold 1-PB",
+      "year": 2024,
+      "value": 4250,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Gold 2-IB",
+      "year": 2024,
+      "value": 4250,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Gold 3-PA",
+      "year": 2024,
+      "value": 4250,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Gold 4-PB",
+      "year": 2024,
+      "value": 4250,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Gold 5-IA",
+      "year": 2025,
+      "value": 4250,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Gold 7-PA",
+      "year": 2025,
+      "value": 4250,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Sugarloaf",
+      "year": 2026,
+      "value": 4805,
+      "pc": "research",
+      "sc": "planned"
+    },
+    {
+      "project": "Cooper Basin/ Habanero Pilot Plant (HPP)",
+      "well": "H03",
+      "year": 2008,
+      "value": 4200,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Cooper Basin/ Habanero Pilot Plant (HPP)",
+      "well": "Savina 1",
+      "year": 2009,
+      "value": 3700,
+      "pc": "research",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Cooper Basin/ Habanero Pilot Plant (HPP)",
+      "well": "Jolokia 1",
+      "year": 2010,
+      "value": 4911,
+      "pc": "research",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Cooper Basin/ Habanero Pilot Plant (HPP)",
+      "well": "H04",
+      "year": 2012,
+      "value": 4225,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "CUBO",
+      "well": "CUBO",
+      "year": 2022,
+      "value": 2984,
+      "pc": "research",
+      "sc": "planned"
+    },
+    {
+      "project": "Desert Peak",
+      "well": "27-15 (existing)",
+      "year": 2012,
+      "value": 1765,
+      "pc": "unknown",
+      "sc": "operating"
+    },
+    {
+      "project": "Eden Geothermal",
+      "well": "EG-1",
+      "year": 2021,
+      "value": 5277,
+      "pc": "unknown",
+      "sc": "operating"
+    },
+    {
+      "project": "Frome",
+      "well": "Frome 2",
+      "year": 2007,
+      "value": 500,
+      "pc": "unknown",
+      "sc": "unknown"
+    },
+    {
+      "project": "Frome",
+      "well": "Frome 3",
+      "year": 2007,
+      "value": 500,
+      "pc": "unknown",
+      "sc": "unknown"
+    },
+    {
+      "project": "Frome",
+      "well": "Frome 9",
+      "year": 2007,
+      "value": 505,
+      "pc": "unknown",
+      "sc": "unknown"
+    },
+    {
+      "project": "Frome",
+      "well": "5A",
+      "year": 2008,
+      "value": 3250,
+      "pc": "unknown",
+      "sc": "unknown"
+    },
+    {
+      "project": "Frome",
+      "well": "Frome 10",
+      "year": 2008,
+      "value": 261,
+      "pc": "unknown",
+      "sc": "unknown"
+    },
+    {
+      "project": "Frome",
+      "well": "Frome 11",
+      "year": 2008,
+      "value": 255,
+      "pc": "unknown",
+      "sc": "unknown"
+    },
+    {
+      "project": "Frome",
+      "well": "Frome 12",
+      "year": 2009,
+      "value": 1761,
+      "pc": "unknown",
+      "sc": "unknown"
+    },
+    {
+      "project": "Frome",
+      "well": "Frome 13",
+      "year": 2009,
+      "value": 1809,
+      "pc": "unknown",
+      "sc": "unknown"
+    },
+    {
+      "project": "GeneSys Hannover",
+      "well": "GT-1",
+      "year": 2009,
+      "value": 3901,
+      "pc": "unknown",
+      "sc": "concluded"
+    },
+    {
+      "project": "Gonghe EGS",
+      "well": "GH-01",
+      "year": 2019,
+      "value": 3705,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Gonghe EGS",
+      "well": "GH-02",
+      "year": 2020,
+      "value": 4000,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Gonghe EGS",
+      "well": "GH-03",
+      "year": 2020,
+      "value": 4009,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Gonghe EGS",
+      "well": "GH-03A (branch)",
+      "year": 2021,
+      "value": 3058,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Gro\u00df Sch\u00f6nebeck",
+      "well": "GrSk 4/05",
+      "year": 2006,
+      "value": 4404,
+      "pc": "commercial",
+      "sc": "concluded"
+    },
+    {
+      "project": "Haute Sorne",
+      "well": "GVL-1",
+      "year": 2024,
+      "value": 4042,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Illkirch-Graffenstaden",
+      "well": "GIL-1",
+      "year": 2018,
+      "value": 3800,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Innamincka Shallows",
+      "well": "Celsius 1",
+      "year": 2011,
+      "value": 2418,
+      "pc": "research",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Insheim",
+      "well": "GTI1",
+      "year": 2008,
+      "value": 3654,
+      "pc": "unknown",
+      "sc": "operating"
+    },
+    {
+      "project": "Insheim",
+      "well": "GTI1b",
+      "year": 2009,
+      "value": 3848,
+      "pc": "unknown",
+      "sc": "operating"
+    },
+    {
+      "project": "Insheim",
+      "well": "GTI2",
+      "year": 2010,
+      "value": 3858,
+      "pc": "unknown",
+      "sc": "operating"
+    },
+    {
+      "project": "Klaip\u0117da",
+      "well": "KGDP-1I",
+      "year": 2009,
+      "value": 1116,
+      "pc": "commercial",
+      "sc": "concluded"
+    },
+    {
+      "project": "Landau",
+      "well": "GT La-2",
+      "year": 2006,
+      "value": 3170,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Litom\u011b\u0159ice",
+      "well": "PVGT-LT1",
+      "year": 2007,
+      "value": 2112,
+      "pc": "research",
+      "sc": "planned"
+    },
+    {
+      "project": "Mazama",
+      "well": "NWG 46-16 (recompletion)",
+      "year": 2025,
+      "value": 3353,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Mazama",
+      "well": "NWG 55A-29",
+      "year": 2025,
+      "value": 3109,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Mez\u0151ber\u00e9ny",
+      "well": "B-115",
+      "year": 2021,
+      "value": 2003,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Mez\u0151ber\u00e9ny",
+      "well": "K-116",
+      "year": 2021,
+      "value": 2001,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Naknek",
+      "well": "G1",
+      "year": 2009,
+      "value": 3471,
+      "pc": "research",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Newberry/Altarock (FORGE) - EGS",
+      "well": "NWG 55-29",
+      "year": 2014,
+      "value": 3067,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Newberry/Altarock (FORGE) - SHR",
+      "well": "NWG 46-16/D",
+      "year": 2008,
+      "value": 3536,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "NW Geysers/Calpine",
+      "well": "P-32",
+      "year": 2011,
+      "value": 3396,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "NW Geysers/Calpine",
+      "well": "PS-31",
+      "year": 2011,
+      "value": 3089,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Parachilna",
+      "well": "Treebeard 1A",
+      "year": 2010,
+      "value": 4500,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Paralana EGS",
+      "well": "P1b",
+      "year": 2006,
+      "value": 1807,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Paralana EGS",
+      "well": "P2",
+      "year": 2009,
+      "value": 4012,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Penola (PANAX)",
+      "well": "Salamander 1",
+      "year": 2010,
+      "value": 4025,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Pohang EGS",
+      "well": "PX-1",
+      "year": 2012,
+      "value": 4362,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Pohang EGS",
+      "well": "PX-2",
+      "year": 2015,
+      "value": 4208,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Project Red",
+      "well": "34-22",
+      "year": 2022,
+      "value": 3417,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Project Red",
+      "well": "34A-22",
+      "year": 2022,
+      "value": 3420,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Project Red",
+      "well": "73-22",
+      "year": 2022,
+      "value": 2441,
+      "pc": "research",
+      "sc": "operating"
+    },
+    {
+      "project": "Qiabuqia EGS",
+      "well": "DR3",
+      "year": 2014,
+      "value": 2927,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Qiabuqia EGS",
+      "well": "DR4",
+      "year": 2015,
+      "value": 3102,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Qiabuqia EGS",
+      "well": "GR1",
+      "year": 2017,
+      "value": 3705,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Qiabuqia EGS",
+      "well": "GR2",
+      "year": 2017,
+      "value": 3003,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Raft River EGS",
+      "well": "ST1 (new sidetrack drilled off existing RRG-9)",
+      "year": 2013,
+      "value": 1808,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Reykjanes",
+      "well": "IDDP-2 (was RN-15)",
+      "year": 2017,
+      "value": 4659,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Rittershoffen",
+      "well": "GRT-1",
+      "year": 2012,
+      "value": 2582,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Rittershoffen",
+      "well": "GRT-2",
+      "year": 2014,
+      "value": 3196,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Salak",
+      "well": "AWI 18-3",
+      "year": 2012,
+      "value": 2939,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "SE Geysers",
+      "well": "E-7",
+      "year": 2009,
+      "value": 1341,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Soda Lake",
+      "well": "25A-33",
+      "year": 2009,
+      "value": 2741,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Soultz-sous-For\u00eats",
+      "well": "GPK-1",
+      "year": 2018,
+      "value": 3590,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "St Gallen",
+      "well": "GT1",
+      "year": 2013,
+      "value": 4450,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "St Johns Dome",
+      "well": "?",
+      "year": 2010,
+      "value": 1981,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "ST1 Otaniemi",
+      "well": "OTN-1",
+      "year": 2015,
+      "value": 2015,
+      "pc": "research",
+      "sc": "abandoned"
+    },
+    {
+      "project": "ST1 Otaniemi",
+      "well": "OTN-3",
+      "year": 2016,
+      "value": 6400,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "ST1 Otaniemi",
+      "well": "OTN-2",
+      "year": 2020,
+      "value": 6213,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "United Downs",
+      "well": "UD-1",
+      "year": 2018,
+      "value": 5275,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "United Downs",
+      "well": "UD-2",
+      "year": 2018,
+      "value": 2393,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Unterhaching",
+      "well": "Gt Uha2",
+      "year": 2007,
+      "value": 3864,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Vendenheim/ Georhin",
+      "well": "VDH-GT1",
+      "year": 2018,
+      "value": 5408,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Vendenheim/ Georhin",
+      "well": "VDH-GT2",
+      "year": 2019,
+      "value": 6312,
+      "pc": "unknown",
+      "sc": "abandoned"
+    }
+  ],
+  "bht": [
+    {
+      "project": "Basel EGS",
+      "well": "Basel 1",
+      "year": 2006,
+      "value": 190.0,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Bradys Hot Springs",
+      "well": "15-12 ST1 (recompleted)",
+      "year": 2007,
+      "value": 208.0,
+      "pc": "commercial",
+      "sc": "concluded"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Delano 1-OB",
+      "year": 2023,
+      "value": 229.0,
+      "pc": "research",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 1-I",
+      "year": 2023,
+      "value": 190.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 2-P",
+      "year": 2023,
+      "value": 190.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 3-I",
+      "year": 2023,
+      "value": 200.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 4-T",
+      "year": 2023,
+      "value": 185.0,
+      "pc": "research",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 1-IA",
+      "year": 2024,
+      "value": 185.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 2 -IB",
+      "year": 2024,
+      "value": 205.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 3-PA",
+      "year": 2024,
+      "value": 190.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 4-PB",
+      "year": 2024,
+      "value": 200.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 5-IA",
+      "year": 2024,
+      "value": 190.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 6-IB",
+      "year": 2024,
+      "value": 205.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 7-PA",
+      "year": 2024,
+      "value": 190.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 8-IA",
+      "year": 2024,
+      "value": 190.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Gold 1-PB",
+      "year": 2024,
+      "value": 200.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Gold 2-IB",
+      "year": 2024,
+      "value": 205.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Gold 3-PA",
+      "year": 2024,
+      "value": 190.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Gold 4-PB",
+      "year": 2024,
+      "value": 205.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Gold 5-IA",
+      "year": 2025,
+      "value": 190.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Gold 7-PA",
+      "year": 2025,
+      "value": 185.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Sugarloaf",
+      "year": 2026,
+      "value": 271.0,
+      "pc": "research",
+      "sc": "planned"
+    },
+    {
+      "project": "Cooper Basin/ Habanero Pilot Plant (HPP)",
+      "well": "Jolokia 1",
+      "year": 2010,
+      "value": 278.0,
+      "pc": "research",
+      "sc": "abandoned"
+    },
+    {
+      "project": "CUBO",
+      "well": "CUBO",
+      "year": 2022,
+      "value": 79.0,
+      "pc": "research",
+      "sc": "planned"
+    },
+    {
+      "project": "Desert Peak",
+      "well": "27-15 (existing)",
+      "year": 2012,
+      "value": 210.0,
+      "pc": "unknown",
+      "sc": "operating"
+    },
+    {
+      "project": "Eden Geothermal",
+      "well": "EG-1",
+      "year": 2021,
+      "value": 200.0,
+      "pc": "unknown",
+      "sc": "operating"
+    },
+    {
+      "project": "Frome",
+      "well": "Frome 2",
+      "year": 2007,
+      "value": 43.0,
+      "pc": "unknown",
+      "sc": "unknown"
+    },
+    {
+      "project": "Frome",
+      "well": "Frome 3",
+      "year": 2007,
+      "value": 45.0,
+      "pc": "unknown",
+      "sc": "unknown"
+    },
+    {
+      "project": "Frome",
+      "well": "Frome 9",
+      "year": 2007,
+      "value": 43.0,
+      "pc": "unknown",
+      "sc": "unknown"
+    },
+    {
+      "project": "Frome",
+      "well": "5A",
+      "year": 2008,
+      "value": 200.0,
+      "pc": "unknown",
+      "sc": "unknown"
+    },
+    {
+      "project": "Frome",
+      "well": "Frome 10",
+      "year": 2008,
+      "value": 36.0,
+      "pc": "unknown",
+      "sc": "unknown"
+    },
+    {
+      "project": "Frome",
+      "well": "Frome 11",
+      "year": 2008,
+      "value": 36.0,
+      "pc": "unknown",
+      "sc": "unknown"
+    },
+    {
+      "project": "Frome",
+      "well": "Frome 12",
+      "year": 2009,
+      "value": 94.0,
+      "pc": "unknown",
+      "sc": "unknown"
+    },
+    {
+      "project": "Frome",
+      "well": "Frome 13",
+      "year": 2009,
+      "value": 96.0,
+      "pc": "unknown",
+      "sc": "unknown"
+    },
+    {
+      "project": "GeneSys Hannover",
+      "well": "GT-1",
+      "year": 2009,
+      "value": 160.0,
+      "pc": "unknown",
+      "sc": "concluded"
+    },
+    {
+      "project": "Gonghe EGS",
+      "well": "GH-01",
+      "year": 2019,
+      "value": 209.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Gonghe EGS",
+      "well": "GH-02",
+      "year": 2020,
+      "value": 236.0,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Gonghe EGS",
+      "well": "GH-03",
+      "year": 2020,
+      "value": 200.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Innamincka Shallows",
+      "well": "Celsius 1",
+      "year": 2011,
+      "value": 145.0,
+      "pc": "research",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Insheim",
+      "well": "GTI2",
+      "year": 2010,
+      "value": 165.0,
+      "pc": "unknown",
+      "sc": "operating"
+    },
+    {
+      "project": "Litom\u011b\u0159ice",
+      "well": "PVGT-LT1",
+      "year": 2007,
+      "value": 56.0,
+      "pc": "research",
+      "sc": "planned"
+    },
+    {
+      "project": "Mazama",
+      "well": "NWG 46-16 (recompletion)",
+      "year": 2025,
+      "value": 374.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Mazama",
+      "well": "NWG 55A-29",
+      "year": 2025,
+      "value": 331.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Mez\u0151ber\u00e9ny",
+      "well": "B-115",
+      "year": 2021,
+      "value": 113.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Mez\u0151ber\u00e9ny",
+      "well": "K-116",
+      "year": 2021,
+      "value": 113.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Newberry/Altarock (FORGE) - EGS",
+      "well": "NWG 55-29",
+      "year": 2014,
+      "value": 331.0,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Newberry/Altarock (FORGE) - SHR",
+      "well": "NWG 46-16/D",
+      "year": 2008,
+      "value": 320.0,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "NW Geysers/Calpine",
+      "well": "P-32",
+      "year": 2011,
+      "value": 399.0,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "NW Geysers/Calpine",
+      "well": "PS-31",
+      "year": 2011,
+      "value": 323.0,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Parachilna",
+      "well": "Treebeard 1A",
+      "year": 2010,
+      "value": 99.0,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Paralana EGS",
+      "well": "P1b",
+      "year": 2006,
+      "value": 109.0,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Paralana EGS",
+      "well": "P2",
+      "year": 2009,
+      "value": 176.0,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Penola (PANAX)",
+      "well": "Salamander 1",
+      "year": 2010,
+      "value": 171.0,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Project Red",
+      "well": "34-22",
+      "year": 2022,
+      "value": 191.0,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Project Red",
+      "well": "34A-22",
+      "year": 2022,
+      "value": 191.0,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Qiabuqia EGS",
+      "well": "DR3",
+      "year": 2014,
+      "value": 181.0,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Qiabuqia EGS",
+      "well": "DR4",
+      "year": 2015,
+      "value": 182.0,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Qiabuqia EGS",
+      "well": "GR1",
+      "year": 2017,
+      "value": 236.0,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Qiabuqia EGS",
+      "well": "GR2",
+      "year": 2017,
+      "value": 186.0,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Raft River EGS",
+      "well": "ST1 (new sidetrack drilled off existing RRG-9)",
+      "year": 2013,
+      "value": 139.0,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Reykjanes",
+      "well": "IDDP-2 (was RN-15)",
+      "year": 2017,
+      "value": 500.0,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Rittershoffen",
+      "well": "GRT-1",
+      "year": 2012,
+      "value": 163.0,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Rittershoffen",
+      "well": "GRT-2",
+      "year": 2014,
+      "value": 177.0,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Soda Lake",
+      "well": "25A-33",
+      "year": 2009,
+      "value": 199.0,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Soultz-sous-For\u00eats",
+      "well": "GPK-1",
+      "year": 2018,
+      "value": 168.0,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "St Gallen",
+      "well": "GT1",
+      "year": 2013,
+      "value": 145.0,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "ST1 Otaniemi",
+      "well": "OTN-3",
+      "year": 2016,
+      "value": 110.0,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "United Downs",
+      "well": "UD-1",
+      "year": 2018,
+      "value": 188.0,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Vendenheim/ Georhin",
+      "well": "VDH-GT1",
+      "year": 2018,
+      "value": 200.0,
+      "pc": "unknown",
+      "sc": "abandoned"
+    }
+  ],
+  "costWell": [
+    {
+      "project": "Cape Station",
+      "well": "Frisco 4-T",
+      "year": 2023,
+      "depth_m": 4051,
+      "cost_per_m": 1065,
+      "cost_well": 4314315,
+      "pc": "research",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 1-IA",
+      "year": 2024,
+      "depth_m": 4251,
+      "cost_per_m": 1345,
+      "cost_well": 5717595,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Bearskin 2 -IB",
+      "year": 2024,
+      "depth_m": 4189,
+      "cost_per_m": 1150,
+      "cost_well": 4817350,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Penola (PANAX)",
+      "well": "Salamander 1",
+      "year": 2010,
+      "depth_m": 4025,
+      "cost_per_m": 3434,
+      "cost_well": 13821850,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Qiabuqia EGS",
+      "well": "DR4",
+      "year": 2015,
+      "depth_m": 3102,
+      "cost_per_m": 4373,
+      "cost_well": 13565046,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Eden Geothermal",
+      "well": "EG-1",
+      "year": 2021,
+      "depth_m": 5277,
+      "cost_per_m": 4932,
+      "cost_well": 26026164,
+      "pc": "unknown",
+      "sc": "operating"
+    },
+    {
+      "project": "Bad Urach: Phase 2",
+      "well": "Urach 4 (redrilled)",
+      "year": 2022,
+      "depth_m": 700,
+      "cost_per_m": 1679,
+      "cost_well": 1175300,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "SE Geysers",
+      "well": "E-7",
+      "year": 2009,
+      "depth_m": 1341,
+      "cost_per_m": 7046,
+      "cost_well": 9448686,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Qiabuqia EGS",
+      "well": "DR3",
+      "year": 2014,
+      "depth_m": 2927,
+      "cost_per_m": 5223,
+      "cost_well": 15287721,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Project Red",
+      "well": "34-22",
+      "year": 2022,
+      "depth_m": 3417,
+      "cost_per_m": 3631,
+      "cost_well": 12407127,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Qiabuqia EGS",
+      "well": "GR2",
+      "year": 2017,
+      "depth_m": 3003,
+      "cost_per_m": 5535,
+      "cost_well": 16621605,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Raft River EGS",
+      "well": "ST1 (new sidetrack drilled off existing RRG-9)",
+      "year": 2013,
+      "depth_m": 1808,
+      "cost_per_m": 786,
+      "cost_well": 1421088,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "Cooper Basin/ Habanero Pilot Plant (HPP)",
+      "well": "H04",
+      "year": 2012,
+      "depth_m": 4225,
+      "cost_per_m": 10106,
+      "cost_well": 42697850,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Cooper Basin/ Habanero Pilot Plant (HPP)",
+      "well": "Jolokia 1",
+      "year": 2010,
+      "depth_m": 4911,
+      "cost_per_m": 5979,
+      "cost_well": 29362869,
+      "pc": "research",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Project Red",
+      "well": "34A-22",
+      "year": 2022,
+      "depth_m": 3420,
+      "cost_per_m": 3263,
+      "cost_well": 11159460,
+      "pc": "commercial",
+      "sc": "operating"
+    },
+    {
+      "project": "St Gallen",
+      "well": "GT1",
+      "year": 2013,
+      "depth_m": 4450,
+      "cost_per_m": 10382,
+      "cost_well": 46199900,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 3-I",
+      "year": 2023,
+      "depth_m": 4147,
+      "cost_per_m": 1295,
+      "cost_well": 5370365,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 1-I",
+      "year": 2023,
+      "depth_m": 4059,
+      "cost_per_m": 2150,
+      "cost_well": 8726850,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Cape Station",
+      "well": "Frisco 2-P",
+      "year": 2023,
+      "depth_m": 4046,
+      "cost_per_m": 1495,
+      "cost_well": 6048770,
+      "pc": "commercial",
+      "sc": "planned"
+    },
+    {
+      "project": "Paralana EGS",
+      "well": "P1b",
+      "year": 2006,
+      "depth_m": 1807,
+      "cost_per_m": 8925,
+      "cost_well": 16127475,
+      "pc": "unknown",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Desert Peak",
+      "well": "27-15 (existing)",
+      "year": 2012,
+      "depth_m": 1765,
+      "cost_per_m": 4726,
+      "cost_well": 8341390,
+      "pc": "unknown",
+      "sc": "operating"
+    },
+    {
+      "project": "Qiabuqia EGS",
+      "well": "GR1",
+      "year": 2017,
+      "depth_m": 3705,
+      "cost_per_m": 5395,
+      "cost_well": 19988475,
+      "pc": "unknown",
+      "sc": "planned"
+    },
+    {
+      "project": "Cooper Basin/ Habanero Pilot Plant (HPP)",
+      "well": "H03",
+      "year": 2008,
+      "depth_m": 4200,
+      "cost_per_m": 5533,
+      "cost_well": 23238600,
+      "pc": "commercial",
+      "sc": "abandoned"
+    },
+    {
+      "project": "Gro\u00df Sch\u00f6nebeck",
+      "well": "GrSk 4/05",
+      "year": 2006,
+      "depth_m": 4404,
+      "cost_per_m": 4888,
+      "cost_well": 21526752,
+      "pc": "commercial",
+      "sc": "concluded"
+    },
+    {
+      "project": "Paralana EGS",
+      "well": "P2",
+      "year": 2009,
+      "depth_m": 4012,
+      "cost_per_m": 4020,
+      "cost_well": 16128240,
+      "pc": "commercial",
+      "sc": "abandoned"
+    }
+  ],
+  "fits": {
+    "costPerM": {
+      "slope": -280.94,
+      "r2": 0.414,
+      "n": 25,
+      "x0": 2006,
+      "y0": 7121.1,
+      "x1": 2024,
+      "y1": 2064.2
+    },
+    "days": {
+      "slope": -6.37,
+      "r2": 0.306,
+      "n": 26,
+      "x0": 2007,
+      "y0": 153.7,
+      "x1": 2026,
+      "y1": 32.7
+    },
+    "depthM": {
+      "slope": 78.85,
+      "r2": 0.156,
+      "n": 93,
+      "x0": 2006,
+      "y0": 2641.0,
+      "x1": 2026,
+      "y1": 4218.1
+    },
+    "bhtC": {
+      "slope": 3.79,
+      "r2": 0.092,
+      "n": 69,
+      "x0": 2006,
+      "y0": 147.5,
+      "x1": 2026,
+      "y1": 223.3
+    }
+  },
+  "window": {
+    "minYear": 2006,
+    "maxYear": 2026
+  }
+}
