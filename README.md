@@ -15,7 +15,7 @@ A static HTML/CSS/JS dashboard that presents technical, financial, and economic 
 ## Run locally
 
 ```bash
-python3 -m http.server 8000
+powershell -ExecutionPolicy Bypass -File .\serve-dashboard.ps1
 # open http://localhost:8000
 ```
 
