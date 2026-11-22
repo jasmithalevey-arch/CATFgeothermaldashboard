@@ -34,33 +34,77 @@
       </section>`;
   }
 
+  function escapeHtml(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function sourceLabel(url) {
+    try {
+      const u = new URL(url);
+      const host = u.hostname.replace(/^www\./, "");
+      const leaf = u.pathname.split("/").filter(Boolean).pop() || "";
+      if (leaf && /\.(pdf|html?)$/i.test(leaf)) {
+        return host + " · " + decodeURIComponent(leaf);
+      }
+      return host + (u.pathname !== "/" ? u.pathname.replace(/\/$/, "") : "");
+    } catch (err) {
+      return url;
+    }
+  }
+
+  function sourcesHtml(sources) {
+    const list = (sources || []).filter(Boolean);
+    if (!list.length) return "";
+    const links = list
+      .map(
+        (url) =>
+          `<a class="map-popup-source-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(sourceLabel(url))}</a>`
+      )
+      .join("");
+    return `
+      <span class="map-popup-info" tabindex="0" aria-label="Sources">
+        <span class="map-popup-info-mark" aria-hidden="true">i</span>
+        <span class="map-popup-info-tip" role="tooltip">
+          <span class="map-popup-info-tip-label">Sources</span>
+          ${links}
+        </span>
+      </span>`;
+  }
+
   function popupHtml(data, kind, sectionId) {
     if (!kind || !sectionId) {
       return `
         <p class="map-popup-plant">Interactive map</p>
         <h3 class="map-popup-title">Hover a numbered part</h3>
-        <p class="map-popup-empty">Hover for a Week 8 summary. KPI detail charts from egs-dash will be wired later.</p>`;
+        <p class="map-popup-empty">Hover a numbered bubble for the sticky summary. Hover the (i) next to a title for sources.</p>`;
     }
     const meta = data.plants[kind];
     const card = data.hover[kind][sectionId];
     const sec = sectionById(data, sectionId);
-    const kpis = (card.kpis || []).map((k) => `<li>${k}</li>`).join("");
+    const kpis = (card.kpis || []).map((k) => `<li>${escapeHtml(k)}</li>`).join("");
     const diff = card.differenceFrom
       ? `<section class="map-popup-block">
-          <h4 class="map-popup-subhead">${card.differenceFrom.heading}</h4>
-          <p class="map-popup-note">${card.differenceFrom.text}</p>
+          <h4 class="map-popup-subhead">${escapeHtml(card.differenceFrom.heading)}</h4>
+          <p class="map-popup-note">${escapeHtml(card.differenceFrom.text)}</p>
         </section>`
       : "";
+    const provenTone = /partially|early/i.test(card.proven && card.proven.heading ? card.proven.heading : "")
+      ? "partial"
+      : "proven";
     const proven = card.proven
-      ? `<section class="map-popup-block map-popup-proven" data-tone="${/partially/i.test(card.proven.heading) ? "partial" : "proven"}">
-          <h4 class="map-popup-subhead">${card.proven.heading}</h4>
-          <p class="map-popup-note">${card.proven.text}</p>
+      ? `<section class="map-popup-block map-popup-proven" data-tone="${provenTone}">
+          <h4 class="map-popup-subhead">${escapeHtml(card.proven.heading)}</h4>
+          <p class="map-popup-note">${escapeHtml(card.proven.text)}</p>
         </section>`
       : "";
     return `
-      <p class="map-popup-plant" style="color:${meta.accent}">${meta.label} · ${sec ? sec.num + ". " + sec.short : ""}</p>
-      <h3 class="map-popup-title">${card.title}</h3>
-      <p class="map-popup-blurb">${card.blurb}</p>
+      <p class="map-popup-plant" style="color:${meta.accent}">${escapeHtml(meta.label)} · ${sec ? sec.num + ". " + escapeHtml(sec.short) : ""}</p>
+      <h3 class="map-popup-title">${escapeHtml(card.title)}${sourcesHtml(card.sources)}</h3>
+      <p class="map-popup-blurb">${escapeHtml(card.blurb)}</p>
       ${diff}
       ${proven}
       <ul class="map-popup-kpis">${kpis}</ul>
@@ -80,7 +124,7 @@
     container.innerHTML = `
       <div class="panel-intro">
         <h2>Plant map · EGS, Superhot rock, Closed-loop</h2>
-        <p>Scroll the stacked schematics. Hover a numbered bubble for the sticky summary. I still need to revise the blurbs to be more quantifiable and add sourcing (they are in my docs but I haven't had the chance to link all of them here yet).</p>
+        <p>Scroll the stacked schematics. Hover a numbered bubble for the sticky summary. Hover the <strong>(i)</strong> next to a part title for sources.</p>
       </div>
       <div class="status-banner" data-tone="loading">Loading map data…</div>
       <div class="map-layout" hidden>

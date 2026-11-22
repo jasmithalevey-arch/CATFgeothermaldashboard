@@ -203,7 +203,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--cobalt); outlin
 
 .map-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 34%);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr);
   gap: 1rem 1.25rem;
   align-items: start;
 }
@@ -326,6 +326,100 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--cobalt); outlin
   font-size: 1.2rem;
   line-height: 1.25;
   color: var(--brand-b);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.map-popup-info {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.1rem;
+  cursor: help;
+  outline: none;
+}
+.map-popup-info-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--brand-c);
+  color: var(--brand-c);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1;
+  background: var(--white);
+}
+.map-popup-info:hover .map-popup-info-mark,
+.map-popup-info:focus-visible .map-popup-info-mark {
+  background: var(--brand-c);
+  color: var(--white);
+}
+.map-popup-info-tip {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 20;
+  min-width: 14rem;
+  max-width: min(22rem, 70vw);
+  margin-top: 0.2rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 10px 24px rgba(1, 33, 105, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-0.15rem);
+  transition: opacity 0.12s ease, transform 0.12s ease, visibility 0.12s;
+}
+.map-popup-info-tip::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -0.35rem;
+  height: 0.35rem;
+}
+.map-popup-info:hover .map-popup-info-tip,
+.map-popup-info:focus-within .map-popup-info-tip {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.map-popup-info-tip-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.map-popup-source-link {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--brand-c);
+  text-decoration: none;
+  word-break: break-word;
+}
+.map-popup-source-link:hover {
+  text-decoration: underline;
 }
 .map-popup-blurb {
   margin: 0 0 0.85rem;
