@@ -1,3 +1,14 @@
 .DS_Store
 node_modules/
 .vscode/
+~$*
+
+# Local PDF extraction / tooling (not part of the dashboard)
+docs/tools/
+docs/week7.pdf
+docs/week8*.pdf
+docs/week8-notes.pdf
+docs/week8-pages/
+docs/week8-text/
+docs/week8-mid.pdf
+docs/week8-small.pdf
