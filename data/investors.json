@@ -1,0 +1,572 @@
+[
+  {
+    "name": "Spring Lane Capital",
+    "investorType": "Climate / infrastructure investor",
+    "layers": ["infrastructure"],
+    "investments": [
+      {
+        "company": "Zanskar",
+        "description": "Co-led a $40 million development-capital facility, structured to scale to $100 million.",
+        "source": {
+          "author": "Zanskar",
+          "year": "2026",
+          "url": "https://zanskargeothermal.substack.com/p/zanskar-closes-40m-in-novel-development"
+        },
+        "geothermalScope": "Broader geothermal; not identified as EGS-specific"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Obvious Ventures",
+    "investorType": "Venture capital",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Zanskar",
+        "description": "Named participant in the $115 million Series C.",
+        "source": {
+          "author": "Zanskar",
+          "year": "2026",
+          "url": "https://zanskargeothermal.substack.com/p/zanskar-raises-115m-series-c-following"
+        },
+        "geothermalScope": "Broader geothermal; not identified as EGS-specific"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Union Square Ventures",
+    "investorType": "Venture capital",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Zanskar",
+        "description": "Named participant in the $115 million Series C.",
+        "source": {
+          "author": "Zanskar",
+          "year": "2026",
+          "url": "https://zanskargeothermal.substack.com/p/zanskar-raises-115m-series-c-following"
+        },
+        "geothermalScope": "Broader geothermal; not identified as EGS-specific"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Lowercarbon Capital",
+    "investorType": "Climate venture capital",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Zanskar",
+        "description": "Named participant in the $115 million Series C.",
+        "source": {
+          "author": "Zanskar",
+          "year": "2026",
+          "url": "https://zanskargeothermal.substack.com/p/zanskar-raises-115m-series-c-following"
+        },
+        "geothermalScope": "Broader geothermal; not identified as EGS-specific"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Munich Re Ventures",
+    "investorType": "Corporate venture capital",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Zanskar",
+        "description": "Named participant in the $115 million Series C.",
+        "source": {
+          "author": "Zanskar",
+          "year": "2026",
+          "url": "https://zanskargeothermal.substack.com/p/zanskar-raises-115m-series-c-following"
+        },
+        "geothermalScope": "Broader geothermal; not identified as EGS-specific"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Susquehanna Sustainable Investments",
+    "investorType": "Sustainable investment platform",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Zanskar",
+        "description": "Named participant in the $115 million Series C.",
+        "source": {
+          "author": "Zanskar",
+          "year": "2026",
+          "url": "https://zanskargeothermal.substack.com/p/zanskar-raises-115m-series-c-following"
+        },
+        "geothermalScope": "Broader geothermal; not identified as EGS-specific"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Clearvision Ventures",
+    "investorType": "Venture capital",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Zanskar",
+        "description": "Named participant in the $115 million Series C.",
+        "source": {
+          "author": "Zanskar",
+          "year": "2026",
+          "url": "https://zanskargeothermal.substack.com/p/zanskar-raises-115m-series-c-following"
+        },
+        "geothermalScope": "Broader geothermal; not identified as EGS-specific"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Safar Partners",
+    "investorType": "Venture capital",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Zanskar",
+        "description": "Named participant in the $115 million Series C.",
+        "source": {
+          "author": "Zanskar",
+          "year": "2026",
+          "url": "https://zanskargeothermal.substack.com/p/zanskar-raises-115m-series-c-following"
+        },
+        "geothermalScope": "Broader geothermal; not identified as EGS-specific"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "StepStone Group",
+    "investorType": "Institutional private-markets investor",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Zanskar",
+        "description": "Named participant in the $115 million Series C.",
+        "source": {
+          "author": "Zanskar",
+          "year": "2026",
+          "url": "https://zanskargeothermal.substack.com/p/zanskar-raises-115m-series-c-following"
+        },
+        "geothermalScope": "Broader geothermal; not identified as EGS-specific"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "University Growth Fund",
+    "investorType": "Venture capital",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Zanskar",
+        "description": "Named participant in the $115 million Series C.",
+        "source": {
+          "author": "Zanskar",
+          "year": "2026",
+          "url": "https://zanskargeothermal.substack.com/p/zanskar-raises-115m-series-c-following"
+        },
+        "geothermalScope": "Broader geothermal; not identified as EGS-specific"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Cross Creek",
+    "investorType": "Growth equity",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Zanskar",
+        "description": "Named participant in the $115 million Series C.",
+        "source": {
+          "author": "Zanskar",
+          "year": "2026",
+          "url": "https://zanskargeothermal.substack.com/p/zanskar-raises-115m-series-c-following"
+        },
+        "geothermalScope": "Broader geothermal; not identified as EGS-specific"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "GVP Climate",
+    "investorType": "Climate venture capital",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Zanskar",
+        "description": "Named participant in the $115 million Series C.",
+        "source": {
+          "author": "Zanskar",
+          "year": "2026",
+          "url": "https://zanskargeothermal.substack.com/p/zanskar-raises-115m-series-c-following"
+        },
+        "geothermalScope": "Broader geothermal; not identified as EGS-specific"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "UP.Partners",
+    "investorType": "Venture capital",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Zanskar",
+        "description": "Named participant in the $115 million Series C.",
+        "source": {
+          "author": "Zanskar",
+          "year": "2026",
+          "url": "https://zanskargeothermal.substack.com/p/zanskar-raises-115m-series-c-following"
+        },
+        "geothermalScope": "Broader geothermal; not identified as EGS-specific"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Just Climate",
+    "investorType": "Climate infrastructure investor",
+    "layers": ["infrastructure"],
+    "investments": [
+      {
+        "company": "Zanskar",
+        "description": "Co-led a $40 million development-capital facility, structured to scale to $100 million.",
+        "source": {
+          "author": "Zanskar",
+          "year": "2026",
+          "url": "https://zanskargeothermal.substack.com/p/zanskar-closes-40m-in-novel-development"
+        },
+        "geothermalScope": "Broader geothermal; not identified as EGS-specific"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "B Capital",
+    "investorType": "Venture / growth equity",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Fervo Energy",
+        "description": "Led the $462 million Series E supporting Cape Station and other geothermal development.",
+        "source": {
+          "author": "Fervo Energy",
+          "year": "2025",
+          "url": "https://fervoenergy.com/fervo-energy-raises-462-million-series-e-to-accelerate-geothermal-development-and-meet-surging-energy-demand-with-clean-firm-power/"
+        },
+        "geothermalScope": "EGS developer; round supports Cape Station and other geothermal projects"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Breakthrough Energy Ventures",
+    "investorType": "Venture capital",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Fervo Energy",
+        "description": "Named participant in the $462 million Series E supporting EGS development.",
+        "source": {
+          "author": "Fervo Energy",
+          "year": "2025",
+          "url": "https://fervoenergy.com/fervo-energy-raises-462-million-series-e-to-accelerate-geothermal-development-and-meet-surging-energy-demand-with-clean-firm-power/"
+        },
+        "geothermalScope": "EGS developer; round supports Cape Station and other geothermal projects"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "CalSTRS",
+    "investorType": "Public pension fund",
+    "layers": ["pensions"],
+    "investments": [
+      {
+        "company": "Fervo Energy",
+        "description": "Named participant in the $462 million Series E; individual commitment and project allocation were not disclosed.",
+        "source": {
+          "author": "Fervo Energy",
+          "year": "2025",
+          "url": "https://fervoenergy.com/fervo-energy-raises-462-million-series-e-to-accelerate-geothermal-development-and-meet-surging-energy-demand-with-clean-firm-power/"
+        },
+        "geothermalScope": "EGS developer; round supports Cape Station and other geothermal projects"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "CPP Investments",
+    "investorType": "Public pension fund",
+    "layers": ["pensions"],
+    "investments": [
+      {
+        "company": "Fervo Energy",
+        "description": "Named participant in the $462 million Series E; individual commitment and project allocation were not disclosed.",
+        "source": {
+          "author": "Fervo Energy",
+          "year": "2025",
+          "url": "https://fervoenergy.com/fervo-energy-raises-462-million-series-e-to-accelerate-geothermal-development-and-meet-surging-energy-demand-with-clean-firm-power/"
+        },
+        "geothermalScope": "EGS developer; round supports Cape Station and other geothermal projects"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Centaurus Capital",
+    "investorType": "Private investment firm / preferred equity",
+    "layers": ["mezzanine"],
+    "investments": [
+      {
+        "company": "Cape Station",
+        "description": "Committed $75 million of preferred equity for Phase I construction and also participated in Fervo's Series E.",
+        "source": {
+          "author": "Fervo Energy",
+          "year": "2025",
+          "url": "https://fervoenergy.com/fervo-energy-raises-462-million-series-e-to-accelerate-geothermal-development-and-meet-surging-energy-demand-with-clean-firm-power/"
+        },
+        "geothermalScope": "EGS project and developer"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Capricorn Investment Group",
+    "investorType": "Climate / growth equity",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Fervo Energy",
+        "description": "Led the $135 million corporate equity round within Fervo's broader $255 million 2024 financing.",
+        "source": {
+          "author": "Fervo Energy",
+          "year": "2024",
+          "url": "https://fervoenergy.com/fervo-energy-secures-additional-255-million-funding/"
+        },
+        "geothermalScope": "EGS developer; financing supports EGS development"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Devon Energy",
+    "investorType": "Corporate / strategic investor",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Fervo Energy",
+        "description": "Named participant in the $135 million corporate equity round.",
+        "source": {
+          "author": "Fervo Energy",
+          "year": "2024",
+          "url": "https://fervoenergy.com/fervo-energy-secures-additional-255-million-funding/"
+        },
+        "geothermalScope": "EGS developer; financing supports EGS development"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Barclays",
+    "investorType": "Commercial bank",
+    "layers": ["banks"],
+    "investments": [
+      {
+        "company": "Cape Station",
+        "description": "Coordinating lead arranger for Fervo's $421 million non-recourse project financing.",
+        "source": {
+          "author": "Fervo Energy",
+          "year": "2026",
+          "url": "https://fervoenergy.com/fervo-energy-secures-421-million-in-non-recourse-project-financing-for-cape-station/"
+        },
+        "geothermalScope": "EGS project financing"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "HSBC",
+    "investorType": "Commercial bank",
+    "layers": ["banks"],
+    "investments": [
+      {
+        "company": "Cape Station",
+        "description": "Coordinating lead arranger for Fervo's non-recourse project financing.",
+        "source": {
+          "author": "Fervo Energy",
+          "year": "2026",
+          "url": "https://fervoenergy.com/fervo-energy-secures-421-million-in-non-recourse-project-financing-for-cape-station/"
+        },
+        "geothermalScope": "EGS project financing"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "MUFG",
+    "investorType": "Commercial bank",
+    "layers": ["banks"],
+    "investments": [
+      {
+        "company": "Cape Station",
+        "description": "Coordinating lead arranger for Fervo's non-recourse project financing.",
+        "source": {
+          "author": "Fervo Energy",
+          "year": "2026",
+          "url": "https://fervoenergy.com/fervo-energy-secures-421-million-in-non-recourse-project-financing-for-cape-station/"
+        },
+        "geothermalScope": "EGS project financing"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "RBC",
+    "investorType": "Commercial bank",
+    "layers": ["banks"],
+    "investments": [
+      {
+        "company": "Cape Station",
+        "description": "Coordinating lead arranger for Fervo's non-recourse project financing.",
+        "source": {
+          "author": "Fervo Energy",
+          "year": "2026",
+          "url": "https://fervoenergy.com/fervo-energy-secures-421-million-in-non-recourse-project-financing-for-cape-station/"
+        },
+        "geothermalScope": "EGS project financing"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Nabors Industries",
+    "investorType": "Strategic drilling / energy investor",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Quaise Energy",
+        "description": "Invested $35 million in Quaise's $180 million Series B and entered a strategic framework agreement.",
+        "source": {
+          "author": "Quaise Energy",
+          "year": "2026",
+          "url": "https://www.quaise.com/news/quaise-energy-closes-180-million-series-b-with-35-million-investment-by-nabors-industries"
+        },
+        "geothermalScope": "Superhot-rock geothermal; adjacent technology, not identified as EGS"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Prelude Ventures",
+    "investorType": "Climate venture capital",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Quaise Energy",
+        "description": "Led the $21 million Series A1 financing.",
+        "source": {
+          "author": "Quaise Energy",
+          "year": "2024",
+          "url": "https://www.quaise.com/news/quaise-energy-raises-21-million-to-accelerate-terawatt-scale-deep-geothermal-energy"
+        },
+        "geothermalScope": "Superhot-rock geothermal; adjacent technology, not identified as EGS"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Mitsubishi Corporation",
+    "investorType": "Corporate / strategic investor",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Quaise Energy",
+        "description": "Participated in Quaise's $21 million Series A1 financing.",
+        "source": {
+          "author": "Quaise Energy",
+          "year": "2024",
+          "url": "https://www.quaise.com/news/quaise-energy-raises-21-million-to-accelerate-terawatt-scale-deep-geothermal-energy"
+        },
+        "geothermalScope": "Superhot-rock geothermal; adjacent technology, not identified as EGS"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "Standard Investments",
+    "investorType": "Industrial investment platform",
+    "layers": ["venture-capital"],
+    "investments": [
+      {
+        "company": "Quaise Energy",
+        "description": "Participated in Quaise's $21 million Series A1 financing.",
+        "source": {
+          "author": "Quaise Energy",
+          "year": "2024",
+          "url": "https://www.quaise.com/news/quaise-energy-raises-21-million-to-accelerate-terawatt-scale-deep-geothermal-energy"
+        },
+        "geothermalScope": "Superhot-rock geothermal; adjacent technology, not identified as EGS"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  },
+  {
+    "name": "EIG Geothermal Catalyst Partners",
+    "investorType": "Geothermal infrastructure fund",
+    "layers": ["infrastructure"],
+    "investments": [
+      {
+        "company": "Power Planet",
+        "description": "Completed its inaugural investment to support the Star Peak EGS project and Power Planet's broader EGS portfolio; amount and terms were not disclosed.",
+        "source": {
+          "author": "EIG Partners",
+          "year": "2026",
+          "url": "https://eigpartners.com/eig-geothermal-catalyst-partners-completes-inaugural-investment/"
+        },
+        "geothermalScope": "EGS-specific"
+      }
+    ],
+    "priorities": "Investor-specific payback, IRR and NPV thresholds were not disclosed in the cited announcement.",
+    "expectedReturns": "No investor-specific expected return range was publicly disclosed for this geothermal investment."
+  }
+]
