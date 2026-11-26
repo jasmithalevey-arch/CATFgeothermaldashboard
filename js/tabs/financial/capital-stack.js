@@ -595,9 +595,15 @@ window.FinancialSections.capitalStack = function (el) {
         align-items: start;
         display: grid;
         gap: 1.25rem;
-        grid-template-columns: minmax(245px, 280px) minmax(360px, 1fr) minmax(320px, 390px);
+        grid-template-columns: minmax(245px, 280px) minmax(0, 1fr);
       }
-      .cs-tower-column { align-content: start; display: grid; gap: 1.25rem; min-width: 0; }
+      .cs-tower-column {
+        align-content: start;
+        display: grid;
+        gap: 1.25rem;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 390px);
+        min-width: 0;
+      }
       .cs-card, .cs-below {
         background: var(--cs-surface);
         border: 1px solid var(--cs-border);
@@ -626,7 +632,7 @@ window.FinancialSections.capitalStack = function (el) {
       .cs-citation { color: var(--cs-muted); display: block; font-size: .55rem; line-height: 1.5; margin-top: .35rem; overflow-wrap: anywhere; }
       .cs-citation a, .cs-source-link { color: var(--cobalt); }
       .cs-investor-count { background: var(--accent); border-radius: 999px; color: var(--chathams); flex: 0 0 auto; font-size: .52rem; font-weight: 700; padding: .25rem .45rem; }
-      .cs-investor-page { color: var(--chathams); margin: 0; max-width: none; min-width: 0; }
+      .cs-investor-page { color: var(--chathams); grid-column: 1 / -1; grid-row: 2; margin: 0; max-width: none; min-width: 0; }
       .cs-investor-page-hero { background: linear-gradient(120deg, var(--chathams), var(--cobalt)); border-radius: 16px; color: #fff; padding: clamp(1.25rem, 3vw, 2.25rem); }
       .cs-investor-page-hero .cs-eyebrow { color: var(--cadet-light); }
       .cs-investor-page-hero h2 { color: #fff; font: 700 clamp(1.5rem, 3vw, 2.1rem)/1.2 var(--font-display); margin: .4rem 0 0; }
@@ -737,13 +743,15 @@ window.FinancialSections.capitalStack = function (el) {
         background: var(--chathams);
         border: 1px solid var(--chathams);
         border-radius: 14px;
-        box-shadow: 0 16px 40px rgba(21, 49, 113, .14);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, .18);
         color: #fff;
         min-height: 0;
         overflow: hidden;
         padding: 1.4rem;
         position: relative;
         align-self: start;
+        grid-column: 1;
+        grid-row: 1;
       }
       .cs-tower::before {
         background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
@@ -757,10 +765,10 @@ window.FinancialSections.capitalStack = function (el) {
       }
       .cs-tower-inner { display: flex; flex-direction: column; min-height: 0; position: relative; }
       .cs-tower-head { align-items: flex-start; display: flex; justify-content: space-between; gap: 1rem; }
-      .cs-tower-kicker { color: var(--cadet); font-size: .6rem; font-weight: 700; letter-spacing: .13em; margin: 0; text-transform: uppercase; }
-      .cs-tower-kicker span { color: var(--accent); font-size: .85rem; margin-right: .25rem; }
+      .cs-tower-kicker { color: #fff; font-size: .6rem; font-weight: 700; letter-spacing: .13em; margin: 0; text-transform: uppercase; }
+      .cs-tower-kicker span { color: #fff; font-size: .85rem; margin-right: .25rem; }
       .cs-tower-head h3 { color: #fff; font: 600 1.45rem/1.2 var(--font-body); letter-spacing: -.035em; margin: .5rem 0 0; }
-      .cs-tower-help { color: var(--cadet); font-size: .58rem; line-height: 1.5; margin: 0; max-width: 155px; text-align: right; }
+      .cs-tower-help { color: #fff; font-size: .58rem; line-height: 1.5; margin: 0; max-width: 155px; text-align: right; }
       .cs-tower-main { align-items: center; display: flex; justify-content: center; margin: 1.5rem 0 1rem; min-height: 360px; }
       .cs-tower-stack {
         display: flex;
@@ -773,7 +781,7 @@ window.FinancialSections.capitalStack = function (el) {
         width: 100%;
       }
       .cs-tower-stack::before {
-        background: linear-gradient(to top, var(--cadet), var(--accent));
+        background: linear-gradient(to top, #777a7d, #fff);
         content: "";
         height: 29px;
         left: 50%;
@@ -783,7 +791,7 @@ window.FinancialSections.capitalStack = function (el) {
         z-index: 0;
       }
       .cs-tower-stack::after {
-        background: linear-gradient(90deg, var(--cadet), #fff, var(--cadet));
+        background: linear-gradient(90deg, #777a7d, #fff, #777a7d);
         bottom: -8px;
         content: "";
         height: 8px;
@@ -797,7 +805,7 @@ window.FinancialSections.capitalStack = function (el) {
         align-items: center;
         background: var(--layer-color);
         border: 0;
-        border-top: 1px solid rgba(21,49,113,.16);
+        border-top: 1px solid rgba(0,0,0,.16);
         color: var(--layer-ink);
         cursor: pointer;
         display: flex;
@@ -813,14 +821,24 @@ window.FinancialSections.capitalStack = function (el) {
         z-index: 1;
         align-self: center;
       }
-      .cs-tower-layer:nth-child(1) { width: 56%; }
-      .cs-tower-layer:nth-child(2) { width: 62%; }
-      .cs-tower-layer:nth-child(3) { width: 68%; }
-      .cs-tower-layer:nth-child(4) { width: 74%; }
-      .cs-tower-layer:nth-child(5) { width: 80%; }
-      .cs-tower-layer:nth-child(6) { width: 86%; }
-      .cs-tower-layer:nth-child(7) { width: 93%; }
-      .cs-tower-layer:nth-child(8) { width: 100%; }
+      .cs-tower-layer:nth-child(1) { background: #666; color: #fff; width: 56%; }
+      .cs-tower-layer:nth-child(2) { background: #606060; color: #fff; width: 62%; }
+      .cs-tower-layer:nth-child(3) { background: #5a5a5a; color: #fff; width: 68%; }
+      .cs-tower-layer:nth-child(4) { background: #545454; color: #fff; width: 74%; }
+      .cs-tower-layer:nth-child(5) { background: #4e4e4e; color: #fff; width: 80%; }
+      .cs-tower-layer:nth-child(6) { background: #484848; color: #fff; width: 86%; }
+      .cs-tower-layer:nth-child(7) { background: #424242; color: #fff; width: 93%; }
+      .cs-tower-layer:nth-child(8) { background: #3c3c3c; color: #fff; width: 100%; }
+      .cs-tower-layer:nth-child(1)::after { background: #666; }
+      .cs-tower-layer:nth-child(2)::after { background: #606060; }
+      .cs-tower-layer:nth-child(3)::after { background: #5a5a5a; }
+      .cs-tower-layer:nth-child(4)::after { background: #545454; }
+      .cs-tower-layer:nth-child(5)::after { background: #4e4e4e; }
+      .cs-tower-layer:nth-child(6)::after { background: #484848; }
+      .cs-tower-layer:nth-child(7)::after { background: #424242; }
+      .cs-tower-layer:nth-child(8)::after { background: #3c3c3c; }
+      .cs-tower-layer .cs-abbrev { background: #292929; color: #fff; }
+      .cs-tower-layer:focus-visible { outline-color: #e5e5e5; }
       .cs-tower-layer::after {
         background: var(--layer-color);
         bottom: -5px;
@@ -841,10 +859,10 @@ window.FinancialSections.capitalStack = function (el) {
       .cs-tower-name { display: block; font-size: .69rem; font-weight: 700; line-height: 1.2; }
       .cs-fid-marker {
         align-items: center;
-        background: rgba(255,222,141,.13);
-        border-bottom: 1px dashed var(--accent);
-        border-top: 1px dashed var(--accent);
-        color: var(--accent);
+        background: rgba(255,255,255,.08);
+        border-bottom: 1px dashed #bfc1c2;
+        border-top: 1px dashed #bfc1c2;
+        color: #fff;
         display: flex;
         flex: 0 0 auto;
         font-size: .54rem;
@@ -857,10 +875,10 @@ window.FinancialSections.capitalStack = function (el) {
       }
       .cs-fid-marker strong { color: #fff; flex: 0 0 auto; }
       .cs-grant-sublayer {
-        background: var(--accent);
-        border: 1px solid rgba(21,49,113,.2);
+        background: #292929;
+        border: 1px solid #777;
         border-radius: 5px;
-        color: var(--chathams);
+        color: #fff;
         display: block;
         font-size: .53rem;
         font-weight: 700;
@@ -869,8 +887,8 @@ window.FinancialSections.capitalStack = function (el) {
         position: relative;
         z-index: 1;
       }
-      .cs-tower-footer { border-top: 1px solid rgba(255,255,255,.15); color: var(--cadet); font-size: .57rem; font-weight: 600; line-height: 1.5; padding-top: .65rem; }
-      .cs-research { overflow: hidden; padding: 0; }
+      .cs-tower-footer { border-top: 1px solid rgba(255,255,255,.15); color: #fff; font-size: .57rem; font-weight: 600; line-height: 1.5; padding-top: .65rem; }
+      .cs-research { display: flex; flex-direction: column; grid-column: 2; grid-row: 1; min-height: 0; overflow: hidden; padding: 0; }
       .cs-profile-head { border-bottom: 1px solid var(--cs-border); padding: 1.25rem; }
       .cs-profile-top { align-items: flex-start; display: flex; gap: .75rem; justify-content: space-between; }
       .cs-profile-title { align-items: center; display: flex; gap: .7rem; }
@@ -879,7 +897,7 @@ window.FinancialSections.capitalStack = function (el) {
       .cs-research-tabs { background: var(--card); border-radius: 8px; display: grid; gap: 3px; grid-template-columns: repeat(3, 1fr); margin-top: .85rem; padding: 3px; }
       .cs-research-tab { background: transparent; border: 0; border-radius: 6px; color: var(--muted); cursor: pointer; font: 600 .65rem var(--font-body); padding: .45rem .25rem; }
       .cs-research-tab[aria-selected="true"] { background: #fff; box-shadow: 0 1px 3px rgba(21,49,113,.1); color: var(--cobalt); }
-      .cs-research-body { max-height: 670px; overflow-y: auto; padding: 1.25rem; }
+      .cs-research-body { flex: 1; max-height: none; min-height: 0; overflow-y: auto; padding: 1.25rem; }
       .cs-research-section + .cs-research-section { margin-top: 1.1rem; }
       .cs-copy { color: var(--cs-muted); font-size: .67rem; line-height: 1.6; margin: .45rem 0 0; }
       .cs-economics { display: grid; gap: .45rem; margin-top: .8rem; }
@@ -962,7 +980,10 @@ window.FinancialSections.capitalStack = function (el) {
       .cs-intro-row { align-items: flex-end; display: flex; gap: 1rem; justify-content: space-between; }
       @media (max-width: 1180px) {
         .cs-workspace { grid-template-columns: minmax(230px, 280px) minmax(360px, 1fr); }
-        .cs-research { grid-column: 1 / -1; }
+        .cs-tower-column { grid-template-columns: minmax(0, 1fr); }
+        .cs-tower { grid-column: 1; grid-row: 1; }
+        .cs-research { grid-column: 1; grid-row: 2; }
+        .cs-investor-page { grid-column: 1; grid-row: 3; }
         .cs-research-body { max-height: none; }
         .cs-below-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       }
@@ -1065,6 +1086,8 @@ window.FinancialSections.capitalStack = function (el) {
             </div>
           </div>
 
+          <aside class="cs-card cs-research" aria-label="EGS capital source details" aria-live="polite"></aside>
+
           <div class="cs-investor-page" id="cs-investor-details" data-investor-view role="region" aria-labelledby="cs-investor-title">
             <header class="cs-investor-page-hero">
               <p class="cs-eyebrow">EGS capital providers</p>
@@ -1092,8 +1115,6 @@ window.FinancialSections.capitalStack = function (el) {
             <div class="cs-investor-grid" data-investor-list aria-label="Investor profiles"></div>
           </div>
         </div>
-
-        <aside class="cs-card cs-research" aria-label="EGS capital source details" aria-live="polite"></aside>
       </div>
 
       <div class="cs-card cs-fid" role="region" aria-labelledby="cs-fid-title">
@@ -1223,7 +1244,13 @@ window.FinancialSections.capitalStack = function (el) {
 
   const root = el.querySelector('.cs-stack');
   const workspace = root.querySelector('.cs-workspace');
+  const tower = root.querySelector('.cs-tower');
   const researchPanel = root.querySelector('.cs-research');
+  const syncResearchPanelHeight = () => {
+    researchPanel.style.height = `${tower.getBoundingClientRect().height}px`;
+  };
+  syncResearchPanelHeight();
+  new ResizeObserver(syncResearchPanelHeight).observe(tower);
   const investorLayerFilter = root.querySelector('[data-investor-layer-filter]');
   const investorTypeFilter = root.querySelector('[data-investor-type-filter]');
   const investorList = root.querySelector('[data-investor-list]');
