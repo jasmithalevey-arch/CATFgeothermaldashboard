@@ -54,6 +54,8 @@ FinancialSections.kpiTrends = function (el) {
     atb2022Data: 'https://data.openei.org/submissions/5716',
     atb2023Data: 'https://data.openei.org/submissions/5865',
     atb2024Data: 'https://data.openei.org/submissions/6006',
+    doeLiftoff: 'https://apps.openei.org/GeoCLUSTER/assets/pdfs/DOE%20Report%202024_Pathways%20to%20Commercial%20liftoff.pdf#page=37',
+    doeLiftoffAnnouncement: 'https://content.govdelivery.com/accounts/USEERE/bulletins/39137dd',
     doeShot: 'https://www.energy.gov/sites/default/files/2023-09/Investing%20in%20Opportunity-%20How%20the%20Geothermal%20Technologies%20Office%20is%20Supporting%20Geothermal%20Everywhere.pdf',
     fervoPhaseI: 'https://www.sec.gov/Archives/edgar/data/1853868/000162828026055942/exhibit991earningsrelease8.htm',
     fervoGoogle: 'https://www.sec.gov/Archives/edgar/data/1853868/000162828026059707/frvo-20260826.htm',
@@ -85,6 +87,25 @@ FinancialSections.kpiTrends = function (el) {
 
   const kpiData = {
     funding: {heating: 11.5, conventional: 5, nextGeneration: 2.2, growth: 80, grants: 9, debt: 30},
+    // Company-level grant disclosures: award amounts, accounting balances and
+    // conditional funding are distinct and must not be summed.
+    fervoGrants: {
+      originalDoeAwardM: 22.1, amendedDoeAwardM: 23.1,
+      originalAwardDate: 'July 1, 2024', amendedTermEnd: 'July 31, 2027',
+      smallerGrantAwardsM: 0.7, grantIncome2025M: 14.1,
+      grantIncomeQ32026M: 19.5, potentialAwardsM: 20
+    },
+    // Q3 2026 consolidated financial statements (USD millions unless noted).
+    // Income attribution and debt carrying value are distinct accounting measures.
+    fervoQ3Financials: {
+      operatingLossM: -43.746, revenueUSD: 116000,
+      pretaxLossM: -18.251, incomeTaxBenefitM: 29.911,
+      consolidatedNetIncomeM: 11.660,
+      redeemableNoncontrollingIncomeM: 31.187,
+      attributableNetLossM: -19.527,
+      debtPrincipalM: 317.483, unamortizedDebtIssuanceCostsM: 15.874,
+      debtNetOfIssuanceCostsM: 301.609
+    },
     projectCapex: {red: 15000, cape: 7000, google: 5500},
     atb: {historicalYears: [2021, 2024], historicalCapex: [53240, 19757], hotOcc: 9868, binaryOcc: 16795,
       representativeFlashOcc: 6653, representativeBinaryOcc: 10758,
@@ -99,11 +120,28 @@ FinancialSections.kpiTrends = function (el) {
       ], latestEdition: 2025, forecastEdition: 2026},
     drilling: [994.62, 1106.74, 633.45, 471.59, 395.71, 346.45, 394.08, 357.36],
     capitalNeeded: {targetGWe: 40, targetYear: 2035},
+    // Published DOE pathway, separate from the EGS-only benchmark calculations.
+    commercialLiftoff: {
+      reportYear: 2024, liftoffYear: 2030, scaleYear: 2050,
+      deploymentBefore2030GW: [2, 5], investmentBefore2030B: [20, 25],
+      additionalDeploymentGW: [88, 125], additionalInvestmentThrough2050B: [225, 250],
+      technologyScope: 'Next-generation geothermal power (EGS and closed-loop)'
+    },
     ppa: {price: 107, year: 2024}
   };
   const average = (values) => values.reduce((sum, value) => sum + value, 0) / values.length;
   const difference = (baseline, next) => (baseline - next) / baseline * 100;
   const dollars = (value, decimals = 0) => '$' + value.toLocaleString('en-US', {minimumFractionDigits: decimals, maximumFractionDigits: decimals});
+  const q3 = kpiData.fervoQ3Financials;
+  const accountingMillions = value => value < 0
+    ? '(' + dollars(Math.abs(value), 3) + 'M)'
+    : dollars(value, 3) + 'M';
+  const liftoff = kpiData.commercialLiftoff;
+  const investmentRange = ([low, high]) => dollars(low) + '–' + dollars(high) + 'B';
+  const capacityRange = ([low, high]) => low + '–' + high + ' GW';
+  const grants = kpiData.fervoGrants;
+  const grantIncreaseM = grants.amendedDoeAwardM - grants.originalDoeAwardM;
+  const grantDollars = value => dollars(value, 1) + 'M';
   // Only like-for-like observations belong in this series. Replace a value and
   // its status together after validating the source filters and 2022-dollar basis.
   const lcoePoints = kpiData.atb.lcoePoints;
@@ -119,6 +157,7 @@ FinancialSections.kpiTrends = function (el) {
   const projectDifference = difference(kpiData.projectCapex.red, kpiData.projectCapex.cape);
   const ieaCitation = apa('International Energy Agency','2026','Investment in next-generation geothermal is surging. Policies are key to further growth',sources.iea,'Investment in next-generation geothermal has risen sharply');
   const doeCitation = apa('Lauren Boyd','2023','Investing in Opportunity: How the Geothermal Technologies Office is Supporting Geothermal Everywhere',sources.doeShot,'Enhanced Geothermal Shot technical pathways, slide 25');
+  const liftoffCitation = apa('U.S. Department of Energy',String(liftoff.reportYear),'Pathways to Commercial Liftoff: Next-Generation Geothermal Power',sources.doeLiftoff,'Chapter 3, Fig. 15, pp. 31–35, notes o and q');
   const atbCitation = apa('National Laboratory of the Rockies','2025','2025 Electricity Annual Technology Baseline: Geothermal',sources.atb2025,'Geothermal Potential Resource and Cost Characteristics');
   const projectCitations = `${apa('Kah, M., & Kleinberg, R.','2025','The Potential Contribution of Enhanced Geothermal Systems to Future Power Supply',sources.projectRed,'p. 6')} ${apa('Fervo Energy','2026','Fervo Energy Reports Third Quarter 2026 Results',sources.fervoQ3,'Nov. 9 Q3 results, Construction')} ${apa('The Motley Fool','2026','Fervo Energy Q3 2026 earnings call transcript',sources.fervoTranscript,'Nov. 9 earnings call')}`;
 
@@ -245,10 +284,27 @@ FinancialSections.kpiTrends = function (el) {
           <div class="kt-highlight-stat"><span class="kt-label">Global public grant share</span><strong>About 9%</strong><span>of next-generation geothermal funding (EGS and closed-loop combined)</span></div>
           <p class="kt-note">The IEA does not establish that this share uses the same annual denominator as the 2025 financing total. An EGS-only grant share or dollar total is not available.</p>
           <p class="kt-source">${ieaCitation}</p>
-          <div class="kt-model-update"><h3>Fervo Project Development Grants</h3><div><strong>$14.1M</strong><span>December 31, 2025</span></div><div><strong>$19.5M</strong><span>September 30, 2026</span></div><p class="kt-note">Grant income netted against property, plant and equipment (PP&amp;E), not annual cash received or an industry-wide EGS grant amount.</p></div>
-          <div class="kt-stat"><strong>~$20M</strong><span>Potential DOE awards disclosed in Q3 2026, subject to definitive funding agreements; not cash received.</span></div>
-          <p class="kt-source">${apa('Fervo Energy Company','2026','Form 10-Q for the quarter ended September 30, 2026',sources.fervo10q,'Part I, Item 1, grant income disclosure')} ${apa('Fervo Energy Company','2026','Fervo Energy Reports Third Quarter 2026 Results',sources.fervoQ3,'Nov. 9 Q3 results, government funding')}</p>
-          <details><summary>Capital stack linkage</summary><p>Use the IEA debt and grant shares only with the same next-generation financing scope. Track Fervo grant accounting and potential awards separately from equity, debt and tax incentives. Do not sum award commitments and accounting balances or infer a grant amount by applying the IEA share to annual financing.</p></details>
+          <div class="kt-model-update">
+            <h3>Fervo Grant Awards</h3>
+            <div><strong>${grantDollars(grants.amendedDoeAwardM)}</strong><span>Amended DOE reimbursement-type grant award (2026)</span></div>
+            <div><strong>${grantDollars(grants.smallerGrantAwardsM)}</strong><span>Other smaller grants awarded in 2025 and the first nine months of 2026</span></div>
+            <p class="kt-note">Company-disclosed awards, not cash receipts or an industry-wide EGS funding total. The amended award includes the original award.</p>
+          </div>
+          <div class="kt-model-update">
+            <h3>Fervo Project Development Grants</h3>
+            <div><strong>${grantDollars(grants.grantIncome2025M)}</strong><span>December 31, 2025</span></div>
+            <div><strong>${grantDollars(grants.grantIncomeQ32026M)}</strong><span>September 30, 2026</span></div>
+            <p class="kt-note">Project-development grant income recorded as a reduction of property, plant and equipment (PP&amp;E). These are accounting amounts at two reporting dates, not annual cash receipts or separate award commitments.</p>
+          </div>
+          <div class="kt-stat"><strong>~${dollars(grants.potentialAwardsM)}M</strong><span>Potential DOE awards disclosed in Q3 2026, subject to definitive funding agreements; not cash received.</span></div>
+          <p class="kt-source">${apa('Fervo Energy Company','2026','Form 10-Q for the quarter ended September 30, 2026',sources.fervo10q,'Note 16, Grant Income, p. F-24')} ${apa('Fervo Energy Company','2026','Fervo Energy Reports Third Quarter 2026 Results',sources.fervoQ3,'Nov. 9 Q3 results, government funding')}</p>
+          <details>
+            <summary>Grant awards: sources &amp; methodology</summary>
+            <p>The original DOE reimbursement-type award was ${grantDollars(grants.originalDoeAwardM)}, effective ${grants.originalAwardDate}. A 2026 amendment raised the award by ${grantDollars(grantIncreaseM)} to ${grantDollars(grants.amendedDoeAwardM)} and extended its term through ${grants.amendedTermEnd}. Grant funding is recognized when eligible costs are incurred under the agreement.</p>
+            <p>Fervo also disclosed ${grantDollars(grants.smallerGrantAwardsM)} in smaller grant awards during 2025 and the first nine months of 2026. Note 16 does not establish an EGS-only industry total or allocate every award to a particular project.</p>
+            <p>Keep award amounts, recognized grant income and potential awards separate. The original DOE award and its amendment are included in the amended total. Do not add these to the PP&amp;E amounts, combine the two reporting-date balances, or treat conditional awards as secured funding. Review future quarterly and annual SEC filings for updated award terms and accounting amounts; check company announcements for definitive funding agreements.</p>
+          </details>
+          <details><summary>Capital stack linkage</summary><p>Use the IEA debt and grant shares only with the same next-generation financing scope. Track Fervo grant commitments, accounting amounts and potential awards separately from equity, debt and tax incentives. Do not sum these categories or infer a grant amount by applying the IEA share to annual financing.</p></details>
           <button type="button" class="kt-stack-link" data-kt-capital-stack hidden>View Capital Stack</button>
         </article></div></section>
 
@@ -397,15 +453,17 @@ FinancialSections.kpiTrends = function (el) {
           <details class="kt-q3-more">
             <summary>View additional Q3 financial and contract metrics</summary>
             <dl class="kt-q3-details">
-              <div><dt>Debt, net of unamortized issuance costs</dt><dd>$301.609M <span>Reported actual as of September 30, 2026</span></dd></div>
+              <div><dt>Total debt, net of unamortized debt issuance costs</dt><dd>${accountingMillions(q3.debtNetOfIssuanceCostsM)} <span>As of September 30, 2026; cash has not been deducted</span></dd></div>
               <div><dt>Capacity under binding PPAs</dt><dd>1,054 MWe <span>Contracted capacity, not operating generation</span></dd></div>
-              <div><dt>Operating loss</dt><dd>($43.746M) <span>Reported actual for Q3 2026</span></dd></div>
-              <div><dt>Revenue</dt><dd>$116,000 <span>Reported actual for Q3 2026</span></dd></div>
-              <div><dt>Net loss attributable to Fervo Energy Company</dt><dd>($19.527M) <span>Reported actual for Q3 2026</span></dd></div>
+              <div><dt>Operating loss</dt><dd>${accountingMillions(q3.operatingLossM)} <span>Reported actual for Q3 2026</span></dd></div>
+              <div><dt>Revenue</dt><dd>${dollars(q3.revenueUSD)} <span>Reported actual for Q3 2026</span></dd></div>
+              <div><dt>Consolidated net income</dt><dd>${accountingMillions(q3.consolidatedNetIncomeM)} <span>Q3 2026; includes subsidiaries and noncontrolling interests</span></dd></div>
+              <div><dt>Net loss attributable to Fervo Energy Company</dt><dd>${accountingMillions(q3.attributableNetLossM)} <span>Q3 2026; after allocation to redeemable noncontrolling interests</span></dd></div>
             </dl>
-            <p class="kt-note">Quarterly figures should not be directly compared with full-year totals. Backlog represents contracted future revenue rather than earned revenue; cash is not profit.</p>
+            <div class="kt-scope-note"><strong>Q3 income reconciliation:</strong> Consolidated net income of ${accountingMillions(q3.consolidatedNetIncomeM)} less ${accountingMillions(q3.redeemableNoncontrollingIncomeM)} of net income attributable to redeemable noncontrolling interests results in the ${accountingMillions(q3.attributableNetLossM)} loss attributable to Fervo Energy Company. These are separate accounting measures, not conflicting results or evidence of project-level profitability. The consolidated result also reflects a ${accountingMillions(q3.incomeTaxBenefitM)} income tax benefit against a pretax loss of ${accountingMillions(q3.pretaxLossM)}.</div>
+            <p class="kt-note">Quarterly figures should not be directly compared with full-year totals. Backlog represents contracted future revenue rather than earned revenue; cash is not profit. All Q3 financial results are company-wide, unaudited reported actuals, not individual EGS project costs.</p>
           </details>
-        </div><div class="kt-highlight-stat kt-takeaway"><strong>Investor takeaway</strong><span>Commercial operation links drilling and construction work to revenue. Long-term contracts show demand, but scaling remains capital intensive</span></div><p class="kt-source">${apa('Fervo Energy Company','2026','Form 10-Q for the quarter ended September 30, 2026',sources.fervo10q,'Part I, Items 1 and 2')} ${apa('Fervo Energy Company','2026','Fervo Energy Reports Third Quarter 2026 Results',sources.fervoQ3,'Nov. 9 Q3 results')}</p><details><summary>Sources &amp; methodology</summary><p>Cash and cash equivalents were $1.916477B before display rounding. Debt principal was $317.483M. The $301.609M balance sheet value is net of unamortized issuance costs. Q3 revenue, operating loss and company-attributable net loss follow the 10-Q captions. Backlog is not recognized revenue. Cash is not profit.</p></details></div></section>
+        </div><div class="kt-highlight-stat kt-takeaway"><strong>Investor takeaway</strong><span>Commercial operation links drilling and construction work to revenue. Long-term contracts show demand, but scaling remains capital intensive</span></div><p class="kt-source">${apa('Fervo Energy Company','2026','Form 10-Q for the quarter ended September 30, 2026',sources.fervo10q,'Part I, Item 1, statements of operations, p. F-4; Note 3, Debt, p. F-13; Item 2')} ${apa('Fervo Energy Company','2026','Fervo Energy Reports Third Quarter 2026 Results',sources.fervoQ3,'Nov. 9 Q3 results')}</p><details><summary>Sources &amp; methodology</summary><p>Cash and cash equivalents were $1.916477B before display rounding. Note 3 (p. F-13) reports debt principal of ${accountingMillions(q3.debtPrincipalM)} less ${accountingMillions(q3.unamortizedDebtIssuanceCostsM)} in unamortized debt issuance costs, resulting in total debt of ${accountingMillions(q3.debtNetOfIssuanceCostsM)} net of issuance costs, before deducting cash or the current portion. This is not conventional net debt (debt less cash). The unaudited condensed consolidated statements of operations (p. F-4) report the revenue, operating loss, pretax loss, income tax benefit, consolidated net income and income allocation for the three months ended September 30, 2026. Values reported in USD thousands are converted to USD millions where indicated; the parent-company loss is not the separate common-stockholder loss measure in Note 15. Backlog is not recognized revenue. Cash is not profit. For future updates, review the latest quarterly Form 10-Q or annual Form 10-K and preserve the reporting period and accounting captions.</p></details></div></section>
       <section id="kt-capital-needed" class="kt-section">
         <div class="kt-section-head">
           <p class="kt-eyebrow">Capital deployment outlook</p>
@@ -432,6 +490,26 @@ FinancialSections.kpiTrends = function (el) {
             <p class="kt-note">These scenario amounts reflect different stages of project cost maturity; none is a verified industry-wide average. The earlier pilot benchmark should not be treated as a commercial-scale forecast.</p>
             <p class="kt-source">${doeCitation} ${projectCitations}</p>
           </aside>
+          <article class="kt-card kt-span-12" aria-labelledby="kt-liftoff-title">
+            <p class="kt-eyebrow">Published government investment pathway</p>
+            <h3 id="kt-liftoff-title">DOE Commercial Liftoff Investment Estimates</h3>
+            <p class="kt-note">The DOE's March ${liftoff.reportYear} report outlines two stages of U.S. next-generation geothermal power deployment. These published scenario estimates provide independent investment context alongside the illustrative EGS calculations above.</p>
+            <div class="kt-grid">
+              <div class="kt-span-6 kt-highlight-stat">
+                <span class="kt-label">Stage 1 · Commercial liftoff by ${liftoff.liftoffYear}</span>
+                <strong>${investmentRange(liftoff.investmentBefore2030B)}</strong>
+                <span>${capacityRange(liftoff.deploymentBefore2030GW)} of deployment to demonstrate technical and commercial viability across geological settings.</span>
+              </div>
+              <div class="kt-span-6 kt-highlight-stat">
+                <span class="kt-label">Stage 2 · Commercial scale by ${liftoff.scaleYear}</span>
+                <strong>${investmentRange(liftoff.additionalInvestmentThrough2050B)}</strong>
+                <span>Additional investment for ${capacityRange(liftoff.additionalDeploymentGW)} of additional deployment in the modeled scenarios.</span>
+              </div>
+            </div>
+            <div class="kt-scope-note"><strong>Scope and comparability:</strong> ${liftoff.technologyScope}; not EGS-only. These are scenario-based U.S. investment requirements, not observed expenditures or committed funding. The second stage is incremental to liftoff. The DOE estimates use different technology coverage, time horizons and cost assumptions from the 40 GWe EGS pathway and fixed project-cost calculations above. Do not combine these separate pathways or subtract the annual global financing figure to infer a funding shortfall.</div>
+            <p class="kt-source">${liftoffCitation} <a href="${sources.doeLiftoffAnnouncement}" target="_blank" rel="noopener noreferrer">DOE release announcement (March 18, 2024)</a></p>
+            <details><summary>Sources &amp; methodology</summary><p>Chapter 3, Figure 15 and notes o and q describe the Earthshot and Earthshot with Limited Access modeling cases. The first-stage investment range covers initial development by 2029–2030; the second-stage range covers additional deployment by 2050. The source reports electrical capacity in GW and investment in USD billions; values are reproduced as reported without inflation adjustment. These estimates are not calculated from the Fervo benchmarks. Preserve the original scenario definitions and publication year, and review future DOE commercial liftoff reports or revised deployment studies for updates.</p></details>
+          </article>
         </div>
       </section>
       <section class="kt-section kt-source-library" aria-labelledby="kt-references-heading">
@@ -444,6 +522,7 @@ FinancialSections.kpiTrends = function (el) {
             <li>Akindipe, D., Martinez Smith, F., Witter, E., Pauling, H., Oh, H., Podgorny, S., Rane, J., Harmon, J., Javed, S., Simpson, J., Shlosberg, D., Holt, E., Trainor-Guitton, W., Levine, A., Schmidt, B., &amp; Pedersen, A. (2026). <em>2025 U.S. Geothermal Market Report.</em> National Laboratory of the Rockies and Geothermal Rising. <a href="${sources.marketReport}" target="_blank" rel="noopener noreferrer">Original report, Figures 18 and 23</a></li>
             <li>National Laboratory of the Rockies. (2026). <em>2025 Electricity Annual Technology Baseline: Geothermal.</em> 2025 edition; revised data workbook dated November 11, 2026. <a href="${sources.atb2025}" target="_blank" rel="noopener noreferrer">ATB geothermal model and assumptions</a>; <a href="${sources.atbDefinitions}" target="_blank" rel="noopener noreferrer">Definitions</a>; <a href="${sources.atbWorkbook}" target="_blank" rel="noopener noreferrer">Official data package</a>; <a href="${sources.atbWorkbookV2}" target="_blank" rel="noopener noreferrer">Version 2 workbook (November 11, 2026)</a>; <a href="${sources.atbData}" target="_blank" rel="noopener noreferrer">Summary data downloads</a>; <a href="${sources.atbArchive}" target="_blank" rel="noopener noreferrer">ATB archive</a>.</li>
             <li>Boyd, L. (2023, August 30). <em>Investing in Opportunity: How the Geothermal Technologies Office is Supporting Geothermal Everywhere.</em> U.S. Department of Energy, slide 25. <a href="${sources.doeShot}" target="_blank" rel="noopener noreferrer">Enhanced Geothermal Shot technical pathways</a></li>
+            <li>U.S. Department of Energy. (2024, March). <em>Pathways to Commercial Liftoff: Next-Generation Geothermal Power.</em> Chapter 3, Figure 15, pp. 31–35, notes o and q. <a href="${sources.doeLiftoff}" target="_blank" rel="noopener noreferrer">DOE report (OpenEI-hosted PDF)</a>; <a href="${sources.doeLiftoffAnnouncement}" target="_blank" rel="noopener noreferrer">DOE release announcement</a>.</li>
             <li>Fervo Energy Company. (2026, August 12). <em>Fervo Energy Reports Second Quarter 2026 Results.</em> <a href="${sources.fervoPhaseI}" target="_blank" rel="noopener noreferrer">Phase I capacity, Construction section</a></li>
             <li>Fervo Energy Company. (2026, August 26). <em>Form 8-K, Google power purchase agreement.</em> <a href="${sources.fervoGoogle}" target="_blank" rel="noopener noreferrer">Item 1.01, 396 MW agreement</a></li>
             <li>Fervo Energy Company. (2026, May). <em>Final prospectus.</em> <a href="${sources.fervoProspectus}" target="_blank" rel="noopener noreferrer">Previously executed PPAs</a></li>
@@ -452,7 +531,7 @@ FinancialSections.kpiTrends = function (el) {
             <li>Fervo Energy Company. (2026, November 9). <em>Fervo Energy Reports Third Quarter 2026 Results.</em> <a href="${sources.fervoQ3}" target="_blank" rel="noopener noreferrer">Company earnings release</a></li>
             <li>Latimer, T. (2026, November 9). <em>Fervo Energy Q3 2026 earnings call.</em> Transcript published by The Motley Fool. <a href="${sources.fervoTranscript}" target="_blank" rel="noopener noreferrer">Earnings call transcript</a></li>
             <li>Fervo Energy Company. (2026, May 11). <em>Amendment No. 3 to Form S-1.</em> U.S. Securities and Exchange Commission. <a href="${sources.fervoS1}" target="_blank" rel="noopener noreferrer">Audited historical financial statements</a></li>
-            <li>Fervo Energy Company. (2026). <em>Form 10-Q for the quarter ended September 30, 2026.</em> U.S. Securities and Exchange Commission. <a href="${sources.fervo10q}" target="_blank" rel="noopener noreferrer">Quarterly balance sheet and financial results</a></li>
+            <li>Fervo Energy Company. (2026). <em>Form 10-Q for the quarter ended September 30, 2026.</em> U.S. Securities and Exchange Commission. <a href="${sources.fervo10q}" target="_blank" rel="noopener noreferrer">Quarterly financial statements (p. F-4), Note 3 (Debt, p. F-13) and Note 16 (Grant Income, p. F-24)</a></li>
             <li>NV Energy. (2024). <em>2024 Integrated Resource Plan, Volume 26.</em> <a href="${sources.corsacPpa}" target="_blank" rel="noopener noreferrer">Corsac 2 contract summary and $107/MWh price (REN-6-CS2(d), PDF p. 188)</a></li>
             <li>NV Energy. (2024). <em>2024 Integrated Resource Plan, Volume 4.</em> <a href="${sources.corsacLcoe}" target="_blank" rel="noopener noreferrer">Spitzer testimony and utility-calculated $107.69/MWh contract evaluation</a></li>
           </ol>
