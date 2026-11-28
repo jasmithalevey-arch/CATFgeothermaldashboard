@@ -176,6 +176,12 @@ FinancialSections.kpiTrends = function (el) {
   const lcoeLabel = p => p && Number.isFinite(p.value) ? (p.status === 'approximate' ? '~' : '') + dollars(p.value) + '/MWh' : 'Not verified';
   const latestEditionLcoe = lcoePoints.find(p => p.edition === kpiData.atb.latestEdition);
   const latestEditionVerified = latestEditionLcoe && latestEditionLcoe.status === 'verified' && Number.isFinite(latestEditionLcoe.value);
+  // Dashboard scenario only: carry the last available comparable estimate forward.
+  // Never insert this into lcoePoints or imply an observed 2025 ATB value.
+  const lcoeForecast = latestLcoe && latestLcoe.edition < kpiData.atb.forecastEdition
+    ? {baseEdition: latestLcoe.edition, year: kpiData.atb.forecastEdition, value: latestLcoe.value}
+    : null;
+  const lcoeForecastLabel = lcoeForecast ? '~' + dollars(lcoeForecast.value) + '/MWh' : 'Not available';
   const redDrilling = average(kpiData.drilling.slice(0, 2));
   const capeDrilling = average(kpiData.drilling.slice(2));
   const drillingReduction = difference(redDrilling, capeDrilling);
@@ -199,6 +205,7 @@ FinancialSections.kpiTrends = function (el) {
       #fin-kpi-trends .kt-copy,#fin-kpi-trends .kt-note{max-width:920px;color:var(--muted)}
       #fin-kpi-trends .kt-note{font-size:14px;line-height:1.5}
       #fin-kpi-trends .kt-hero{padding:clamp(1.5rem,4vw,2.75rem) 0 1.5rem;border-bottom:1px solid var(--cadet-light)}
+      #fin-kpi-trends .kt-hero > .kt-copy{width:100%;max-width:none}
       #fin-kpi-trends .kt-section{padding:clamp(28px,3vw,40px) 0;border-bottom:1px solid var(--cadet-light);scroll-margin-top:140px}
       #fin-kpi-trends .kt-section-head{margin-bottom:1rem}
       #fin-kpi-trends .kt-jump-nav{position:sticky;top:8px;z-index:5;display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 0;padding:10px;background:var(--card);border:1px solid var(--cadet-light);border-radius:0}
@@ -217,6 +224,14 @@ FinancialSections.kpiTrends = function (el) {
       #fin-kpi-trends .kt-chart-card{border-top:3px solid var(--cobalt);background:var(--page)}
       #fin-kpi-trends .kt-metric{min-height:190px;display:flex;flex-direction:column;gap:.6rem}
       #fin-kpi-trends .kt-metric-primary{grid-column:span 12;justify-content:center;background:var(--chathams);color:var(--page)}
+      /* Prominent funding headline; JavaScript animates the number when visible. */
+      #fin-kpi-trends .kt-hero .kt-metric-primary{height:auto;min-height:0;margin:1rem 0 1.4rem;padding:clamp(1rem,3vw,2rem);border:0;border-left:6px solid var(--accent);gap:.45rem}
+      #fin-kpi-trends .kt-hero .kt-metric-primary .kt-label{font-size:clamp(12px,1.4vw,15px);letter-spacing:.08em;color:var(--page)}
+      #fin-kpi-trends .kt-hero .kt-metric-primary .kt-value{display:block;color:var(--accent);font-size:clamp(2.6rem,7vw,6rem);font-weight:750;line-height:1.05;letter-spacing:-.035em;font-variant-numeric:tabular-nums;white-space:nowrap;opacity:1;transform:none;animation:none;transition:none}
+      #fin-kpi-trends .kt-hero .kt-metric-primary .kt-note{margin:0;max-width:75ch;color:var(--page)}
+      #fin-kpi-trends .kt-hero .kt-metric-primary .kt-source{margin:.35rem 0 0}
+      #fin-kpi-trends .kt-hero .kt-metric-primary details{margin-top:.45rem}
+      @media(max-width:420px){#fin-kpi-trends .kt-hero .kt-metric-primary .kt-value{font-size:clamp(2rem,10vw,3rem);letter-spacing:-.025em}}
       #fin-kpi-trends .kt-metric-primary .kt-label,#fin-kpi-trends .kt-metric-primary .kt-note{color:var(--cadet-light)}
       #fin-kpi-trends .kt-metric-primary .kt-value{color:var(--page)}
       #fin-kpi-trends .kt-metric-primary .kt-source,#fin-kpi-trends .kt-metric-primary .kt-source a{color:var(--cadet-light)}
@@ -294,12 +309,12 @@ FinancialSections.kpiTrends = function (el) {
         <p class="kt-eyebrow">Financial KPIs for Enhanced Geothermal Systems</p>
         <h1>EGS project economics and investment trends</h1>
         <p class="kt-subtitle">Capital costs, drilling performance, commercial progress, and capital needs</p>
+        <article class="card kt-card kt-metric kt-metric-primary"><span class="kt-label">2025 Global Geothermal Funding (All Technologies)</span><strong id="kt-funding-counter" class="kt-value" data-target="18.7" aria-live="off" aria-label="Approximately 18.7 billion U.S. dollars in global geothermal funding in 2025">~$0.0B</strong><p class="kt-note">Approximate annual global funding across geothermal categories, not cumulative EGS investment or a count of transactions</p><p class="kt-source">${ieaCitation}</p><details><summary>Funding methodology</summary><p>The approximately $18.7B total combines rounded estimates of annual geothermal funding worldwide. It includes heating, conventional power, and next-generation geothermal. It is not a cumulative EGS investment figure or a count of individual transactions.</p></details></article>
         <p class="kt-copy">Enhanced geothermal systems (EGS) use engineered underground reservoirs to produce reliable electricity. This dashboard compares project capital costs (USD/kW), drilling costs (USD/ft), and modeled electricity costs (USD/MWh) to assess how EGS economics are evolving. The Fervo Energy case study connects drilling performance with reported spending and contracted capacity. Reported benchmarks, company expectations, targets, modeled estimates, and illustrative forecasts are distinguished throughout. EGS project metrics are separate from broader geothermal financing and company-wide financial context. MWe and kWe denote electrical power capacity. Source-reported MW and $/kW are retained where the precise denominator is not specified; these project capacity figures refer to electricity rather than heat.</p>
       </header>
       <nav class="kt-jump-nav" aria-label="KPI Trends section explorer"><a href="#kt-capex">CapEx</a><a href="#kt-drilling-section">Drilling</a><a href="#kt-lcoe-section">LCOE</a><a href="#kt-fervo-section">Fervo</a><a href="#kt-capital-needed">Capital Needed</a></nav>
 
       <section class="kt-section" aria-labelledby="kt-headlines"><div class="kt-section-head"><p class="kt-eyebrow">Investor snapshot</p><h2 id="kt-headlines">Capital deployment at a glance</h2></div><div class="kt-grid">
-        <article class="card kt-card kt-metric kt-metric-primary"><span class="kt-label">2025 Global Geothermal Funding (All Technologies)</span><strong id="kt-funding-counter" class="kt-value" data-target="18.7" aria-live="off" aria-label="Approximately 18.7 billion U.S. dollars in global geothermal funding in 2025">~$18.7B</strong><p class="kt-note">Approximate annual global funding across geothermal categories, not cumulative EGS investment or a count of transactions</p><p class="kt-source">${ieaCitation}</p><details><summary>Funding methodology</summary><p>The approximately $18.7B total combines rounded estimates of annual geothermal funding worldwide. It includes heating, conventional power, and next-generation geothermal. It is not a cumulative EGS investment figure or a count of individual transactions.</p></details></article>
         <article class="card kt-card kt-metric kt-metric-secondary"><span class="kt-label">2025 Next-Generation Geothermal Financing</span><strong class="kt-value">~$2.2B</strong><p class="kt-note">Annual worldwide funding for next-generation geothermal, already included in the ~$18.7B total. Includes EGS and closed-loop geothermal; an EGS-only breakdown is not available.</p><p class="kt-source">${ieaCitation}</p></article>
         <article class="card kt-card kt-metric kt-metric-secondary"><span class="kt-label">Next-Generation Financing Growth (2025)</span><strong class="kt-value">+80%</strong><p class="kt-note">Increase from 2024 for EGS and closed-loop geothermal combined, not EGS alone.</p><p class="kt-source">${ieaCitation}</p></article>
       </div></section>
@@ -413,14 +428,14 @@ FinancialSections.kpiTrends = function (el) {
             <p class="kt-note">Published historical estimates are approximate readings of Figure 23 in the 2025 U.S. Geothermal Market Report (2022 USD/MWh). The 2025 ATB changes the resource and technology assumptions. Its exact comparable LCOE has not been extracted from the underlying dataset. No separate 2026 ATB edition was located as of November 27, 2026. The 2025 edition was released in 2026 and has an updated workbook dated November 11, 2026.</p>
             <div class="kt-axis-graph">
               <div class="kt-side-axis-title" aria-hidden="true">Modeled LCOE / PPA price<span>(USD/MWh; dollar basis differs)</span></div>
-              <div id="kt-lcoe" class="kt-chart kt-chart-tall" role="img" aria-label="Published modeled Deep EGS Binary LCOE estimates from 2021 to 2024; 2025 comparable value not extracted; separate 2024 Fervo PPA price marker; no unsupported forecast"></div>
+              <div id="kt-lcoe" class="kt-chart kt-chart-tall" role="img" aria-label="Published modeled Deep EGS Binary LCOE estimates from 2021 to 2024; 2025 comparable value not extracted; separate 2024 Fervo PPA price marker; dotted illustrative 2026 no-change scenario from the last comparable estimate, not published ATB data"></div>
             </div>
             <div class="kt-lcoe-coverage">
               <h3>LCOE Data Coverage</h3>
               <span class="kt-label">Latest comparable point in this chart</span>
               <strong>${latestLcoe ? latestLcoe.edition + ' ATB: ' + lcoeLabel(latestLcoe) : 'No comparable value available'}</strong>
               <p class="kt-note">Modeled in 2022 dollars, not a measured project operating cost. The published 2025 edition is available, but its comparable Deep EGS LCOE value is not verified from the underlying dataset.</p>
-              <p class="kt-note">No unsupported 2026 LCOE forecast is plotted. The 2025 and 2026 GEOPHIRES case-study estimates below provide separate recent context, not ATB replacements. The PPA marker is a nominal contract price, not LCOE.</p>
+              <p class="kt-note">${lcoeForecast ? `Illustrative ${lcoeForecast.year} no-change scenario: ${lcoeForecastLabel} (2022 USD), holding the latest comparable ${lcoeForecast.baseEdition} ATB estimate constant. The asterisk and dotted line identify this scenario; the line does not establish a 2025 value or predict the next ATB edition. It is not a published ATB projection.` : 'No illustrative forecast is available.'} The 2025 and 2026 GEOPHIRES case-study estimates below provide separate recent context, not ATB replacements. The PPA marker is a nominal contract price, not LCOE.</p>
             </div>
             <details>
               <summary>ATB LCOE data verification and update status</summary>
@@ -430,18 +445,19 @@ FinancialSections.kpiTrends = function (el) {
                   <tbody>
                     ${lcoePoints.map(p => `<tr><th scope="row">${p.edition}</th><td>${lcoeLabel(p)}</td><td>${p.status === 'verified' ? 'Workbook verified' : p.status === 'approximate' ? 'Approximate Figure 23 reading' : 'Comparable workbook value not verified'}</td><td><a href="${sources[p.dataset]}" target="_blank" rel="noopener noreferrer">${p.edition} ATB data</a></td></tr>`).join('')}
                     <tr><th scope="row">2026 edition</th><td>Not available</td><td>No separate edition located as of November 27, 2026; 2026 projection in 2025 edition not extracted</td><td><a href="${sources.atbData}" target="_blank" rel="noopener noreferrer">2025 ATB data</a></td></tr>
+                    ${lcoeForecast ? `<tr><th scope="row">${lcoeForecast.year} scenario (not an ATB edition)</th><td>${lcoeForecastLabel}</td><td>Illustrative no-change assumption; ${lcoeForecast.year} value = ${lcoeForecast.baseEdition} comparable estimate</td><td><a href="${sources.marketReport}" target="_blank" rel="noopener noreferrer">Figure 23 baseline (Akindipe et al., 2026, p. 27)</a></td></tr>` : ''}
                   </tbody>
                 </table>
               </div>
               <p class="kt-note">To replace approximate points or add the missing 2025 value, first reproduce the Figure 23 selection from the archived workbook or summary CSV. Record the resource class, generation technology, projection year, innovation scenario, financial case, tax-credit treatment, cost recovery period, model parameter, original dollar year, conversion method, and exact source row or worksheet cell. If the selection cannot be reproduced, build a separately labeled comparison with consistently defined filters. Do not combine incompatible 2025 resource classes or infer LCOE from OCC alone.</p>
-              <p class="kt-note">The missing 2025 input is intentionally stored as null. No substitute numerical value is plotted. Use the <a href="${sources.atbData}" target="_blank" rel="noopener noreferrer">official summary CSV or Parquet downloads</a> or the <a href="${sources.atbWorkbookV2}" target="_blank" rel="noopener noreferrer">revised 2025 workbook</a> to complete the verification.</p>
+              <p class="kt-note">The missing 2025 input is intentionally stored as null. No published 2025 point is invented or plotted. The separate dotted scenario is not a substitute observation. Use the <a href="${sources.atbData}" target="_blank" rel="noopener noreferrer">official summary CSV or Parquet downloads</a> or the <a href="${sources.atbWorkbookV2}" target="_blank" rel="noopener noreferrer">revised 2025 workbook</a> to complete the verification.</p>
             </details>
             <p class="kt-source">${apa('Akindipe, D., et al.','2026','2025 U.S. Geothermal Market Report',sources.marketReport,'Fig. 23, p. 27')} ${apa('National Laboratory of the Rockies','2025','2025 ATB data downloads',sources.atbData,'2025 ATB Data')} ${apa('NV Energy','2024','2024 Integrated Resource Plan, Volume 26',sources.corsacPpa,'REN-6-CS2(d), PDF p. 188')}</p>
             <details>
               <summary>Sources &amp; methodology</summary>
               <p>The approximately $480, $450, $473 and $205/MWh values for the 2021 to 2024 ATB editions come from Figure 23. They are approximate readings, not exact workbook values or observed generation costs. The comparable model scenario, projection year and financial case need to be reconciled before extending the published series.</p>
               <p>The 2025 Electricity ATB was released in 2026. Its data package includes a revised Version 2 workbook dated November 11, 2026. A comparable Deep EGS LCOE value has not yet been independently extracted and verified from this workbook, so a numeric 2025 LCOE point is intentionally omitted. The <a href="${sources.atbErrata}" target="_blank" rel="noopener noreferrer">November 11, 2026 ATB errata</a> confirms that the geothermal construction finance factor was reduced to its intended value, lowering modeled CAPEX and LCOE. This model correction does not establish a realized reduction in project financing costs. The <a href="${sources.atbRaw2025}" target="_blank" rel="noopener noreferrer">official 2025 raw Parquet data</a> provide an alternate extraction route; confirm the data revision before using it.</p>
-              <p>The previous illustrative flat 2026 LCOE forecast has been removed. The 2025 ATB edition uses 2023 dollars; any extracted values must be converted to a common dollar year and matched on model assumptions before extending Figure 23. A 2026 projection within the 2025 edition is not a separate 2026 edition.</p>
+              <p>${lcoeForecast ? `The illustrative ${lcoeForecast.year} scenario uses a zero-change assumption: ${lcoeForecast.year} LCOE = ${lcoeForecast.baseEdition} comparable estimate = ${lcoeForecastLabel} in constant 2022 USD. It uses no new cost, financing or resource assumptions. There is no 2025 observation on the dotted segment, which is not an official ATB projection or a prediction of model revisions.` : 'No illustrative forecast is available.'} The 2025 ATB edition uses 2023 dollars; any extracted values must be converted to a common dollar year and matched on model assumptions before extending Figure 23. A 2026 projection within the 2025 edition is not a separate 2026 edition.</p>
               <p>Update from the <a href="${sources.atbWorkbookV2}" target="_blank" rel="noopener noreferrer">2025 ATB Workbook, Version 2 (November 11, 2026; XLSX)</a>, the <a href="${sources.atbWorkbook}" target="_blank" rel="noopener noreferrer">2025 ATB data package</a> and archived <a href="${sources.atb2021Data}" target="_blank" rel="noopener noreferrer">2021</a>, <a href="${sources.atb2022Data}" target="_blank" rel="noopener noreferrer">2022</a>, <a href="${sources.atb2023Data}" target="_blank" rel="noopener noreferrer">2023</a> and <a href="${sources.atb2024Data}" target="_blank" rel="noopener noreferrer">2024</a> datasets when the matching filters and dollar basis can be confirmed.</p>
             </details>
           </div>
@@ -653,8 +669,8 @@ FinancialSections.kpiTrends = function (el) {
     } else if (reduceMotion) {
       fundingCounter.textContent = displayValue(target);
     } else {
-      // Keep the reported value visible until the in-view animation starts.
-      fundingCounter.textContent = displayValue(target);
+      // Start at zero and animate as soon as the headline becomes visible.
+      fundingCounter.textContent = displayValue(0);
       let started = false;
       let elapsedMs = 0;
       let previousFrameTime = null;
@@ -736,6 +752,7 @@ FinancialSections.kpiTrends = function (el) {
         if (document.visibilityState === 'visible') startCounter();
       };
       document.addEventListener('visibilitychange', el._ktCounterVisibilityHandler);
+      startCounter();
     }
   }
 
@@ -839,8 +856,9 @@ FinancialSections.kpiTrends = function (el) {
   const lcoeSeries = comparableLcoe;
   plot('kt-lcoe',[
     {type:'scatter',x:lcoeSeries.map(p=>p.edition),y:lcoeSeries.map(p=>p.value),name:'Modeled ATB estimates (see data status)',mode:'lines+markers+text',line:{color:colors.cobalt,dash:'solid',width:4},marker:{color:colors.page,symbol:'circle',size:13,line:{color:colors.cobalt,width:3}},text:lcoeSeries.map(p=>(p.status==='approximate'?'~':'')+dollars(p.value)),textposition:'top center',customdata:lcoeSeries.map(p=>[lcoeLabel(p),p.status==='verified'?'Workbook-verified comparable value':'Approximate Figure 23 reading, not exact workbook value']),hovertemplate:'<b>%{x} ATB edition</b><br>%{customdata[0]} (2022 USD)<br>Deep EGS Binary modeled LCOE<br>%{customdata[1]}<extra></extra>'},
+    ...(lcoeForecast ? [{type:'scatter',x:[lcoeForecast.baseEdition,lcoeForecast.year],y:[lcoeForecast.value,lcoeForecast.value],name:'Illustrative no-change scenario',mode:'lines+markers+text',line:{color:colors.cobalt,dash:'dot',width:3},marker:{symbol:'circle-open',size:[0,11],color:colors.cobalt,line:{width:2}},text:['',lcoeForecastLabel+'*'],textposition:['top center','top left'],textfont:{size:compact?10:12},hovertemplate:`<b>Illustrative ${lcoeForecast.year} scenario (not ATB data)</b><br>${lcoeForecastLabel} (2022 USD)<br>Held constant at ${lcoeForecast.baseEdition} comparable estimate<br>Not a measured cost or an official ATB forecast<extra></extra>`}] : []),
     {type:'scatter',x:[kpiData.ppa.year],y:[kpiData.ppa.price],name:'Fervo PPA price (not LCOE)',mode:'markers+text',marker:{color:colors.accent,symbol:'diamond',size:17,line:{color:colors.chathams,width:1}},text:[dollars(kpiData.ppa.price)+'/MWh PPA'],textposition:'bottom center',hovertemplate:'<b>Fervo Corsac 2 PPA (2024)</b><br>%{y:$,.0f}/MWh nominal contract price<br>Not LCOE; different dollar basis<br>NV Energy (2024), Vol. 26, REN-6-CS2(d), PDF p. 188<extra></extra>'}
-  ],{margin:compact?{t:70,r:12,b:126,l:54}:{t:70,r:28,b:110,l:70},xaxis:{title:{text:compact?'Edition / contract year':'ATB edition / PPA signing year',font:{size:compact?10:12}},tickmode:'array',tickvals:[2021,2022,2023,2024,2025],ticktext:['2021','2022','2023','2024','2025'],range:[2020.6,2025.55]},yaxis:{title:{text:''},range:[0,550],tickprefix:'$',automargin:false},showlegend:true,legend:{orientation:'h',x:0,y:-.23,font:{size:compact?10:11}},annotations:latestEditionVerified?[]:[{xref:'x',yref:'paper',x:2025,xanchor:'right',y:.96,text:compact?'2025: no<br>verified value':'2025 ATB: comparable LCOE<br>not verified from workbook',showarrow:false,font:{size:compact?9:11,color:colors.muted},align:'center'}]});
+  ],{margin:compact?{t:70,r:12,b:150,l:54}:{t:70,r:28,b:126,l:70},xaxis:{title:{text:compact?'Edition / scenario year':'ATB edition / PPA signing / scenario year',font:{size:compact?10:12}},tickmode:'array',tickvals:[2021,2022,2023,2024,2025,2026],ticktext:['2021','2022','2023','2024','2025','2026*'],range:[2020.6,2026.55]},yaxis:{title:{text:''},range:[0,550],tickprefix:'$',automargin:false},showlegend:true,legend:{orientation:'h',x:0,y:-.23,font:{size:compact?10:11}},annotations:latestEditionVerified?[]:[{xref:'x',yref:'paper',x:2025,xanchor:'center',y:.96,text:compact?'2025: no<br>verified value':'2025 ATB: comparable LCOE<br>not verified from workbook',showarrow:false,font:{size:compact?9:11,color:colors.muted},align:'center'}]});
   plot('kt-geophires-lcoe',[{
     type:'bar', x:commercialLcoe.map(p=>p.label), y:commercialLcoe.map(p=>p.value),
     name:'Published GEOPHIRES modeled LCOE', marker:{color:commercialLcoe.map((p,i)=>i===commercialLcoe.length-1?colors.cobalt:colors.cadet),line:{color:colors.chathams,width:1}},
